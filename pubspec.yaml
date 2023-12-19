@@ -8,10 +8,18 @@ environment:
   flutter: ">=2.5.0"
 
 dependencies:
+  dynatrace_flutter_plugin: ^3.279.2
   flash: ^2.0.0
   flutter:
     sdk: flutter
   flutter_inappwebview: ^5.8.0
+  flutter_aepassurance: ">= 2.0.0 <3.0.0"
+  flutter_aepcore: ">= 2.0.0 <3.0.0"
+  flutter_aepedge: ">= 2.0.0 <3.0.0"
+  flutter_aepedgeconsent: ">= 2.0.0 <3.0.0"
+  flutter_aepedgeidentity: ">= 2.0.0 <3.0.0"
+  flutter_aepuserprofile: ">= 1.0.0 <2.0.0"
+
   get: ^4.6.5
   intersperse: ^2.0.0
   intl: ^0.17.0
