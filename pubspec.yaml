@@ -8,6 +8,7 @@ environment:
   flutter: ">=2.5.0"
 
 dependencies:
+  dio: ^4.0.6
   dynatrace_flutter_plugin: ^3.279.2
   flash: ^2.0.0
   flutter:

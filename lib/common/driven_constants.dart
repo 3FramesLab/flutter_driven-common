@@ -60,4 +60,14 @@ class DrivenConstants {
   static const sendToMobilePhone = 'Mobile Phone';
   static const passwordRegex =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[*&!#@$%^()_+=\-,./?[\]{}|]).*$';
+  static const xDeviceToken = 'xDeviceToken';
+  static const xDeviceTokenHeader = 'x-device-token';
+  static const requestFailed = 'Failed to load request options';
+
+  // OKTA Paths
+  static const oktaAuthnCall = '/api/v2/authn';
+  static const oktaAuthorizeCall = '/api/v2/authorize';
+  static const oktaTokenCall = '/api/v2/token';
+  static const oktaProfileCall = '/api/v2/idp-user/users';
+  static const oktaRevokeTokenCall = '/api/v2/revoke-token';
 }

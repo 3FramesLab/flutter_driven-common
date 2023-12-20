@@ -6,9 +6,14 @@ class Globals {
   late DrivenDynatrace dynatrace;
   late AEPCore analytics;
   late String appFlavor;
+  late bool isCardHolderLogin;
+  late bool isComdata;
+  late String packageId;
+  late String androidCertSignature;
 
-  void init({required String flavor}) {
+  void init({required String flavor, bool isCardHolderLogin = false}) {
     appFlavor = flavor;
+    isCardHolderLogin = isCardHolderLogin;
     initializeAnalytics();
     initializeDynatrace();
   }
