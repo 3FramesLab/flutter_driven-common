@@ -122,9 +122,9 @@ class DrivenDialog extends StatelessWidget {
             children: [
               if (secondaryLeftButtonText != null)
                 _secondaryLeftButton(secondaryLeftButtonText),
-              Container(
+              const SizedBox(
                 height: 40,
-                child: const VerticalDivider(
+                child: VerticalDivider(
                   width: 10,
                   thickness: 1,
                   color: DrivenColors.grey,

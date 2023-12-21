@@ -5,6 +5,7 @@ class DialogButton extends RoundedButton {
     required VoidCallback? onPressed,
     required String text,
     double? height,
+    super.key,
   }) : super(
           onPressed: onPressed,
           text: text,

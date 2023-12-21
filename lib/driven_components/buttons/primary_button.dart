@@ -6,6 +6,7 @@ class PrimaryButton extends RoundedButton {
     required String text,
     Color backgroundColor = DrivenColors.primaryButtonColor,
     Color foregroundColor = DrivenColors.primaryButtonTextColor,
+    super.key,
   }) : super(
           onPressed: onPressed,
           text: text,

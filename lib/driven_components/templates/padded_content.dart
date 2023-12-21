@@ -8,6 +8,7 @@ class PaddedContent extends StatelessWidget {
   PaddedContent.narrow({
     required this.children,
     this.isForm = false,
+    super.key,
   }) {
     padding = const EdgeInsets.symmetric(horizontal: 28);
   }

@@ -7,6 +7,7 @@ class OutlinedPrimaryButton extends RoundedButton {
     Color backgroundColor = DrivenColors.primaryButtonTextColor,
     Color foregroundColor = DrivenColors.primaryButtonColor,
     Color borderColor = DrivenColors.primaryButtonColor,
+    super.key,
   }) : super(
           onPressed: onPressed,
           text: text,

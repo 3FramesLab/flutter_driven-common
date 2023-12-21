@@ -4,6 +4,7 @@ class OutlinedSignupButton extends RoundedButton {
   const OutlinedSignupButton({
     required VoidCallback? onPressed,
     required String text,
+    super.key,
   }) : super(
           onPressed: onPressed,
           text: text,

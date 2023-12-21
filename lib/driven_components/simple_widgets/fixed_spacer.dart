@@ -3,9 +3,9 @@ part of driven_components_module;
 class HorizontalSpacer extends StatelessWidget {
   final double size;
 
-  const HorizontalSpacer({required this.size});
-  const HorizontalSpacer.small() : size = 10;
-  const HorizontalSpacer.medium() : size = 20;
+  const HorizontalSpacer({required this.size, super.key});
+  const HorizontalSpacer.small({super.key}) : size = 10;
+  const HorizontalSpacer.medium({super.key}) : size = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +16,9 @@ class HorizontalSpacer extends StatelessWidget {
 class VerticalSpacer extends StatelessWidget {
   final double size;
 
-  const VerticalSpacer({required this.size});
-  const VerticalSpacer.small() : size = 10;
-  const VerticalSpacer.medium() : size = 20;
+  const VerticalSpacer({super.key, required this.size});
+  const VerticalSpacer.small({super.key}) : size = 10;
+  const VerticalSpacer.medium({super.key}) : size = 20;
 
   @override
   Widget build(BuildContext context) {

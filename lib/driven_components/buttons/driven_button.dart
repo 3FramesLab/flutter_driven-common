@@ -4,6 +4,7 @@ class DrivenButton extends RoundedButton {
   const DrivenButton({
     required VoidCallback? onPressed,
     required String text,
+    super.key,
   }) : super(
           onPressed: onPressed,
           text: text,

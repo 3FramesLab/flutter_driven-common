@@ -2,7 +2,7 @@ part of driven_components_module;
 
 class SendToText extends StatelessWidget {
   final String text;
-  const SendToText({super.key, this.text = DrivenConstants.sendToMobilePhone});
+  const SendToText({this.text = DrivenConstants.mobilePhone, super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(

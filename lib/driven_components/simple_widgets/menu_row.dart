@@ -9,6 +9,7 @@ class MenuRow extends StatelessWidget {
     this.backgroundColor = Colors.transparent,
     this.subTitle,
     this.subTitleStyle,
+    super.key,
   });
 
   final String title;
@@ -35,7 +36,7 @@ class MenuRow extends StatelessWidget {
     Widget? subtitle,
     Widget? leading,
   }) {
-    return Container(
+    return SizedBox(
       height: 70,
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(

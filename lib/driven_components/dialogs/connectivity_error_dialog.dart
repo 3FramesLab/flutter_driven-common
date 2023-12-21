@@ -3,7 +3,10 @@ part of driven_components_module;
 class ConnectivityErrorDialog extends StatelessWidget {
   final Function? dismissAction;
 
-  const ConnectivityErrorDialog({this.dismissAction});
+  const ConnectivityErrorDialog({
+    this.dismissAction,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

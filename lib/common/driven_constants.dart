@@ -57,7 +57,7 @@ class DrivenConstants {
   static const city = 'City';
   static const smallDot = '•';
   static const sendToText = 'Send to ';
-  static const sendToMobilePhone = 'Mobile Phone';
+  static const mobilePhone = 'Mobile Phone';
   static const passwordRegex =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[*&!#@$%^()_+=\-,./?[\]{}|]).*$';
 }

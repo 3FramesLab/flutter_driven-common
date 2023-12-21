@@ -5,6 +5,7 @@ class PaddedDivider extends StatelessWidget {
 
   const PaddedDivider({
     required this.padding,
+    super.key,
   });
 
   @override

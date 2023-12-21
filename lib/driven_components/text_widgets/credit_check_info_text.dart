@@ -2,7 +2,7 @@ part of driven_components_module;
 
 class CreditCheckInfoText extends StatelessWidget {
   final String label;
-  const CreditCheckInfoText(this.label);
+  const CreditCheckInfoText(this.label, {super.key});
   @override
   Widget build(BuildContext context) {
     return Row(
