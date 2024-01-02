@@ -10,4 +10,5 @@ import 'package:intl/intl.dart';
 part 'date_helper.dart';
 // part 'launch_phone_call.dart';
 // part 'safe_launch.dart'; // same file exist with dynatrace
+part 'bool_conversions.dart';
 part 'utils.dart';
