@@ -100,3 +100,30 @@ DateTime? _parseMMddySlashFormat(String dateString) {
     return null;
   }
 }
+
+int getTimeDiff(int timeStampStored, {TimeDiffUnits? unit}) {
+  final int lastTimeStored = timeStampStored;
+  final int todayTimeStamp = DateTime.now().millisecondsSinceEpoch;
+  final lastTimeStoredDate =
+      DateTime.fromMillisecondsSinceEpoch(lastTimeStored);
+  final todayDate = DateTime.fromMillisecondsSinceEpoch(todayTimeStamp);
+  int difference = todayDate.difference(lastTimeStoredDate).inMinutes;
+  if (unit != null && unit == TimeDiffUnits.days) {
+    difference = todayDate.difference(lastTimeStoredDate).inDays;
+  } else if (unit != null && unit == TimeDiffUnits.hours) {
+    difference = todayDate.difference(lastTimeStoredDate).inHours;
+  } else if (unit != null && unit == TimeDiffUnits.seconds) {
+    difference = todayDate.difference(lastTimeStoredDate).inSeconds;
+  } else if (unit != null && unit == TimeDiffUnits.milliseconds) {
+    difference = todayDate.difference(lastTimeStoredDate).inMilliseconds;
+  }
+  return difference;
+}
+
+enum TimeDiffUnits {
+  days,
+  minutes,
+  hours,
+  seconds,
+  milliseconds,
+}
