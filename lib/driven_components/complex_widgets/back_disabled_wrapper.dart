@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class BackDisabledWrapper extends StatelessWidget {
   final Widget child;

@@ -1,14 +1,9 @@
-import 'dart:async';
-
-import 'package:driven_common/common/driven_constants.dart';
-import 'package:driven_common/driven_common_resources_module.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+part of driven_components_module;
 
 class InactivityController extends FullLifeCycleController
     with FullLifeCycleMixin {
-  static const Duration _warningTime = Duration(minutes: 2);
-  static const Duration _logOutTime = Duration(minutes: 3);
+  Duration warningTime = const Duration(minutes: 9);
+  Duration logOutTime = const Duration(minutes: 10);
 
   bool enabled = false;
 
@@ -28,8 +23,8 @@ class InactivityController extends FullLifeCycleController
     if (enabled) {
       cancelTimers();
 
-      logoutTimer = Timer(_logOutTime, () => onTimerLogout!(true));
-      warningTimer = Timer(_warningTime, _warn);
+      logoutTimer = Timer(logOutTime, () => onTimerLogout!(true));
+      warningTimer = Timer(warningTime, _warn);
     }
   }
 

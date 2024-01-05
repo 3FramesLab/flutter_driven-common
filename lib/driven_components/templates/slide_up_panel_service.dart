@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
+part of driven_components_module;
 
 class SlideUpPanelService extends GetxService {
   static const Widget defaultPanel = Text('');

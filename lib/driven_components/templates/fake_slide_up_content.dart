@@ -1,5 +1,5 @@
-import 'package:driven_common/driven_components/driven_components_module.dart';
-import 'package:flutter/material.dart';
+part of driven_components_module;
+
 
 class FakeSlideUpContent extends StatelessWidget {
   final Color? backgroundColor;

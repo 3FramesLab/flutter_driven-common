@@ -1,6 +1,4 @@
-import 'package:driven_common/driven_components/complex_widgets/dark_logo_app_bar.dart';
-import 'package:driven_common/driven_components/templates/driven_scaffold.dart';
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class DarkDrivenScaffold extends BaseDrivenScaffold {
   DarkDrivenScaffold({
