@@ -11,6 +11,7 @@ import 'package:driven_common/common/semantic_strings.dart';
 import 'package:driven_common/common/validation.dart';
 import 'package:driven_common/driven_components/text_widgets/view_large_title.dart';
 import 'package:driven_common/extensions/extensions_module.dart';
+import 'package:driven_common/globals.dart';
 import 'package:driven_common/styles/styles_module.dart';
 import 'package:driven_common/utils/safe_launch.dart';
 import 'package:driven_common/utils/utils_module.dart';
@@ -25,6 +26,7 @@ import 'package:intersperse/intersperse.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+part 'app_bar/driven_app_bar.dart';
 part 'buttons/dialog_button.dart';
 part 'buttons/driven_button.dart';
 part 'buttons/edit_button.dart';
