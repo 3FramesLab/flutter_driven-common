@@ -25,6 +25,7 @@ import 'package:intersperse/intersperse.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
+part 'app_bar/driven_app_bar.dart';
 part 'buttons/dialog_button.dart';
 part 'buttons/driven_button.dart';
 part 'buttons/edit_button.dart';

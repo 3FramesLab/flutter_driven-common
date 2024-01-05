@@ -1,6 +1,8 @@
 part of driven_components_module;
 
 class CommonWebView extends StatefulWidget {
+  const CommonWebView({super.key});
+
   @override
   State<CommonWebView> createState() => _CommonWebViewState();
 }
@@ -59,8 +61,7 @@ class _CommonWebViewState extends State<CommonWebView> {
     );
   }
 
-  // TODO: use DrivenAppBar instead of AppBar
-  PreferredSizeWidget get _appBar => AppBar(
+  PreferredSizeWidget get _appBar => DrivenAppBar(
         leading: DrivenBackButton(
           onPressed: commonWebViewController.onBackPressed,
         ),
