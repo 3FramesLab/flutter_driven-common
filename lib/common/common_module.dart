@@ -2,6 +2,7 @@ library common_module;
 
 // import 'package:money2/money2.dart';
 
+part 'common_route_arguments.dart';
 // part 'driven_assets.dart';
 // part 'driven_constants.dart';
 // part 'driven_dimensions.dart';

@@ -2,12 +2,14 @@ library driven_components_module;
 
 import 'dart:async';
 
+import 'package:driven_common/common/common_module.dart';
 import 'package:driven_common/common/driven_constants.dart';
 import 'package:driven_common/common/driven_dimensions.dart';
 import 'package:driven_common/common/money_maker.dart';
 import 'package:driven_common/common/name_id_object.dart';
 import 'package:driven_common/common/semantic_strings.dart';
 import 'package:driven_common/common/validation.dart';
+import 'package:driven_common/driven_components/text_widgets/view_large_title.dart';
 import 'package:driven_common/extensions/extensions_module.dart';
 import 'package:driven_common/styles/styles_module.dart';
 import 'package:driven_common/utils/safe_launch.dart';
@@ -17,6 +19,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:intersperse/intersperse.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -155,3 +158,6 @@ part 'text_widgets/subtitle1_regular16.dart';
 part 'text_widgets/title_text.dart';
 
 // part 'text_widgets/view_large_title.dart'; // ViewLargeTitle exist
+
+part 'web_view/common_web_view_controller.dart';
+part 'web_view/common_web_view.dart';
