@@ -4,7 +4,7 @@ import 'package:driven_common/driven_components/driven_components_module.dart';
 import 'package:driven_common/driven_components/templates/driven_slide_up_panel.dart';
 import 'package:flutter/material.dart';
 
-class DrivenScaffold extends StatelessWidget {
+class BaseDrivenScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
   final bool disableBack;
   final Color? backgroundColor;
@@ -14,7 +14,7 @@ class DrivenScaffold extends StatelessWidget {
   final Function(bool)? onTimerOut;
   final bool isInactivityWrapperActivated;
 
-  const DrivenScaffold({
+  const BaseDrivenScaffold({
     Key? key,
     this.appBar,
     this.disableBack = false,

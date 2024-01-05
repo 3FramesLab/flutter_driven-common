@@ -2,7 +2,7 @@ import 'package:driven_common/driven_components/complex_widgets/dark_logo_app_ba
 import 'package:driven_common/driven_components/templates/driven_scaffold.dart';
 import 'package:flutter/material.dart';
 
-class DarkDrivenScaffold extends DrivenScaffold {
+class DarkDrivenScaffold extends BaseDrivenScaffold {
   DarkDrivenScaffold({
     super.key,
     Widget? body,
