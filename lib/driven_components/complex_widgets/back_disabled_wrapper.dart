@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class BackDisabledWrapper extends StatelessWidget {
   final Widget child;
 
-  const BackDisabledWrapper({required this.child});
+  const BackDisabledWrapper({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

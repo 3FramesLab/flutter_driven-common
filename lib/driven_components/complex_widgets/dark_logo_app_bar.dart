@@ -1,6 +1,4 @@
-import 'package:driven_common/driven_components/complex_widgets/app_logo.dart';
-import 'package:driven_common/driven_components/driven_components_module.dart';
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class DarkLogoAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? leading;

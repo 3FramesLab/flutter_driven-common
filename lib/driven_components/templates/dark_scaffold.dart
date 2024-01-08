@@ -1,7 +1,4 @@
-import 'package:driven_common/driven_components/complex_widgets/dark_logo_app_bar.dart';
-import 'package:driven_common/driven_components/driven_components_module.dart';
-import 'package:driven_common/styles/styles_module.dart';
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class DarkScaffold extends StatelessWidget {
   final Widget body;

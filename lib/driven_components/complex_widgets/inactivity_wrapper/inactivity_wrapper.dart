@@ -1,11 +1,10 @@
-import 'package:driven_common/driven_components/complex_widgets/inactivity_wrapper/inactivity_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+part of driven_components_module;
 
 class InactivityWrapper extends StatelessWidget {
   final Function(bool)? onTimerOut;
   final bool isEnabled;
   final InactivityController controller = Get.find();
+  final int warningTimeInMinutes;
 
   final Widget? child;
 
@@ -14,10 +13,13 @@ class InactivityWrapper extends StatelessWidget {
     required this.child,
     this.onTimerOut,
     this.isEnabled = false,
+    this.warningTimeInMinutes = 9,
   }) {
-    controller.initializeTimers();
     controller.onTimerLogout = onTimerOut;
     controller.enabled = isEnabled;
+    controller.warningTime = Duration(minutes: warningTimeInMinutes);
+    controller.logOutTime = Duration(minutes: warningTimeInMinutes + 1);
+    controller.initializeTimers();
   }
 
   @override
