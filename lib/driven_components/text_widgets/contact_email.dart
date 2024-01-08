@@ -35,7 +35,7 @@ Future<void> _makeTapActionForEmail() async {
   )) {
     await safeLaunchAsync(
       DrivenConstants.launchEmail,
-      tryAction: () => canLaunchUrlString(url),
+      tryAction: () => launchUrlString(url),
       catchAction: () => Future.value(false),
     );
   }

@@ -10,9 +10,7 @@ Future<void> launchPhoneCall(String url) async {
   )) {
     await safeLaunchAsync(
       DrivenConstants.launchPhoneCall,
-      // TODO(siva): need to cross check
-      // tryAction: () => Globals.launch(url),
-      tryAction: () => canLaunchUrlString(url),
+      tryAction: () => launchUrlString(url),
       catchAction: () => Future.value(false),
     );
   }
