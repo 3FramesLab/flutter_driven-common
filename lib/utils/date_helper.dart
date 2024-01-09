@@ -67,3 +67,63 @@ bool cardExpireDateCheck(int month, int year) {
 String notificationDate(DateTime dateTime) {
   return DateFormat('MM/dd/yyyy hh:mm a').format(dateTime);
 }
+
+// shortDate function will return this format: Jan 31, 2020
+String shortDate(String dateString) {
+  final DateTime? date = parseToDate(dateString);
+  return date != null ? DateFormat.yMMMd().format(date) : '';
+}
+
+// utility core validations / formatters
+
+DateTime? parseToDate(String dateString) {
+  try {
+    return _parseMMddyDashFormat(dateString) ??
+        _parseMMddySlashFormat(dateString);
+  } catch (_) {
+    return null;
+  }
+}
+
+DateTime? _parseMMddyDashFormat(String dateString) {
+  try {
+    return DateFormat('MM-dd-y').parse(dateString);
+  } catch (_) {
+    return null;
+  }
+}
+
+DateTime? _parseMMddySlashFormat(String dateString) {
+  try {
+    return DateFormat('MM/dd/y').parse(dateString);
+  } catch (_) {
+    return null;
+  }
+}
+
+int getTimeDiff(int timeStampStored, {TimeDiffUnits? unit}) {
+  final int lastTimeStored = timeStampStored;
+  final int todayTimeStamp = DateTime.now().millisecondsSinceEpoch;
+  final lastTimeStoredDate =
+      DateTime.fromMillisecondsSinceEpoch(lastTimeStored);
+  final todayDate = DateTime.fromMillisecondsSinceEpoch(todayTimeStamp);
+  int difference = todayDate.difference(lastTimeStoredDate).inMinutes;
+  if (unit != null && unit == TimeDiffUnits.days) {
+    difference = todayDate.difference(lastTimeStoredDate).inDays;
+  } else if (unit != null && unit == TimeDiffUnits.hours) {
+    difference = todayDate.difference(lastTimeStoredDate).inHours;
+  } else if (unit != null && unit == TimeDiffUnits.seconds) {
+    difference = todayDate.difference(lastTimeStoredDate).inSeconds;
+  } else if (unit != null && unit == TimeDiffUnits.milliseconds) {
+    difference = todayDate.difference(lastTimeStoredDate).inMilliseconds;
+  }
+  return difference;
+}
+
+enum TimeDiffUnits {
+  days,
+  minutes,
+  hours,
+  seconds,
+  milliseconds,
+}
