@@ -36,6 +36,8 @@ enum APIType {
   oktaRevokeAccessToken,
   oktaRevokeRefreshToken,
   oktaCreateUser,
+  getFuelPrices,
+  getFuelPreferences,
   // Below for test coverage
   get,
   noPath,
@@ -152,6 +154,10 @@ class APIRoute implements APIRouteConfigurable {
         return oktaRevokeToken();
       case APIType.oktaCreateUser:
         return oktaCreateUser();
+      case APIType.getFuelPrices:
+        return getFuelPrices();
+      case APIType.getFuelPreferences:
+        return getFuelPreferences();
 
       case APIType.get:
         return get();
@@ -432,6 +438,26 @@ class APIRoute implements APIRouteConfigurable {
           'Content-Type': 'application/json',
           'x-auth-jwt': '$routeParams'
         });
+  }
+
+  RequestOptions getFuelPrices() {
+    return RequestOptions(
+      path: '/fleets/fuel-price',
+      method: APIMethod.post,
+      headers: headerQueryParams != null
+          ? {'Authorization': 'Bearer $headerQueryParams'}
+          : {'Authorization': ''},
+    );
+  }
+
+  RequestOptions getFuelPreferences() {
+    return RequestOptions(
+      path: '/fleets/fuel-preference',
+      method: APIMethod.post,
+      headers: headerQueryParams != null
+          ? {'Authorization': 'Bearer $headerQueryParams'}
+          : {'Authorization': ''},
+    );
   }
 
   RequestOptions post() {
