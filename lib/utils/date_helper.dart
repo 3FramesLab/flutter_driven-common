@@ -127,3 +127,7 @@ enum TimeDiffUnits {
   seconds,
   milliseconds,
 }
+
+String convertHrsToAmPm(String text) {
+  return DateFormat('hh a').format(DateFormat('HH:mm').parse(text));
+}
