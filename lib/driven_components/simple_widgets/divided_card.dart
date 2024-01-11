@@ -3,11 +3,14 @@ part of driven_components_module;
 class DividedCard extends StatelessWidget {
   final List<Widget> children;
   final String? title;
+  final String? titleMiddlePart;
+  final String? titleLastPart;
 
   const DividedCard({
     required this.children,
     this.title,
-    super.key,
+    this.titleMiddlePart,
+    this.titleLastPart,
   });
 
   @override
@@ -15,18 +18,33 @@ class DividedCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (title != null) _title(),
+        Row(
+          children: [
+            if (title != null) _title(title),
+            if (titleMiddlePart != null) _titleMiddle(),
+            if (titleLastPart != null) _title(titleLastPart),
+          ],
+        ),
         _card(),
       ],
     );
   }
 
-  Widget _title() {
+  Widget _title(title) {
     return PaddedText(
       title!,
       textAlign: TextAlign.left,
       padding: const EdgeInsets.only(left: 2, bottom: 10),
       style: f16RegularGrey,
+    );
+  }
+
+  Widget _titleMiddle() {
+    return PaddedText(
+      titleMiddlePart!,
+      textAlign: TextAlign.left,
+      padding: const EdgeInsets.only(left: 4, bottom: 10, right: 2),
+      style: f16SemiBoldLink,
     );
   }
 
