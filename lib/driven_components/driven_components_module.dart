@@ -51,6 +51,7 @@ part 'complex_widgets/driven_back_button.dart';
 part 'complex_widgets/driven_checkbox.dart';
 part 'complex_widgets/driven_flash_bar/base_driven_flash_bar.dart';
 part 'complex_widgets/driven_flash_bar/driven_error_parser.dart';
+part 'complex_widgets/driven_flash_bar/driven_flash_action.dart';
 part 'complex_widgets/driven_flash_bar/driven_flash_content.dart';
 part 'complex_widgets/driven_flash_bar/driven_flash_message.dart';
 part 'complex_widgets/driven_flash_bar/message_type.dart';

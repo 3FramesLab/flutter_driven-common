@@ -6,6 +6,7 @@ class BaseDrivenFlashBar {
     String code = '',
     int duration = DrivenConstants.flashMessageDuration,
     MessageType type = MessageType.error,
+    DrivenFlashAction? action,
     Function()? onRemoteMessageTap,
   }) {
     DrivenFlashMessage.dismiss();
@@ -14,6 +15,7 @@ class BaseDrivenFlashBar {
       code,
       duration,
       type,
+      action,
       onRemoteMessageNotificationTap: onRemoteMessageTap,
     );
   }

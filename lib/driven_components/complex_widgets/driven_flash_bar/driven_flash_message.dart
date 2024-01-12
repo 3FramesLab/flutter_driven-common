@@ -10,6 +10,7 @@ class DrivenFlashMessage {
   static MessageType messageType = MessageType.error;
   static TextStyle textStyle = f16SemiBoldWhite;
   static Function()? onRemoteMessageTap;
+  static DrivenFlashAction? flashButtonAction;
 
   DrivenFlashMessage._internal();
   static final _singleton = DrivenFlashMessage._internal();
@@ -18,9 +19,16 @@ class DrivenFlashMessage {
   CancelableOperation<void>? _cancelableOperation;
 
   // ignore: long-parameter-list
-  void createView(String message, String code, int duration, MessageType type,
-      {Function()? onRemoteMessageNotificationTap}) {
+  void createView(
+    String message,
+    String code,
+    int duration,
+    MessageType type,
+    DrivenFlashAction? action, {
+    Function()? onRemoteMessageNotificationTap,
+  }) {
     flashMessage = message;
+    flashButtonAction = action;
     errorCode = code;
     messageType = type;
     onRemoteMessageTap = onRemoteMessageNotificationTap;
@@ -91,10 +99,62 @@ class DrivenFlashMessage {
           ),
           if (messageType == MessageType.notification)
             _notificationContent
+          else if (flashButtonAction != null)
+            _buttonActionsContent
           else
             const SizedBox.shrink()
         ],
       ),
+    );
+  }
+
+  Widget get _buttonActionsContent {
+    return Container(
+      height: 64,
+      decoration: BoxDecoration(
+        color: _backgroundColor(),
+        borderRadius: _borderRadius,
+      ),
+      child: Column(
+        children: [
+          Container(height: 1, color: DrivenColors.white),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InkWell(
+                  onTap: flashButtonAction?.onPositiveButtonTap ?? dismiss,
+                  child: _actionTextButton(
+                    flashButtonAction?.positiveButtonText ?? DrivenConstants.ok,
+                  ),
+                ),
+                Container(
+                  width: 2,
+                  height: 40,
+                  color: DrivenColors.white,
+                ),
+                InkWell(
+                  onTap: dismiss,
+                  child: _actionTextButton(
+                    flashButtonAction?.negativeButtonText ??
+                        DrivenConstants.cancel,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _actionTextButton(String text) {
+    return Container(
+      width: Get.width / 2 - 1,
+      height: 45,
+      alignment: Alignment.center,
+      child: Text(text, style: f16SemiBoldLinkWhite),
     );
   }
 
