@@ -4,6 +4,7 @@ class OutlinedDialogButton extends RoundedButton {
   const OutlinedDialogButton({
     required VoidCallback? onPressed,
     required String text,
+    super.key,
   }) : super(
           onPressed: onPressed,
           text: text,

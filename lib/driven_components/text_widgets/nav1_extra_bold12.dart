@@ -6,6 +6,7 @@ class Nav1ExtraBold12 extends Text {
     TextStyle style = const TextStyle(),
     TextAlign? textAlign,
     TextOverflow? overflow,
+    super.key,
   }) : super(
           data,
           style: const TextStyle(

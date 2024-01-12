@@ -22,16 +22,19 @@ class UnderlinedButton extends StatelessWidget {
   const UnderlinedButton.black({
     required this.onPressed,
     required this.text,
+    super.key,
   }) : style = _underlinedBlack;
 
   const UnderlinedButton.purple({
     required this.onPressed,
     required this.text,
+    super.key,
   }) : style = _underlinedPurple;
 
   const UnderlinedButton.white({
     required this.onPressed,
     required this.text,
+    super.key,
   }) : style = _underlinedWhite;
 
   @override

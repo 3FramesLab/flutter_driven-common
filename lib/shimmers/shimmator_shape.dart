@@ -10,12 +10,14 @@ class ShimmatorShape extends StatelessWidget {
     required this.height,
     this.width = double.infinity,
     this.isPurple = false,
+    super.key,
   }) : shapeBorder = const RoundedRectangleBorder();
 
   const ShimmatorShape.roundedRectangular({
     required this.height,
     this.width = double.infinity,
     this.isPurple = false,
+    super.key,
   }) : shapeBorder = const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16)));
 
@@ -24,6 +26,7 @@ class ShimmatorShape extends StatelessWidget {
     this.width = double.infinity,
     this.isPurple = false,
     this.shapeBorder = const CircleBorder(),
+    super.key,
   });
 
   @override

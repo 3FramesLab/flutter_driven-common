@@ -28,6 +28,7 @@ class AutoCompleteInput<T extends NameIdObject> extends StatelessWidget
     this.isDefaultValueRequired = false,
     this.maxLength = 30,
     this.allowMaxLength = true,
+    super.key,
   });
 
   @override

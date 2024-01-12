@@ -25,7 +25,7 @@ class ObscurableFormInput extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ObscurableFormInputState createState() => _ObscurableFormInputState();
+  State<ObscurableFormInput> createState() => _ObscurableFormInputState();
 }
 
 class _ObscurableFormInputState extends State<ObscurableFormInput> {
