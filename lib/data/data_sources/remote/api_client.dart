@@ -3,12 +3,15 @@ part of data_module;
 class APIClient {
   late BaseOptions options;
   late Dio instance;
-  late String baseUrl;
 
   APIClient({BaseOptions? options}) {
-    this.options = options ?? BaseOptions(baseUrl: baseUrl);
+    this.options = options ?? _defaultBaseOptions;
     instance = Dio(options);
   }
+
+  BaseOptions get _defaultBaseOptions => BaseOptions(
+        baseUrl: ApiConstants.instance.baseUrl,
+      );
 
   // ignore: long-parameter-list
   Future<ResponseWrapper<T>> request<T extends Decodable<dynamic>>({
