@@ -6,6 +6,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart' as url_launcher;
 
 class Globals {
+  static final Globals _singleton = Globals._internal();
+  factory Globals() => _singleton;
+  Globals._internal();
+
   late DrivenDynatrace dynatrace;
   late AEPCore analytics;
   late String appFlavor;

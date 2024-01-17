@@ -5,9 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'driven_common_platform_interface.dart';
 
 class DrivenCommon {
+  static final DrivenCommon _singleton = DrivenCommon._internal();
+  factory DrivenCommon() => _singleton;
   DrivenCommon._internal();
-  static final DrivenCommon _instance = DrivenCommon._internal();
-  static DrivenCommon get instance => _instance;
 
   Future<String?> getPlatformVersion() {
     return DrivenCommonPlatform.instance.getPlatformVersion();
