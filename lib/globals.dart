@@ -21,9 +21,18 @@ class Globals {
   late Future<bool> Function(String, {LaunchMode mode}) launch;
   late Future<bool> Function(String) canLaunch;
 
-  void init({required String flavor, bool isCardHolderLogin = false}) async {
+  void init({
+    required String flavor,
+    required String packageId,
+    required String androidCertSignature,
+    required bool isComdata,
+    bool isCardHolderLogin = false,
+  }) async {
     appFlavor = flavor;
     isCardHolderLogin = isCardHolderLogin;
+    this.packageId = packageId;
+    this.androidCertSignature = androidCertSignature;
+    this.isComdata = isComdata;
     initializeAnalytics();
     initializeDynatrace();
     await initializeSharedPreferences();

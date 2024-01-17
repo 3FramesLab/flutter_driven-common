@@ -16,11 +16,19 @@ class DrivenCommon {
   Future<void> init({
     required String appFlavor,
     required String baseUrl,
+    required String packageId,
+    required String androidCertSignature,
+    required bool isComdata,
   }) async {
     try {
       debugPrint('driven common package: init() called');
       ApiConstants.instance.baseUrl = baseUrl;
-      Globals().init(flavor: appFlavor);
+      Globals().init(
+        flavor: appFlavor,
+        packageId: packageId,
+        androidCertSignature: androidCertSignature,
+        isComdata: isComdata,
+      );
     } on Exception catch (_) {
       debugPrint('Error while initializing common resources packages');
     }
