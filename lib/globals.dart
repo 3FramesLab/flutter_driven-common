@@ -29,7 +29,7 @@ class Globals {
     bool isCardHolderLogin = false,
   }) async {
     appFlavor = flavor;
-    isCardHolderLogin = isCardHolderLogin;
+    this.isCardHolderLogin = isCardHolderLogin;
     this.packageId = packageId;
     this.androidCertSignature = androidCertSignature;
     this.isComdata = isComdata;
