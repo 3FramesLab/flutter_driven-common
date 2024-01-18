@@ -21,7 +21,7 @@ dependencies:
 
   get: ^4.6.6
   intersperse: ^2.0.0
-  intl: ^0.18.0
+  intl: ^0.19.0
   mask_text_input_formatter: ^2.7.0
   money2: ^4.0.0
   shared_preferences: ^2.2.2
