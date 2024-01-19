@@ -5,11 +5,11 @@ Map<String, Map<String, String>> _configurablePageFields(
   AnalyticsPlatform platform,
   AnalyticsAuthState authState,
   AnalyticsLineOfBusiness lineOfBusiness,
-  String flavor,
+  // String flavor,
 ) =>
     {
       'pageInfo': {
-        ..._pageInfo(platform, authState, lineOfBusiness, flavor),
+        ..._pageInfo(platform, authState, lineOfBusiness),
       }
     };
 
@@ -17,11 +17,12 @@ Map<String, String> _pageInfo(
   AnalyticsPlatform platform,
   AnalyticsAuthState authState,
   AnalyticsLineOfBusiness lineOfBusiness,
-  String flavor,
+  // String flavor,
 ) =>
     {
       'platform': platform.value,
-      'type': flavor,
+      // 'type': flavor,
+      'type': Globals().appFlavor,
       'authState': authState.value,
     };
 
@@ -30,7 +31,7 @@ void trackState(
   AnalyticsPlatform platform = AnalyticsPlatform.mobileApp,
   AnalyticsLineOfBusiness lineOfBusiness = AnalyticsLineOfBusiness.comdata,
   AnalyticsAuthState authState = AnalyticsAuthState.postLogin,
-  String flavor = 'default',
+  // String flavor = 'default',
 }) {
   _safeTrack(
     trackName: 'trackPage',
@@ -46,7 +47,7 @@ void trackState(
         }
       },
       '_fleetcor': {
-        ..._configurablePageFields(platform, authState, lineOfBusiness, flavor),
+        ..._configurablePageFields(platform, authState, lineOfBusiness),
         'customMetric': {
           'beacons': {
             'value': '1',
@@ -64,7 +65,7 @@ void trackAction(
   String actionName, {
   AnalyticsActionType actionType = AnalyticsActionType.buttonClick,
   AnalyticsLineOfBusiness lineOfBusiness = AnalyticsLineOfBusiness.comdata,
-  String flavor = 'default',
+  // String flavor = 'default',
 }) {
   _safeTrack(
     trackName: 'trackAction',
@@ -81,7 +82,7 @@ void trackAction(
       },
       '_fleetcor': {
         'pageInfo': {
-          'type': flavor,
+          'type': Globals().appFlavor,
         },
         'customMetric': {
           'beacons': {
@@ -101,7 +102,7 @@ void trackStatus(
   AnalyticsScreenName screenName, {
   AnalyticsLineOfBusiness lineOfBusiness = AnalyticsLineOfBusiness.comdata,
   bool isComplete = true,
-  String flavor = 'default',
+  // String flavor = 'default',
 }) {
   _safeTrack(
     trackName: 'trackAction',
@@ -118,7 +119,7 @@ void trackStatus(
       },
       '_fleetcor': {
         'pageInfo': {
-          'type': flavor,
+          'type': Globals().appFlavor,
         },
         'apiDetails': {
           isComplete ? 'completes' : 'failure': {'value': '1'},
