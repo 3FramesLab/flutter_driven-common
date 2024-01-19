@@ -20,12 +20,14 @@ class Globals {
   late SharedPreferences sharedPreferences;
   late Future<bool> Function(String, {LaunchMode mode}) launch;
   late Future<bool> Function(String) canLaunch;
+  String? _appLogoPath;
 
   void init({
     required String flavor,
     required String packageId,
     required String androidCertSignature,
     required bool isComdata,
+    required String appLogoPath,
     bool isCardHolderLogin = false,
   }) async {
     _appFlavor = flavor;
@@ -35,6 +37,7 @@ class Globals {
     this.isComdata = isComdata;
     initializeAnalytics();
     initializeDynatrace();
+    setAppLogoPath(appLogoPath);
     await initializeSharedPreferences();
     launch = url_launcher.launchUrlString;
     canLaunch = url_launcher.canLaunchUrlString;
@@ -57,4 +60,10 @@ class Globals {
   void setAppFlavor(String? appFlavor) {
     _appFlavor = appFlavor;
   }
+
+  void setAppLogoPath(String? appLogoPath) {
+    _appLogoPath = appLogoPath;
+  }
+
+  String get appLogoPath => _appLogoPath ?? '';
 }
