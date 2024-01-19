@@ -31,11 +31,13 @@ class DrivenTooltipIcon extends StatelessWidget {
 
   void _launchToolTip(BuildContext context) {
     completer(Completer());
-    context.showFlashDialog(
-      content: TextScaleClamp(child: Text(tooltip)),
+    context.showFlash(
+      onBarrierTap: _dismissTooltip,
       persistent: true,
       dismissCompleter: completer(),
-      onWillPop: _dismissTooltip,
+      builder: (context, controller) {
+        return TextScaleClamp(child: Text(tooltip));
+      },
     );
   }
 }
