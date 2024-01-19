@@ -1,3 +1,4 @@
+import 'package:driven_common/globals.dart';
 import 'package:flutter/material.dart';
 
 class AppLogo extends StatefulWidget {
@@ -25,5 +26,5 @@ class _AppLogoState extends State<AppLogo> {
     );
   }
 
-  Widget get _appLogo => Image.asset(widget.appLogoPath ?? '');
+  Widget get _appLogo => Image.asset(Globals().appLogoPath);
 }
