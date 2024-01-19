@@ -53,4 +53,8 @@ class Globals {
   }
 
   String get appFlavor => _appFlavor ?? 'comdata';
+
+  void setAppFlavor(String? appFlavor) {
+    _appFlavor = appFlavor;
+  }
 }
