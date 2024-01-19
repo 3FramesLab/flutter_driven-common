@@ -110,6 +110,12 @@ const f14SemiboldPurpleUnderline = TextStyle(
   decoration: TextDecoration.underline,
 );
 
+const f14RegularPurple = TextStyle(
+  fontSize: 14,
+  color: DrivenColors.brandPurple,
+  fontFamily: DrivenFonts.avertaFontFamily,
+);
+
 const f16SemiboldBlack2Underline = TextStyle(
   fontSize: 16,
   color: DrivenColors.black90,
