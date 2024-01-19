@@ -12,8 +12,8 @@ class Globals {
 
   late DrivenDynatrace dynatrace;
   late AEPCore analytics;
-  late String appFlavor;
-  late bool isCardHolderLogin;
+  String? _appFlavor;
+  bool isCardHolderLogin = false;
   late bool isComdata;
   late String packageId;
   late String androidCertSignature;
@@ -28,7 +28,7 @@ class Globals {
     required bool isComdata,
     bool isCardHolderLogin = false,
   }) async {
-    appFlavor = flavor;
+    _appFlavor = flavor;
     this.isCardHolderLogin = isCardHolderLogin;
     this.packageId = packageId;
     this.androidCertSignature = androidCertSignature;
@@ -51,4 +51,6 @@ class Globals {
   Future<void> initializeSharedPreferences() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
+
+  String get appFlavor => _appFlavor ?? 'comdata';
 }
