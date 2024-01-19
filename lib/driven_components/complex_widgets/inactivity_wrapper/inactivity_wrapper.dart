@@ -12,7 +12,7 @@ class InactivityWrapper extends StatelessWidget {
     super.key,
     required this.child,
     this.onTimerOut,
-    this.isEnabled = false,
+    this.isEnabled = true,
     this.warningTimeInMinutes = 9,
   }) {
     controller.onTimerLogout = onTimerOut;
