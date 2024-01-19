@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   dynatrace_flutter_plugin: ^3.279.2
-  flash: ^2.0.0
+  flash: ^3.1.0
   flutter:
     sdk: flutter
   flutter_inappwebview: ^5.8.0
