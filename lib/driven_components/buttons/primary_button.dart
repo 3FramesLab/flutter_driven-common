@@ -4,6 +4,7 @@ class PrimaryButton extends RoundedButton {
   const PrimaryButton({
     required VoidCallback? onPressed,
     required String text,
+    TextStyle? buttonTextStyle,
     Color backgroundColor = DrivenColors.primaryButtonColor,
     Color foregroundColor = DrivenColors.primaryButtonTextColor,
     super.key,
@@ -11,6 +12,7 @@ class PrimaryButton extends RoundedButton {
           onPressed: onPressed,
           text: text,
           height: 48,
+          buttonTextStyle: buttonTextStyle,
           backgroundColor: backgroundColor,
           foregroundColor: foregroundColor,
         );
