@@ -32,6 +32,7 @@ class DrivenColors {
   static const transparent = Color(0x00000000);
   static const barrierColor = Color(0x00123456);
   static const blue = Colors.blue;
+  static const darkBlue = Color(0xFF1565C0);
 
   static const inactiveCardDot = Color(0xFFd6d6d6);
   static const activeCardDot = Color(0xFF3b3b3b);
