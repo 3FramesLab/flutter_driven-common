@@ -28,6 +28,7 @@ class DrivenColors {
   static const lightOrange = Color.fromRGBO(206, 58, 13, 1);
   static const purple = Color(0xFF7646F1);
   static const red = Color(0xFFb00020);
+  static const pureRed = Color(0xFFFF0000);
   static const shimmerGrey = Color(0xFFF1F4F6);
   static const transparent = Color(0x00000000);
   static const barrierColor = Color(0x00123456);
