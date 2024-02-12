@@ -42,7 +42,7 @@ class CustomTextFormField extends StatefulWidget {
     this.enabled,
     this.hintText,
     this.isShowErrorBorder = false,
-    this.autocorrect = false,
+    this.autocorrect = true,
     this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
