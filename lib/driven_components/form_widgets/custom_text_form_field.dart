@@ -19,6 +19,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool? enabled;
   final String? hintText;
   final bool isShowErrorBorder;
+  final bool autocorrect;
   final TextCapitalization textCapitalization;
 
   const CustomTextFormField({
@@ -41,6 +42,7 @@ class CustomTextFormField extends StatefulWidget {
     this.enabled,
     this.hintText,
     this.isShowErrorBorder = false,
+    this.autocorrect = false,
     this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
@@ -70,6 +72,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         enabled: widget.enabled,
         textCapitalization: widget.textCapitalization,
         scrollPadding: const EdgeInsets.only(bottom: 80),
+        autocorrect: widget.autocorrect,
       ),
     );
   }
