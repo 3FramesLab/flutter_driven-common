@@ -10,7 +10,6 @@ import 'package:driven_common/common/semantic_strings.dart';
 import 'package:driven_common/common/validation.dart';
 import 'package:driven_common/extensions/extensions_module.dart';
 import 'package:driven_common/styles/styles_module.dart';
-import 'package:driven_common/utils/safe_launch.dart';
 import 'package:driven_common/utils/utils_module.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/cupertino.dart';
@@ -20,7 +19,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intersperse/intersperse.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'buttons/dialog_button.dart';
 part 'buttons/driven_button.dart';
