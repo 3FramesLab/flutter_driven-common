@@ -60,8 +60,9 @@ class APIRoute implements APIRouteConfigurable {
       '/site/locations/comdata/summary';
 
   final headers = {
+    'Access-Control-Allow-Origin': '*',
     'accept': 'application/json',
-    'content-type': 'application/json',
+    'content-type': 'application/json'
   };
 
   final apiKeySecurityHeaders = {
