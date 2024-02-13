@@ -9,6 +9,7 @@ class DrivenDialog extends StatelessWidget {
   final bool isDynamicAlert;
   final bool enableBackPress;
   final double height;
+  final double width;
   final bool? has3CTAButtons;
   final String? secondaryLeftButtonText;
   final String? secondaryRightButtonText;
@@ -24,6 +25,7 @@ class DrivenDialog extends StatelessWidget {
     this.isDynamicAlert = false,
     this.enableBackPress = true,
     this.height = 105,
+    this.width = 300,
     this.has3CTAButtons = false,
     this.secondaryLeftButtonText,
     this.secondaryRightButtonText,
@@ -63,6 +65,7 @@ class DrivenDialog extends StatelessWidget {
           insetPadding: const EdgeInsets.all(8),
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
+            width: width,
             constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
             child: DrivenColumn(
               padding: _dialogPadding(),
