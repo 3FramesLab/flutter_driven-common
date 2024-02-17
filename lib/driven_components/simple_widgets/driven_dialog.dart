@@ -9,26 +9,32 @@ class DrivenDialog extends StatelessWidget {
   final bool isDynamicAlert;
   final bool enableBackPress;
   final double height;
+  final double width;
   final bool? has3CTAButtons;
   final String? secondaryLeftButtonText;
   final String? secondaryRightButtonText;
+  final String? clickableText;
   final void Function()? secondaryLeftButtonOnPressed;
   final void Function()? secondaryRightButtonOnPressed;
+  final void Function()? onClickableTextPressed;
 
   const DrivenDialog({
     required this.text,
     this.titleWidget,
     this.primaryButton,
     this.secondaryButton,
+    this.clickableText,
     this.secondaryBody,
     this.isDynamicAlert = false,
     this.enableBackPress = true,
     this.height = 105,
+    this.width = 300,
     this.has3CTAButtons = false,
     this.secondaryLeftButtonText,
     this.secondaryRightButtonText,
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
+    this.onClickableTextPressed,
     super.key,
   });
 
@@ -39,6 +45,13 @@ class DrivenDialog extends StatelessWidget {
         _dialogTextView(),
         _dialogSecondaryBody(),
       ],
+    );
+  }
+
+  Widget _clickableText() {
+    return UnderlinedButton.black(
+      onPressed: onClickableTextPressed,
+      text: clickableText!,
     );
   }
 
@@ -60,9 +73,12 @@ class DrivenDialog extends StatelessWidget {
       onWillPop: () => Future.value(enableBackPress),
       child: TextScaleClamp(
         child: Dialog(
+          backgroundColor: DrivenColors.white,
+          surfaceTintColor: Colors.transparent,
           insetPadding: const EdgeInsets.all(8),
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
+            width: width,
             constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
             child: DrivenColumn(
               padding: _dialogPadding(),
@@ -99,6 +115,7 @@ class DrivenDialog extends StatelessWidget {
           if (secondaryButton != null) _secondaryButton(),
           if (secondaryRightButtonText != null)
             _secondaryRightButton(secondaryRightButtonText),
+          if (clickableText != null) _clickableText(),
         ],
       );
     }
