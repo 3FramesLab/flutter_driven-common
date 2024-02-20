@@ -327,14 +327,23 @@ class APIRoute implements APIRouteConfigurable {
   }
 
   RequestOptions siteLocations() {
+    headers.addAll(headerQueryParams != null
+        ? {
+            'Authorization': 'Bearer $headerQueryParams',
+            'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*"
+          }
+        : {'Authorization': ''});
     return RequestOptions(
       path: Globals().isComdata
           ? cardholderSiteLocationsPath
           : adminSiteLocationsPath,
       method: APIMethod.post,
-      headers: headerQueryParams != null
-          ? {'Authorization': 'Bearer $headerQueryParams'}
-          : {'Authorization': ''},
+      // headers: headerQueryParams != null
+      //     ? {'Authorization': 'Bearer $headerQueryParams'}
+      //     : {'Authorization': ''},
+      headers: headers,
     );
   }
 
@@ -366,12 +375,21 @@ class APIRoute implements APIRouteConfigurable {
   }
 
   RequestOptions sitesBrandLogoUrls() {
+    headers.addAll(headerQueryParams != null
+        ? {
+            'Authorization': 'Bearer $headerQueryParams',
+            'Access-Control-Allow-Origin': '*',
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*"
+          }
+        : {'Authorization': ''});
     return RequestOptions(
       path: '/SLS/brand-logos',
       method: APIMethod.get,
-      headers: headerQueryParams != null
-          ? {'Authorization': 'Bearer $headerQueryParams'}
-          : {'Authorization': ''},
+      // headers: headerQueryParams != null
+      //     ? {'Authorization': 'Bearer $headerQueryParams'}
+      //     : {'Authorization': ''},
+      headers: headers,
     );
   }
 
