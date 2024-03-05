@@ -29,9 +29,12 @@ const f12BoldWhite = DrivenTextStyle(12, bold, white);
 const f12RegularBlack = DrivenTextStyle(12, regular, black);
 const f12RegularBlack2 = DrivenTextStyle(12, regular, black2);
 const f12RegularGrey = DrivenTextStyle(12, regular, grey);
+
+const f13BoldWhite = DrivenTextStyle(13, bold, white);
 const f13RegularGrey = DrivenTextStyle(13, regular, grey);
 const f13RegularBlack = DrivenTextStyle(13, regular, black);
 const f13RegularBlack60 = DrivenTextStyle(13, regular, black60);
+
 const f14RegularBlack = DrivenTextStyle(14, regular, black);
 const f14RegularBlackDark = DrivenTextStyle(14, regular, blackDark);
 const f14RegularSemiboldBlack = DrivenTextStyle(14, semiBold, blackDark);
