@@ -33,6 +33,7 @@ class Validation {
   static const userNameNotRecognized = 'User Name not recognized';
   static const securityAnswerRequired = 'Security Answer required';
   static const enterValidPhoneNumber = 'Enter a valid 10-digit phone number';
+  static const notValidCardNumber = 'This is not a valid card number';
 
   static String mustBeNDigits(int n) {
     return 'Must be $n digits';
