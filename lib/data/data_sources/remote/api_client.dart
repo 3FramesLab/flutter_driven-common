@@ -100,6 +100,7 @@ class APIClient {
   }
 
   Future<Response<T>> _httpCall<T>(RequestOptions requestOptions) async {
+    requestOptions.headers.addAll({'Access-Control-Allow-Origin': '*'});
     final url = '${requestOptions.baseUrl}${requestOptions.path}';
     switch (requestOptions.method) {
       case APIMethod.post:
