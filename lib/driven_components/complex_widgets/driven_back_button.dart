@@ -32,7 +32,7 @@ class DrivenBackButton extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 42,
+            width: 60,
             child: Text(
               buttonLabelText,
               style: TextStyle(
