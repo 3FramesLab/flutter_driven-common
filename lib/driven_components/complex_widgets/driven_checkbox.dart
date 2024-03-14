@@ -47,7 +47,15 @@ class DrivenCheckbox extends StatelessWidget {
         child: Checkbox(
           value: value,
           onChanged: onChanged,
-          activeColor: DrivenColors.brandPurple,
+          fillColor: MaterialStateColor.resolveWith(
+            (states) {
+              if (states.contains(MaterialState.selected)) {
+                return DrivenColors
+                    .brandPurple; // Color when checkbox is selected
+              }
+              return DrivenColors.grey; // Color when checkbox is unselected
+            },
+          ),
         ),
       ),
     );
