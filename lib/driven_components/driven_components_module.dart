@@ -21,6 +21,7 @@ import 'package:driven_common/utils/safe_launch.dart';
 import 'package:driven_common/utils/utils_module.dart';
 import 'package:flash/flash.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

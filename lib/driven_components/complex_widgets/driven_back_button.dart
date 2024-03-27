@@ -33,6 +33,7 @@ class DrivenBackButton extends StatelessWidget {
               color: color,
             ),
           ),
+          if (kIsWeb) const SizedBox(width: 16),
           Flexible(
             child: Text(
               buttonLabelText,
