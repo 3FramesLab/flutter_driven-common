@@ -14,6 +14,7 @@ class DrivenDialog extends StatelessWidget {
   final String? secondaryRightButtonText;
   final void Function()? secondaryLeftButtonOnPressed;
   final void Function()? secondaryRightButtonOnPressed;
+  final TextStyle? secondaryRightButtonTextStyle;
 
   const DrivenDialog({
     required this.text,
@@ -29,6 +30,7 @@ class DrivenDialog extends StatelessWidget {
     this.secondaryRightButtonText,
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
+    this.secondaryRightButtonTextStyle,
     super.key,
   });
 
@@ -157,12 +159,13 @@ class DrivenDialog extends StatelessWidget {
   }
 
   Widget _secondaryRightButton(buttonText) {
-    const textStyle = TextStyle(
-      fontSize: 14,
-      fontWeight: DrivenFonts.fontWeightSemibold,
-      color: Colors.black,
-      decoration: TextDecoration.underline,
-    );
+    final textStyle = secondaryRightButtonTextStyle ??
+        const TextStyle(
+          fontSize: 14,
+          fontWeight: DrivenFonts.fontWeightSemibold,
+          color: Colors.black,
+          decoration: TextDecoration.underline,
+        );
     return TextButton(
       onPressed: secondaryRightButtonOnPressed ?? Get.back,
       child: Text(
