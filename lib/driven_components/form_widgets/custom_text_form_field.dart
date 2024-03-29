@@ -3,6 +3,7 @@ part of driven_components_module;
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController? textEditingController;
   final Function(String)? onTextChanged;
+  final Function()? onEditComplete;
   final Function()? onSuffixIconPressed;
   final String? Function(String?)? onValidate;
   final bool isObscureText;
@@ -26,6 +27,7 @@ class CustomTextFormField extends StatefulWidget {
     Key? key,
     this.textEditingController,
     this.onTextChanged,
+    this.onEditComplete,
     this.isObscureText = false,
     this.onValidate,
     this.suffixIcon,
@@ -73,6 +75,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         textCapitalization: widget.textCapitalization,
         scrollPadding: const EdgeInsets.only(bottom: 80),
         autocorrect: widget.autocorrect,
+        onEditingComplete: widget.onEditComplete,
       ),
     );
   }
