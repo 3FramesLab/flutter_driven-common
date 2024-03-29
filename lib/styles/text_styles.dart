@@ -17,6 +17,7 @@ const regular = DrivenFonts.fontWeightRegular;
 const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
+const cpDarkBlue = DrivenColors.cpDarkBlue;
 
 const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
@@ -39,6 +40,7 @@ const f13RegularBlack60 = DrivenTextStyle(13, regular, black60);
 
 const f14RegularBlack = DrivenTextStyle(14, regular, black);
 const f14RegularBlackDark = DrivenTextStyle(14, regular, blackDark);
+const f14RegularDarkBlue = DrivenTextStyle(14, regular, cpDarkBlue);
 const f14RegularSemiboldBlack = DrivenTextStyle(14, semiBold, blackDark);
 const f14SemiboldBlack = DrivenTextStyle(14, semiBold, black);
 const f14SemiboldWhite = DrivenTextStyle(14, semiBold, white);
