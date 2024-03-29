@@ -12,7 +12,7 @@ Future<void> launchPhoneCall(String url) async {
       DrivenConstants.launchPhoneCall,
       // TODO(siva): need to cross check
       // tryAction: () => Globals.launch(url),
-      tryAction: () => canLaunchUrlString(url),
+      tryAction: () => launchUrlString(url),
       catchAction: () => Future.value(false),
     );
   }
