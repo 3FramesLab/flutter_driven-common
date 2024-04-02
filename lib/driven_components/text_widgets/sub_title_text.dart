@@ -23,6 +23,7 @@ class SubTitleText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
+      label: title,
       container: true,
       child: Container(
         alignment: alignment,

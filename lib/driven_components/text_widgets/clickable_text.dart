@@ -22,8 +22,8 @@ class ClickableText extends StatelessWidget {
       mainAxisAlignment: alignment,
       children: [
         Semantics(
+          label: title,
           container: true,
-          label: SemanticStrings.clickTextTap,
           child: GestureDetector(
             onTap: onTap,
             child: Text(

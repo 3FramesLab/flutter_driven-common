@@ -27,9 +27,13 @@ class RoundedButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: _style(),
-      child: Text(
-        text,
-        style: buttonTextStyle,
+      child: Semantics(
+        label: text,
+        button: true,
+        child: Text(
+          text,
+          style: buttonTextStyle,
+        ),
       ),
     );
   }

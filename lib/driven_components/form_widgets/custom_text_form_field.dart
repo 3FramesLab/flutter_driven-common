@@ -19,6 +19,7 @@ class CustomTextFormField extends StatefulWidget {
   final InputDecoration? inputDecoration;
   final bool? enabled;
   final String? hintText;
+  final String? semanticLabel;
   final bool isShowErrorBorder;
   final bool autocorrect;
   final TextCapitalization textCapitalization;
@@ -45,6 +46,7 @@ class CustomTextFormField extends StatefulWidget {
     this.hintText,
     this.isShowErrorBorder = false,
     this.autocorrect = true,
+    this.semanticLabel = 'InputText',
     this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
@@ -56,8 +58,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      container: true,
-      textField: true,
+      label: widget.semanticLabel,
       child: TextFormField(
         textInputAction: TextInputAction.done,
         controller: widget.textEditingController,

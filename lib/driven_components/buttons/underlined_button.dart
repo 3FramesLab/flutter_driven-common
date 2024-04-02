@@ -51,12 +51,15 @@ class UnderlinedButton extends StatelessWidget {
     super.key,
   }) : style = _underlinedWhitef16;
 
-
   @override
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: Text(text, style: style),
+      child: Semantics(
+        label: text,
+        button: true,
+        child: Text(text, style: style),
+      ),
     );
   }
 }
