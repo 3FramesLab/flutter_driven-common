@@ -8,14 +8,14 @@ class RoundedButtonStyle extends ButtonStyle {
     required Color disabledBackgroundColor,
     BorderSide? side,
     EdgeInsets? padding,
-    bool showBorder = true,
+    bool showRoundedShape = true,
   }) : super(
           textStyle: _textStyle(),
           foregroundColor: _textColor(primary),
           backgroundColor:
               _backgroundColor(backgroundColor, disabledBackgroundColor),
           minimumSize: _sizeFromHeight(minimumHeight),
-          shape: _shape(minimumHeight, showBorder),
+          shape: _shape(minimumHeight, showRoundedShape),
           side: _side(side),
           padding: _padding(padding),
         );
@@ -52,11 +52,11 @@ class RoundedButtonStyle extends ButtonStyle {
   }
 
   static MaterialStateProperty<OutlinedBorder?>? _shape(
-      double height, bool showBorder) {
+      double height, bool showRoundedShape) {
     return ButtonStyleButton.allOrNull<OutlinedBorder>(
       RoundedRectangleBorder(
         borderRadius: BorderRadius.all(
-          Radius.circular(showBorder ? height / 2 : 0),
+          Radius.circular(showRoundedShape ? height / 2 : 0),
         ),
       ),
     );
