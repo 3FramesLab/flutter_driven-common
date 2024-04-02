@@ -8,7 +8,7 @@ class RoundedButtonStyle extends ButtonStyle {
     required Color disabledBackgroundColor,
     BorderSide? side,
     EdgeInsets? padding,
-    bool showBorder = false,
+    bool showBorder = true,
   }) : super(
           textStyle: _textStyle(),
           foregroundColor: _textColor(primary),
