@@ -4,7 +4,8 @@ class CardNumberCharactersValidator extends Validator {
   final int n;
   final int propCardLength;
 
-  const CardNumberCharactersValidator(this.n, this.propCardLength) : super();
+  const CardNumberCharactersValidator(this.n, {this.propCardLength = 12})
+      : super();
 
   @override
   bool isValid(String? value) {
