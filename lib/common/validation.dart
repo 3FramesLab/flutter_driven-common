@@ -25,7 +25,7 @@ class Validation {
   static const spacesNotAllowed = 'Spaces not allowed';
   static const userNameRequired = 'Should not be empty';
   static const enterValidEmail = 'Enter valid email';
-  static const passwordMustBeLength = 'Must be at least 8 characters';
+  static const passwordMustBeLength = 'Must be at least 12 characters';
   static const enterValidAnswer = 'Enter a valid answer';
   static const mustMeetPasswordFormatRules = 'Must meet all format rules';
   static const passwordsMustMatch = 'Passwords must match';
