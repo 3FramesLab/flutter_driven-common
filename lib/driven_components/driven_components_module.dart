@@ -99,6 +99,7 @@ part 'form_widgets/validators/no_po_box_validator.dart';
 part 'form_widgets/validators/password_length_validator.dart';
 part 'form_widgets/validators/password_regex_validator.dart';
 part 'form_widgets/validators/password_validator.dart';
+part 'form_widgets/validators/new_password_length_validator.dart';
 part 'form_widgets/validators/passwords_match_validator.dart';
 part 'form_widgets/validators/phone_number_validator.dart';
 part 'form_widgets/validators/pins_must_match_validator.dart';
