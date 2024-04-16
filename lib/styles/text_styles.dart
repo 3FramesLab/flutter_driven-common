@@ -72,12 +72,14 @@ const f16SemiboldBlackDark = DrivenTextStyle(16, semiBold, blackDark);
 const f16SemiboldBlack2 = DrivenTextStyle(16, semiBold, black2);
 const f16BoldBlackDark = DrivenTextStyle(16, bold, blackDark);
 const f16ExtraBoldBlackDark = DrivenTextStyle(16, extraBold, blackDark);
+const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
 const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
 
 const f20RegularGrey = DrivenTextStyle(20, regular, grey);
+const f20RegularBlack = DrivenTextStyle(20, regular, blackDark);
 const f20RegularBlack2 = DrivenTextStyle(20, regular, black2);
 const f20RegularBlackDark = DrivenTextStyle(20, regular, black2);
 const f20SemiboldBlackDark = DrivenTextStyle(20, semiBold, blackDark);
