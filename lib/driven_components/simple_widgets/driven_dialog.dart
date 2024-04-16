@@ -10,6 +10,7 @@ class DrivenDialog extends StatelessWidget {
   final bool enableBackPress;
   final double height;
   final bool? has3CTAButtons;
+  final bool isScrollable;
   final String? secondaryLeftButtonText;
   final String? secondaryRightButtonText;
   final void Function()? secondaryLeftButtonOnPressed;
@@ -26,6 +27,7 @@ class DrivenDialog extends StatelessWidget {
     this.enableBackPress = true,
     this.height = 105,
     this.has3CTAButtons = false,
+    this.isScrollable = false,
     this.secondaryLeftButtonText,
     this.secondaryRightButtonText,
     this.secondaryLeftButtonOnPressed,
@@ -66,20 +68,33 @@ class DrivenDialog extends StatelessWidget {
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
             constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
-            child: DrivenColumn(
-              padding: _dialogPadding(),
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _titleWidget(),
-                Column(children: body),
-                SizedBox(height: isDynamicAlert ? 30 : 2),
-                _actions(),
-              ],
-            ),
+            child: isScrollable
+                ? drivenScrollableColumn(body)
+                : drivenColumn(body),
           ),
         ),
       ),
+    );
+  }
+
+  Widget drivenScrollableColumn(List<Widget> body) {
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: drivenColumn(body),
+    );
+  }
+
+  Widget drivenColumn(List<Widget> body) {
+    return DrivenColumn(
+      padding: _dialogPadding(),
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _titleWidget(),
+        Column(children: body),
+        SizedBox(height: isDynamicAlert ? 30 : 2),
+        _actions(),
+      ],
     );
   }
 
