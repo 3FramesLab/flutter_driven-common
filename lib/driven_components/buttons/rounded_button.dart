@@ -28,7 +28,6 @@ class RoundedButton extends StatelessWidget {
       onPressed: onPressed,
       style: _style(),
       child: Semantics(
-        label: text,
         button: true,
         child: Text(
           text,

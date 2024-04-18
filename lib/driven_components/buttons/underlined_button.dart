@@ -56,7 +56,6 @@ class UnderlinedButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       child: Semantics(
-        label: text,
         button: true,
         child: Text(text, style: style),
       ),
