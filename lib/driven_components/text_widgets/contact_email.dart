@@ -21,7 +21,7 @@ TapGestureRecognizer _showEmailPopUp() {
 }
 
 Future<void> _makeTapActionForEmail() async {
-  final Uri emailUrl = Uri(
+  final Uri params = Uri(
     scheme: 'mailto',
     path: DrivenConstants.contactEmail,
     query: '', //add subject and body here

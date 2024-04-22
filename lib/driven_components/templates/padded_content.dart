@@ -6,7 +6,6 @@ class PaddedContent extends StatelessWidget {
   late final EdgeInsets padding;
 
   PaddedContent.narrow({
-    super.key,
     required this.children,
     this.isForm = false,
     super.key,
