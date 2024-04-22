@@ -31,6 +31,7 @@ class Body1Regular14Lh23 extends Text {
     TextAlign? textAlign,
     TextOverflow? overflow,
     double? textScaleFactor,
+    int? maxLines,
   }) : super(
           data,
           style: const TextStyle(
@@ -41,6 +42,7 @@ class Body1Regular14Lh23 extends Text {
           textAlign: textAlign,
           overflow: overflow,
           textScaleFactor: textScaleFactor,
+          maxLines: maxLines,
         );
 
   Body1Regular14Lh23.fixed(

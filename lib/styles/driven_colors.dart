@@ -28,10 +28,12 @@ class DrivenColors {
   static const lightOrange = Color.fromRGBO(206, 58, 13, 1);
   static const purple = Color(0xFF7646F1);
   static const red = Color(0xFFb00020);
+  static const pureRed = Color(0xFFFF0000);
   static const shimmerGrey = Color(0xFFF1F4F6);
   static const transparent = Color(0x00000000);
   static const barrierColor = Color(0x00123456);
   static const blue = Colors.blue;
+  static const darkBlue = Color(0xFF1565C0);
 
   static const inactiveCardDot = Color(0xFFd6d6d6);
   static const activeCardDot = Color(0xFF3b3b3b);
@@ -63,4 +65,5 @@ class DrivenColors {
   static const normalGrey = Colors.grey;
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
   static const purpleActiveColor = Color(0xFF8154F2);
+  static const cpDarkBlue = Color(0xFF276E8A);
 }

@@ -25,3 +25,7 @@ extension StringExtensions on String? {
 
   bool get isNotNullEmptyOrWhitespace => !isNullEmptyOrWhitespace;
 }
+
+extension ConvertToDouble on String? {
+  double? stringToDouble() => this == null ? null : double.parse(this!);
+}

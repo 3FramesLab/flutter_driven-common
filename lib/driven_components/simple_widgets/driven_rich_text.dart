@@ -2,8 +2,13 @@ part of driven_components_module;
 
 class DrivenRichText extends StatelessWidget {
   final List<TextSpan> text;
+  final TextAlign textAlign;
 
-  const DrivenRichText(this.text, {super.key});
+  const DrivenRichText(
+    this.text, {
+    this.textAlign = TextAlign.center,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class DrivenRichText extends StatelessWidget {
         ),
         children: text,
       ),
-      textAlign: TextAlign.center,
+      textAlign: textAlign,
     );
   }
 }

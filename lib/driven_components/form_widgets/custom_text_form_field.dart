@@ -3,6 +3,7 @@ part of driven_components_module;
 class CustomTextFormField extends StatefulWidget {
   final TextEditingController? textEditingController;
   final Function(String)? onTextChanged;
+  final Function()? onEditComplete;
   final Function()? onSuffixIconPressed;
   final String? Function(String?)? onValidate;
   final bool isObscureText;
@@ -18,13 +19,16 @@ class CustomTextFormField extends StatefulWidget {
   final InputDecoration? inputDecoration;
   final bool? enabled;
   final String? hintText;
+  final String? semanticLabel;
   final bool isShowErrorBorder;
+  final bool autocorrect;
   final TextCapitalization textCapitalization;
 
   const CustomTextFormField({
     Key? key,
     this.textEditingController,
     this.onTextChanged,
+    this.onEditComplete,
     this.isObscureText = false,
     this.onValidate,
     this.suffixIcon,
@@ -41,6 +45,8 @@ class CustomTextFormField extends StatefulWidget {
     this.enabled,
     this.hintText,
     this.isShowErrorBorder = false,
+    this.autocorrect = true,
+    this.semanticLabel = 'InputText',
     this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
@@ -54,6 +60,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     return Semantics(
       container: true,
       textField: true,
+      label: widget.semanticLabel,
       child: TextFormField(
         textInputAction: TextInputAction.done,
         controller: widget.textEditingController,
@@ -70,6 +77,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         enabled: widget.enabled,
         textCapitalization: widget.textCapitalization,
         scrollPadding: const EdgeInsets.only(bottom: 80),
+        autocorrect: widget.autocorrect,
+        onEditingComplete: widget.onEditComplete,
       ),
     );
   }

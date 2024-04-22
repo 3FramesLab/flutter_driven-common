@@ -17,12 +17,11 @@ class TitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      container: true,
-      child: Padding(
-        padding: isPaddingRequired
-            ? const EdgeInsets.only(top: 20)
-            : EdgeInsets.zero,
+    return Padding(
+      padding:
+          isPaddingRequired ? const EdgeInsets.only(top: 20) : EdgeInsets.zero,
+      child: Semantics(
+        container: true,
         child: Text(
           title,
           style: DrivenTextStyle(

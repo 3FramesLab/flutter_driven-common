@@ -2,7 +2,6 @@
 
 library driven_common_module;
 
-export 'package:driven_common/analytics/analytics.dart';
 // modules
 export 'package:driven_common/common/common_module.dart';
 export 'package:driven_common/data/data_module.dart';

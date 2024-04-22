@@ -27,10 +27,10 @@ class OtpFields extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<OtpFields> createState() => _OtpFieldsState();
+  State<OtpFields> createState() => OtpFieldsState();
 }
 
-class _OtpFieldsState extends State<OtpFields> with TickerProviderStateMixin {
+class OtpFieldsState extends State<OtpFields> with TickerProviderStateMixin {
   TextEditingController? _textEditingController;
   late FocusNode? _focusNode;
   late List<String> _inputList;

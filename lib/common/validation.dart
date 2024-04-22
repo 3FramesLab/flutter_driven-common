@@ -25,6 +25,7 @@ class Validation {
   static const spacesNotAllowed = 'Spaces not allowed';
   static const userNameRequired = 'Should not be empty';
   static const enterValidEmail = 'Enter valid email';
+  static const newPasswordMustBeLength = 'Must be at least 12 characters';
   static const passwordMustBeLength = 'Must be at least 8 characters';
   static const enterValidAnswer = 'Enter a valid answer';
   static const mustMeetPasswordFormatRules = 'Must meet all format rules';
@@ -33,6 +34,7 @@ class Validation {
   static const userNameNotRecognized = 'User Name not recognized';
   static const securityAnswerRequired = 'Security Answer required';
   static const enterValidPhoneNumber = 'Enter a valid 10-digit phone number';
+  static const notValidCardNumber = 'This is not a valid card number';
 
   static String mustBeNDigits(int n) {
     return 'Must be $n digits';

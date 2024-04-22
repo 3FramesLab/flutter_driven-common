@@ -10,17 +10,21 @@ const black90 = DrivenColors.black90;
 const blackDark = Colors.black;
 const green = DrivenColors.green;
 const red = DrivenColors.red;
+const darkBlue = DrivenColors.darkBlue;
 const brandPrimaryColor = DrivenColors.black;
+const cpLightGrey = DrivenColors.grey600;
 const regular = DrivenFonts.fontWeightRegular;
 const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
+const cpDarkBlue = DrivenColors.cpDarkBlue;
 
 const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
 
 const f10RegularBlack = DrivenTextStyle(10, regular, black);
 const f10RegularGrey = DrivenTextStyle(10, regular, grey);
+
 const f12SemiboldBlack = DrivenTextStyle(12, semiBold, black);
 const f12SemiboldGrey = DrivenTextStyle(12, semiBold, grey);
 const f12SemiboldWhite = DrivenTextStyle(12, semiBold, white);
@@ -37,47 +41,62 @@ const f13RegularBlack60 = DrivenTextStyle(13, regular, black60);
 
 const f14RegularBlack = DrivenTextStyle(14, regular, black);
 const f14RegularBlackDark = DrivenTextStyle(14, regular, blackDark);
+const f14RegularDarkBlue = DrivenTextStyle(14, regular, cpDarkBlue);
 const f14RegularSemiboldBlack = DrivenTextStyle(14, semiBold, blackDark);
-
 const f14SemiboldBlack = DrivenTextStyle(14, semiBold, black);
 const f14SemiboldWhite = DrivenTextStyle(14, semiBold, white);
 const f14BoldWhite = DrivenTextStyle(14, bold, white);
-
 const f14SemiboldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
 const f14SemiboldBlack2 = DrivenTextStyle(14, semiBold, black2);
 const f14SemiboldGrey = DrivenTextStyle(14, semiBold, grey);
 const f14BoldBlackDark = DrivenTextStyle(14, bold, blackDark);
+const f14SemiBoldWhite = DrivenTextStyle(14, semiBold, white);
 const f14BoldBlack = DrivenTextStyle(14, bold, black);
 const f14ExtraBoldBlackDark = DrivenTextStyle(14, extraBold, blackDark);
 const f14RegularGrey = DrivenTextStyle(14, regular, grey);
 const f14RegularLightGrey = DrivenTextStyle(14, regular, lightGrey);
 const f14RegularWhite = DrivenTextStyle(14, regular, white);
+const f14RegularRed = DrivenTextStyle(14, regular, red);
+const f14SemiBoldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
+
 const f15RegularWhite = DrivenTextStyle(15, regular, white);
 const f15RegularBlack = DrivenTextStyle(15, regular, black);
+
 const f16RegularGrey = DrivenTextStyle(16, regular, grey);
 const f16SemiBoldGrey = DrivenTextStyle(16, semiBold, grey);
 const f16SemiBoldWhite = DrivenTextStyle(16, semiBold, white);
+const f16SemiBoldCpGrey = DrivenTextStyle(16, semiBold, cpLightGrey);
 const f16RegularBlack = DrivenTextStyle(16, regular, black);
 const f16RegularWhite = DrivenTextStyle(16, regular, white);
 const f16SemiboldBlack = DrivenTextStyle(16, semiBold, black);
 const f16SemiboldBlackDark = DrivenTextStyle(16, semiBold, blackDark);
 const f16SemiboldBlack2 = DrivenTextStyle(16, semiBold, black2);
-
 const f16BoldBlackDark = DrivenTextStyle(16, bold, blackDark);
 const f16ExtraBoldBlackDark = DrivenTextStyle(16, extraBold, blackDark);
+const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
+const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
+
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
+
 const f20RegularGrey = DrivenTextStyle(20, regular, grey);
+const f20RegularBlack = DrivenTextStyle(20, regular, blackDark);
 const f20RegularBlack2 = DrivenTextStyle(20, regular, black2);
 const f20RegularBlackDark = DrivenTextStyle(20, regular, black2);
 const f20SemiboldBlackDark = DrivenTextStyle(20, semiBold, blackDark);
 const f20BoldBlackDark = DrivenTextStyle(20, bold, blackDark);
+
 const f22SemiboldBlack = DrivenTextStyle(22, semiBold, black);
+
 const f24SemiboldBlack = DrivenTextStyle(24, semiBold, blackDark);
 const f24SemiboldBlackDark = DrivenTextStyle(24, semiBold, blackDark);
 const f24ExtraboldBlackDark = DrivenTextStyle(24, extraBold, blackDark);
+const f24BoldBlackDark = DrivenTextStyle(24, bold, blackDark);
+
 const f26BoldWhite = DrivenTextStyle(26, bold, white);
+
 const f28ExtraboldBlackDark = DrivenTextStyle(28, extraBold, blackDark);
+
 const f45RegularBlackDark = DrivenTextStyle(45, regular, blackDark);
 const f45RegularLightGrey = DrivenTextStyle(45, regular, lightGrey);
 
@@ -100,6 +119,12 @@ const f14SemiboldPurpleUnderline = TextStyle(
   color: DrivenColors.brandPurple,
   fontFamily: DrivenFonts.avertaFontFamily,
   decoration: TextDecoration.underline,
+);
+
+const f14RegularPurple = TextStyle(
+  fontSize: 14,
+  color: DrivenColors.brandPurple,
+  fontFamily: DrivenFonts.avertaFontFamily,
 );
 
 const f16SemiboldBlack2Underline = TextStyle(

@@ -23,7 +23,6 @@ class ClickableText extends StatelessWidget {
       children: [
         Semantics(
           container: true,
-          label: SemanticStrings.clickTextTap,
           child: GestureDetector(
             onTap: onTap,
             child: Text(

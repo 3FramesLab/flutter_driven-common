@@ -11,11 +11,13 @@ class DrivenDialog extends StatelessWidget {
   final double height;
   final double? width;
   final bool? has3CTAButtons;
+  final bool isScrollable;
   final String? secondaryLeftButtonText;
   final String? secondaryRightButtonText;
   final String? clickableText;
   final void Function()? secondaryLeftButtonOnPressed;
   final void Function()? secondaryRightButtonOnPressed;
+  final TextStyle? secondaryRightButtonTextStyle;
   final void Function()? onClickableTextPressed;
 
   const DrivenDialog({
@@ -30,10 +32,12 @@ class DrivenDialog extends StatelessWidget {
     this.height = 105,
     this.width,
     this.has3CTAButtons = false,
+    this.isScrollable = false,
     this.secondaryLeftButtonText,
     this.secondaryRightButtonText,
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
+    this.secondaryRightButtonTextStyle,
     this.onClickableTextPressed,
     super.key,
   });
@@ -80,20 +84,33 @@ class DrivenDialog extends StatelessWidget {
           child: Container(
             width: width,
             constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
-            child: DrivenColumn(
-              padding: _dialogPadding(),
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                _titleWidget(),
-                Column(children: body),
-                SizedBox(height: isDynamicAlert ? 30 : 2),
-                _actions(),
-              ],
-            ),
+            child: isScrollable
+                ? drivenScrollableColumn(body)
+                : drivenColumn(body),
           ),
         ),
       ),
+    );
+  }
+
+  Widget drivenScrollableColumn(List<Widget> body) {
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: drivenColumn(body),
+    );
+  }
+
+  Widget drivenColumn(List<Widget> body) {
+    return DrivenColumn(
+      padding: _dialogPadding(),
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        _titleWidget(),
+        Column(children: body),
+        SizedBox(height: isDynamicAlert ? 30 : 2),
+        _actions(),
+      ],
     );
   }
 
@@ -174,12 +191,13 @@ class DrivenDialog extends StatelessWidget {
   }
 
   Widget _secondaryRightButton(buttonText) {
-    const textStyle = TextStyle(
-      fontSize: 14,
-      fontWeight: DrivenFonts.fontWeightSemibold,
-      color: Colors.black,
-      decoration: TextDecoration.underline,
-    );
+    final textStyle = secondaryRightButtonTextStyle ??
+        const TextStyle(
+          fontSize: 14,
+          fontWeight: DrivenFonts.fontWeightSemibold,
+          color: Colors.black,
+          decoration: TextDecoration.underline,
+        );
     return TextButton(
       onPressed: secondaryRightButtonOnPressed ?? Get.back,
       child: Text(

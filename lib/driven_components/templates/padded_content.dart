@@ -9,8 +9,17 @@ class PaddedContent extends StatelessWidget {
     super.key,
     required this.children,
     this.isForm = false,
+    super.key,
   }) {
     padding = const EdgeInsets.symmetric(horizontal: 28);
+  }
+
+  PaddedContent.subTitleText({
+    required this.children,
+    this.isForm = false,
+    super.key,
+  }) {
+    padding = const EdgeInsets.fromLTRB(0, 13, 0, 5);
   }
 
   @override

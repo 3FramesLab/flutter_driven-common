@@ -4,7 +4,7 @@ class DrivenConstants {
   static const contactEmail = 'drivensupport@fleetcor.com';
   static const canLaunchEmail = 'canLaunchEmail';
   static const launchEmail = 'launchEmail';
-  static const ok = 'ok';
+  static const ok = 'Ok';
   static const other = 'Other';
   static const nullString = 'null';
   static const password = 'Password';
@@ -57,7 +57,7 @@ class DrivenConstants {
   static const city = 'City';
   static const smallDot = '•';
   static const sendToText = 'Send to ';
-  static const sendToMobilePhone = 'Mobile Phone';
+  static const mobilePhone = 'Mobile Phone';
   static const passwordRegex =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[*&!#@$%^()_+=\-,./?[\]{}|]).*$';
   static const xDeviceToken = 'xDeviceToken';

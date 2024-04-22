@@ -2,14 +2,19 @@ part of driven_components_module;
 
 class CardNumberCharactersValidator extends Validator {
   final int n;
+  final int propCardLength;
 
-  const CardNumberCharactersValidator(this.n) : super();
+  const CardNumberCharactersValidator(this.n, {this.propCardLength = 12})
+      : super();
 
   @override
   bool isValid(String? value) {
-    return value != null && value.length >= n;
+    if (value != null) {
+      return value.length == propCardLength || value.length >= n;
+    }
+    return false;
   }
 
   @override
-  String get failMessage => Validation.atLeastNCharacters(16);
+  String get failMessage => Validation.notValidCardNumber;
 }

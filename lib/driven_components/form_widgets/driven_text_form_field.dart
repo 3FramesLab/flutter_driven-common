@@ -20,6 +20,7 @@ class DrivenTextFormField extends TextFormField {
     TextCapitalization textCapitalization = TextCapitalization.none,
     double? bottomScrollPadding = 0,
     bool? enabled = true,
+    bool autocorrect = true,
   }) : super(
           autovalidateMode: autovalidateMode,
           controller: controller,
@@ -38,6 +39,7 @@ class DrivenTextFormField extends TextFormField {
           textCapitalization: textCapitalization,
           scrollPadding: EdgeInsets.only(bottom: bottomScrollPadding ?? 0),
           enabled: enabled,
+          autocorrect: autocorrect,
         );
 
   static List<TextInputFormatter> _universalFormatters() {
