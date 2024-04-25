@@ -8,9 +8,9 @@ class DrivenFlashMessage {
   static String flashMessage = '';
   static String errorCode = '';
   static MessageType messageType = MessageType.error;
-  static TextStyle textStyle = f16SemiBoldWhite;
-  static Function()? onRemoteMessageTap;
+  static int? firebaseBannerDuration;
   static DrivenFlashAction? flashButtonAction;
+  static TextStyle textStyle = f16SemiBoldWhite;
 
   DrivenFlashMessage._internal();
   static final _singleton = DrivenFlashMessage._internal();
@@ -18,27 +18,29 @@ class DrivenFlashMessage {
   static bool _isVisible = false;
   CancelableOperation<void>? _cancelableOperation;
 
-  // ignore: long-parameter-list
   void createView(
     String message,
     String code,
-    int duration,
     MessageType type,
-    DrivenFlashAction? action, {
-    Function()? onRemoteMessageNotificationTap,
-  }) {
+    DrivenFlashAction? action,
+  ) {
     flashMessage = message;
-    flashButtonAction = action;
     errorCode = code;
     messageType = type;
-    onRemoteMessageTap = onRemoteMessageNotificationTap;
+    flashButtonAction = action;
     _overlayEntry = OverlayEntry(
       builder: (context) => DrivenFlashContent(widget: _flashView(context)),
     );
-    Navigator.of(Get.overlayContext!).overlay?.insert(_overlayEntry);
-    _isVisible = true;
-    if (type == MessageType.success || type == MessageType.bannerInfo) {
-      startDelayedOperation(duration);
+    if (Get.overlayContext != null) {
+      Navigator.of(Get.overlayContext!).overlay?.insert(_overlayEntry);
+      _isVisible = true;
+      if (type == MessageType.bannerInfo) {
+        startDelayedOperation(DrivenConstants.firebaseFlashMessageDuration);
+      } else if (firebaseBannerDuration != null && type != MessageType.error) {
+        startDelayedOperation(firebaseBannerDuration!);
+      } else if (type == MessageType.success) {
+        startDelayedOperation(DrivenConstants.flashMessageDuration);
+      }
     }
   }
 
@@ -97,12 +99,7 @@ class DrivenFlashMessage {
               children: _flashContentChildren,
             ),
           ),
-          if (messageType == MessageType.notification)
-            _notificationContent
-          else if (flashButtonAction != null)
-            _buttonActionsContent
-          else
-            const SizedBox.shrink()
+          if (flashButtonAction != null) _buttonActionsContent
         ],
       ),
     );
@@ -135,7 +132,7 @@ class DrivenFlashMessage {
                   color: DrivenColors.white,
                 ),
                 InkWell(
-                  onTap: dismiss,
+                  onTap: flashButtonAction?.onNegativeButtonTap ?? dismiss,
                   child: _actionTextButton(
                     flashButtonAction?.negativeButtonText ??
                         DrivenConstants.cancel,
@@ -158,44 +155,6 @@ class DrivenFlashMessage {
     );
   }
 
-  Widget get _notificationContent {
-    return Container(
-      height: 64,
-      decoration: BoxDecoration(
-        color: _backgroundColor(),
-        borderRadius: _borderRadius,
-      ),
-      child: Column(
-        children: [
-          Container(height: 1, color: DrivenColors.white),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                InkWell(
-                    onTap: onRemoteMessageTap,
-                    child: notificationButton(DrivenConstants.viewMore)),
-                Container(width: 2, height: 40, color: DrivenColors.white),
-                InkWell(
-                    onTap: dismiss,
-                    child: notificationButton(DrivenConstants.close)),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget notificationButton(String text) {
-    return Container(
-        width: Get.width / 2 - 1,
-        height: 45,
-        alignment: Alignment.center,
-        child: Text(text, style: f16SemiBoldLinkWhite));
-  }
-
   List<Widget> get _flashContentChildren {
     return <Widget>[
       _leadingIcon(),
@@ -204,16 +163,15 @@ class DrivenFlashMessage {
         flashMessage,
         code: errorCode,
         type: messageType,
-        style: textStyle,
       ),
       const SizedBox(width: 20),
-      Image.asset(DrivenAssets.closeIcon),
+      if (flashButtonAction == null) Image.asset(DrivenAssets.closeIcon),
     ];
   }
 
   void _onVerticalDragUpdate(DragUpdateDetails details) {
     // When dragging Up
-    if (details.delta.dy < 0) {
+    if (details.delta.dy <= 0) {
       dismiss();
     }
   }
@@ -221,7 +179,7 @@ class DrivenFlashMessage {
   Icon _leadingIcon() {
     return Icon(
       messageType == MessageType.success
-          ? Icons.check_circle_outline
+          ? Icons.check_circle
           : messageType == MessageType.bannerInfo
               ? Icons.info
               : messageType == MessageType.information
@@ -235,7 +193,6 @@ class DrivenFlashMessage {
     String message, {
     String code = '',
     MessageType type = MessageType.error,
-    TextStyle style = f16SemiBoldWhite,
   }) {
     final errorParser = DrivenErrorParser(message: message, code: code);
     switch (messageType) {
@@ -244,14 +201,14 @@ class DrivenFlashMessage {
           child: RichText(
             key: const Key(DrivenConstants.systemErrorContent),
             text: TextSpan(
-              style: style,
+              style: textStyle,
               children: errorParser.parseErrorMessage(),
             ),
           ),
         );
       default:
         return Expanded(
-          child: Text(_messageText(message, code), style: style),
+          child: Text(_messageText(message, code), style: textStyle),
         );
     }
   }

@@ -4,19 +4,10 @@ class BaseDrivenFlashBar {
   static void show({
     String message = DrivenConstants.somethingWentWrong,
     String code = '',
-    int duration = DrivenConstants.flashMessageDuration,
-    MessageType type = MessageType.error,
     DrivenFlashAction? action,
-    Function()? onRemoteMessageTap,
+    MessageType type = MessageType.error,
   }) {
     DrivenFlashMessage.dismiss();
-    DrivenFlashMessage().createView(
-      message,
-      code,
-      duration,
-      type,
-      action,
-      onRemoteMessageNotificationTap: onRemoteMessageTap,
-    );
+    DrivenFlashMessage().createView(message, code, type, action);
   }
 }

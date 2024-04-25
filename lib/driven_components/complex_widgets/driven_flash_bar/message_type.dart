@@ -5,7 +5,6 @@ enum MessageType {
   error,
   success,
   warning,
-  notification,
   information,
   bannerInfo,
 }

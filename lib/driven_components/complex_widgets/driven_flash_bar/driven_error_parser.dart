@@ -12,10 +12,10 @@ class DrivenErrorParser {
 
   List<InlineSpan> parseErrorMessage() {
     return [
-      TextSpan(text: message),
+      TextSpan(text: message, style: f16SemiBoldWhite),
       _clickablePhoneNumber(),
       const TextSpan(text: '.'),
-      TextSpan(text: code),
+      TextSpan(text: code, style: f16SemiBoldWhite),
     ];
   }
 
@@ -24,9 +24,7 @@ class DrivenErrorParser {
       text: DrivenConstants.helpPhoneNumber,
       recognizer: TapGestureRecognizer()
         ..onTap = () => launchPhoneCall(DrivenConstants.helpPhoneUrl),
-      style: const TextStyle(
-        decoration: TextDecoration.underline,
-      ),
+      style: f16SemiBoldLinkWhite,
     );
   }
 }

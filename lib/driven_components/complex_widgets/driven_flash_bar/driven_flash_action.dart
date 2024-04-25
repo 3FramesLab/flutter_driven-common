@@ -4,11 +4,11 @@ class DrivenFlashAction {
   String? positiveButtonText;
   String? negativeButtonText;
   void Function()? onPositiveButtonTap;
-  void Function()? onNagativeButtonTap;
+  void Function()? onNegativeButtonTap;
   DrivenFlashAction({
     this.positiveButtonText,
     this.negativeButtonText,
     this.onPositiveButtonTap,
-    this.onNagativeButtonTap,
+    this.onNegativeButtonTap,
   });
 }

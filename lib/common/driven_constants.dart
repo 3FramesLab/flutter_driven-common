@@ -64,6 +64,8 @@ class DrivenConstants {
   static const xDeviceTokenHeader = 'x-device-token';
   static const requestFailed = 'Failed to load request options';
 
+  static const firebaseFlashMessageDuration = 12;
+
   // OKTA Paths
   static const oktaAuthnCall = '/api/v2/authn';
   static const oktaAuthorizeCall = '/api/v2/authorize';
