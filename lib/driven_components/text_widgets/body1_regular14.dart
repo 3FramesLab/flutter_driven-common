@@ -82,3 +82,44 @@ class Body1Semibold14Lh23 extends Body1Regular14Lh23 {
           textScaleFactor: 1,
         );
 }
+
+class Body1SemiBold16Lh23 extends Text {
+  Body1SemiBold16Lh23(
+    String data, {
+    super.key,
+    TextStyle style = const TextStyle(),
+    TextAlign? textAlign,
+    TextOverflow? overflow,
+    double? textScaleFactor,
+    int? maxLines,
+  }) : super(
+          data,
+          style: const TextStyle(
+            fontSize: 16,
+            color: DrivenColors.textColor,
+            height: 23 / 14,
+          ).merge(style),
+          textAlign: textAlign,
+          overflow: overflow,
+          textScaleFactor: textScaleFactor,
+          maxLines: maxLines,
+        );
+
+  Body1SemiBold16Lh23.fixed(
+    String data, {
+    super.key,
+    TextStyle style = const TextStyle(),
+    double height = 23 / 14,
+    TextAlign? textAlign,
+  }) : super(
+          data,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: DrivenColors.textColor,
+            height: height,
+          ).merge(style),
+          textAlign: textAlign,
+          textScaleFactor: 1,
+        );
+}
