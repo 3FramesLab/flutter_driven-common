@@ -18,7 +18,8 @@ class APIClient {
     required APIRouteConfigurable route,
     required Create<T> create,
     dynamic data,
-    AnalyticsScreenName? analyticsScreenName = AnalyticsScreenName.noTracking,
+    // AnalyticsScreenName? analyticsScreenName = AnalyticsScreenName.noTracking,
+    String? analyticsScreenName = 'no tracking',
     bool isDeviceTokenFromHeaderRequired = false,
   }) async {
     final config = route.getConfig();
@@ -37,7 +38,6 @@ class APIClient {
         response.data[DrivenConstants.xDeviceToken] =
             response.headers.map[DrivenConstants.xDeviceTokenHeader]?.first;
       }
-      _trackApiSuccessAnalytics(config, analyticsScreenName, route);
       return ResponseWrapper.init(create: create, data: response.data);
     } on DioError catch (error) {
       Globals().dynatrace.logError(
@@ -45,7 +45,6 @@ class APIClient {
             value: error.message,
             reason: error.toString(),
           );
-      _trackApiFailureAnalytics(config, analyticsScreenName, route);
       var errorResponse =
           ErrorResponse(errorSummary: DrivenConstants.somethingWentWrong);
       errorResponse.headers = error.response?.headers;
@@ -64,43 +63,7 @@ class APIClient {
     }
   }
 
-  void _trackApiFailureAnalytics(RequestOptions config,
-      AnalyticsScreenName? analyticsScreenName, APIRouteConfigurable route) {
-    if (Globals().isCardHolderLogin) {
-      trackStatus(
-        '${AnalyticsTrackActionName.oktaCall} : ${config.path}',
-        fetchScreenType(config.path),
-        isComplete: false,
-      );
-    } else {
-      trackApiStatus(
-        analyticsScreenName: analyticsScreenName,
-        isSuccess: false,
-        requestOption: config,
-        apiType: route.getApiType(),
-      );
-    }
-  }
-
-  void _trackApiSuccessAnalytics(RequestOptions config,
-      AnalyticsScreenName? analyticsScreenName, APIRouteConfigurable route) {
-    if (Globals().isCardHolderLogin) {
-      trackStatus(
-        '${AnalyticsTrackActionName.oktaCall} : ${config.path}',
-        fetchScreenType(config.path),
-      );
-    } else {
-      trackApiStatus(
-        analyticsScreenName: analyticsScreenName,
-        isSuccess: true,
-        requestOption: config,
-        apiType: route.getApiType(),
-      );
-    }
-  }
-
   Future<Response<T>> _httpCall<T>(RequestOptions requestOptions) async {
-    requestOptions.headers.addAll({'Access-Control-Allow-Origin': '*'});
     final url = '${requestOptions.baseUrl}${requestOptions.path}';
     switch (requestOptions.method) {
       case APIMethod.post:
@@ -155,17 +118,17 @@ class APIClient {
           .toString()
           .containsIgnoreCase(DrivenConstants.xDeviceTokenHeader);
 
-  AnalyticsScreenName fetchScreenType(String path) {
-    if (path == DrivenConstants.oktaRevokeTokenCall) {
-      return AnalyticsScreenName.accountPage;
-    } else if (path.contains(DrivenConstants.oktaProfileCall)) {
-      return AnalyticsScreenName.accountPage;
-    } else if (path == DrivenConstants.oktaAuthnCall ||
-        path == DrivenConstants.oktaAuthorizeCall ||
-        path == DrivenConstants.oktaTokenCall) {
-      return AnalyticsScreenName.login;
-    } else {
-      return AnalyticsScreenName.accountPage;
-    }
-  }
+  // AnalyticsScreenName fetchScreenType(String path) {
+  //   if (path == DrivenConstants.oktaRevokeTokenCall) {
+  //     return AnalyticsScreenName.accountPage;
+  //   } else if (path.contains(DrivenConstants.oktaProfileCall)) {
+  //     return AnalyticsScreenName.accountPage;
+  //   } else if (path == DrivenConstants.oktaAuthnCall ||
+  //       path == DrivenConstants.oktaAuthorizeCall ||
+  //       path == DrivenConstants.oktaTokenCall) {
+  //     return AnalyticsScreenName.login;
+  //   } else {
+  //     return AnalyticsScreenName.accountPage;
+  //   }
+  // }
 }

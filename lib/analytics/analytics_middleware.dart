@@ -4,15 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AnalyticsMiddleware extends GetMiddleware {
-  AnalyticsScreenName screenName;
+  // AnalyticsScreenName screenName;
+  String screenNameValue;
+  String screenSectionNameValue;
   AnalyticsPlatform platform;
-  AnalyticsLineOfBusiness lineOfBusiness;
   AnalyticsAuthState authState;
 
   AnalyticsMiddleware(
-    this.screenName, {
+    // this.screenName, {
+    this.screenNameValue,
+    this.screenSectionNameValue, {
     this.platform = AnalyticsPlatform.mobileApp,
-    this.lineOfBusiness = AnalyticsLineOfBusiness.comdata,
     this.authState = AnalyticsAuthState.postLogin,
   });
 
@@ -20,7 +22,9 @@ class AnalyticsMiddleware extends GetMiddleware {
   Widget onPageBuilt(Widget page) {
     // Run Async so we don't wait.
     Future(() => trackState(
-          screenName,
+          // screenName,
+          screenNameValue,
+          screenSectionNameValue,
           platform: platform,
           authState: authState,
         ));

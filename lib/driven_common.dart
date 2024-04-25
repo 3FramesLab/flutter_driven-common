@@ -20,6 +20,7 @@ class DrivenCommon {
     required String androidCertSignature,
     required bool isComdata,
     required String appLogoPath,
+    required bool isProdEnvironment,
   }) async {
     try {
       debugPrint('driven common package: init() called');
@@ -30,6 +31,7 @@ class DrivenCommon {
         androidCertSignature: androidCertSignature,
         isComdata: isComdata,
         appLogoPath: appLogoPath,
+        isProdEnvironment: isProdEnvironment,
       );
     } on Exception catch (_) {
       debugPrint('Error while initializing common resources packages');

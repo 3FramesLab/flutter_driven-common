@@ -21,6 +21,7 @@ class Globals {
   late Future<bool> Function(String, {LaunchMode mode}) launch;
   late Future<bool> Function(String) canLaunch;
   String? _appLogoPath;
+  late bool isProdEnvironment;
 
   void init({
     required String flavor,
@@ -28,8 +29,10 @@ class Globals {
     required String androidCertSignature,
     required bool isComdata,
     required String appLogoPath,
+    required bool isProdEnvironment,
     bool isCardHolderLogin = false,
   }) async {
+    this.isProdEnvironment = isProdEnvironment;
     _appFlavor = flavor;
     this.isCardHolderLogin = isCardHolderLogin;
     this.packageId = packageId;
