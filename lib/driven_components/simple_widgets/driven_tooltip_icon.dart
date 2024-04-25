@@ -25,18 +25,10 @@ class DrivenTooltipIcon extends StatelessWidget {
     );
   }
 
-  Future<bool> _dismissTooltip() async {
-    completer().complete();
-    return false;
-  }
-
   void _launchToolTip(BuildContext context) {
     completer(Completer());
-    context.showFlashDialog(
+    context.showInfoBar(
       content: TextScaleClamp(child: Text(tooltip)),
-      persistent: true,
-      dismissCompleter: completer(),
-      onWillPop: _dismissTooltip,
     );
   }
 }
