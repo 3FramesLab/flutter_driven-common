@@ -1,6 +1,5 @@
 part of driven_components_module;
 
-
 class DrivenSlideUpPanel extends StatelessWidget {
   final SlideUpPanelService panel = Get.find();
   final Widget? body;
@@ -20,7 +19,9 @@ class DrivenSlideUpPanel extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         controller: panel.controller,
         defaultPanelState: panel.panelState,
-        maxHeight: UiHelper.screenHeight(context, panel.height()),
+        maxHeight: !panel.isDynamicHeight()
+            ? UiHelper.screenHeight(context, panel.height())
+            : panel.height().toDouble(),
         minHeight: 0,
         onPanelClosed: panel.callAndResetPanelClosed,
         panel: _panelHelper(),
