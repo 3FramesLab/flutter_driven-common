@@ -6,6 +6,7 @@ class SlideUpPanelService extends GetxService {
   PanelState panelState = PanelState.CLOSED;
   final Rx<Widget> _panelWidget = defaultPanel.obs;
   final RxInt height = 75.obs;
+  final RxBool isDynamicHeight = false.obs; // Used for card settings
   final RxDouble topMargin = 30.0.obs;
   final Rx<Future<void> Function()> onPanelClosed = defaultCallback.obs;
 
@@ -34,24 +35,27 @@ class SlideUpPanelService extends GetxService {
     await controller.close();
   }
 
-  Future<void> open() async {
-    height(75);
-    topMargin(30);
+  Future<void> open({
+    double top = 30,
+    int panelHeight = 75,
+    bool dynamicHeight = false,
+  }) async {
+    height(panelHeight);
+    topMargin(top);
+    isDynamicHeight(dynamicHeight);
     await controller.open();
   }
 
-  Future<void> setAndOpen(Widget widget) async {
-    height(30);
-    topMargin(0);
-    panelWidget = widget;
-    await controller.open();
-  }
-
-  Future<void> openWidget(Widget widget,
-      {double top = 30, int panelHeight = 75}) async {
+  Future<void> openWidget(
+    Widget widget, {
+    double top = 30,
+    int panelHeight = 75,
+    bool dynamicHeight = false,
+  }) async {
     height(panelHeight);
     topMargin(top);
     panelWidget = widget;
+    isDynamicHeight(dynamicHeight);
     await controller.open();
   }
 }
