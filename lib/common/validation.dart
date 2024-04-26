@@ -1,5 +1,7 @@
 // part of common_module;
 
+import 'package:driven_common/driven_common_resources_module.dart';
+
 class Validation {
   static const required = 'Required';
   static const mustBeNumber = 'Must be a valid number';
@@ -35,6 +37,7 @@ class Validation {
   static const securityAnswerRequired = 'Security Answer required';
   static const enterValidPhoneNumber = 'Enter a valid 10-digit phone number';
   static const notValidCardNumber = 'This is not a valid card number';
+  static const alreadyInUse = 'already in use';
 
   static String mustBeNDigits(int n) {
     return 'Must be $n digits';
@@ -68,5 +71,11 @@ class Validation {
     return (fieldName == null || fieldName.isEmpty)
         ? defaultFieldsMustMatch
         : '$fieldName $mustMatch';
+  }
+
+  static String fieldAlreadyInUse(String? fieldName) {
+    return (fieldName == null || fieldName.isEmpty)
+        ? alreadyInUse.capitalizeFirstLetter()
+        : '$fieldName $alreadyInUse';
   }
 }

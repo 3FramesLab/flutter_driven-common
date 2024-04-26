@@ -23,6 +23,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool isShowErrorBorder;
   final bool autocorrect;
   final TextCapitalization textCapitalization;
+  final Color fillColor;
 
   const CustomTextFormField({
     Key? key,
@@ -48,6 +49,7 @@ class CustomTextFormField extends StatefulWidget {
     this.autocorrect = true,
     this.semanticLabel = 'InputText',
     this.textCapitalization = TextCapitalization.none,
+    this.fillColor = DrivenColors.textBackgroundColor,
   }) : super(key: key);
 
   @override
@@ -89,7 +91,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       counterText: '',
       suffixIcon: _suffixWidget(),
       focusedBorder: _focusedBorder(),
-      fillColor: DrivenColors.textBackgroundColor,
+      fillColor: widget.fillColor,
       filled: true,
       enabledBorder: _focusedBorder(),
       errorText: _errorText(),
