@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   dio: ^4.0.6
+  device_info_plus: ^3.2.1
   dynatrace_flutter_plugin: ^3.279.2
   firebase_crashlytics: ^3.3.7
   flash: ^2.0.0
