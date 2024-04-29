@@ -1,3 +1,5 @@
+import 'package:driven_common/common/driven_constants.dart';
+import 'package:driven_common/globals.dart';
 import 'package:dynatrace_flutter_plugin/dynatrace_flutter_plugin.dart';
 
 class DrivenDynatrace {
@@ -14,7 +16,9 @@ class DrivenDynatrace {
 
   void tagUser(String? username) {
     _dynatrace.identifyUser(username);
-
+    Globals()
+        .crashlytics
+        .setCustomKey(DrivenConstants.username, username ?? '');
     tagEvent('User Logged In');
   }
 
@@ -31,7 +35,19 @@ class DrivenDynatrace {
     String? stackTrace,
   }) {
     final trace = stackTrace ?? StackTrace.current.toString();
-
     _dynatrace.reportErrorStacktrace(name, value, reason, trace);
+    _logCrashlytics(name, value, reason);
+  }
+
+  void _logCrashlytics(
+    String name,
+    String value,
+    String reason,
+  ) {
+    Globals().crashlytics.logNonFatalError(
+          name: name,
+          value: value,
+          reason: reason,
+        );
   }
 }

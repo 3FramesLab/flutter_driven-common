@@ -72,4 +72,6 @@ class DrivenConstants {
   static const oktaTokenCall = '/api/v2/token';
   static const oktaProfileCall = '/api/v2/idp-user/users';
   static const oktaRevokeTokenCall = '/api/v2/revoke-token';
+
+  static const username = 'Username';
 }
