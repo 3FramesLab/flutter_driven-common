@@ -17,6 +17,9 @@ class DrivenDialog extends StatelessWidget {
   final void Function()? secondaryLeftButtonOnPressed;
   final void Function()? secondaryRightButtonOnPressed;
   final void Function()? onClickableTextPressed;
+  final CrossAxisAlignment crossAxisAlignment;
+  final bool isAlignedLeft;
+  final bool hasSmallContentHeight;
 
   const DrivenDialog({
     required this.text,
@@ -35,6 +38,9 @@ class DrivenDialog extends StatelessWidget {
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
     this.onClickableTextPressed,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.isAlignedLeft = false,
+    this.hasSmallContentHeight = false,
     super.key,
   });
 
@@ -55,12 +61,17 @@ class DrivenDialog extends StatelessWidget {
     );
   }
 
-  Widget _dialogTextView() => isDynamicAlert
-      ? Align(child: DrivenRichText([...text]))
-      : SizedBox(
-          height: height,
-          child: Align(child: DrivenRichText([...text])),
-        );
+  Widget _dialogTextView() => isAlignedLeft
+      ? DrivenRichText(
+          [...text],
+          textAlign: TextAlign.start,
+        )
+      : isDynamicAlert
+          ? Align(child: DrivenRichText([...text]))
+          : SizedBox(
+              height: height,
+              child: Align(child: DrivenRichText([...text])),
+            );
 
   Widget _dialogSecondaryBody() {
     return secondaryBody != null ? secondaryBody! : const SizedBox();
@@ -79,8 +90,15 @@ class DrivenDialog extends StatelessWidget {
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
             width: width,
-            constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
+            constraints: BoxConstraints(
+              minHeight: hasSmallContentHeight
+                  ? 60
+                  : isDynamicAlert
+                      ? 170
+                      : 248,
+            ),
             child: DrivenColumn(
+              crossAxisAlignment: crossAxisAlignment,
               padding: _dialogPadding(),
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.min,
