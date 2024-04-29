@@ -5,12 +5,14 @@ class DrivenCheckbox extends StatelessWidget {
   final Function(bool?)? onChanged;
   final bool value;
   final Widget textWidget;
+  final bool isShowGreyCheckbox;
 
   const DrivenCheckbox({
     required this.onTap,
     required this.onChanged,
     required this.value,
     required this.textWidget,
+    this.isShowGreyCheckbox = false,
     super.key,
   });
 
@@ -47,15 +49,12 @@ class DrivenCheckbox extends StatelessWidget {
         child: Checkbox(
           value: value,
           onChanged: onChanged,
-          fillColor: MaterialStateColor.resolveWith(
-            (states) {
-              if (states.contains(MaterialState.selected)) {
-                return DrivenColors
-                    .brandPurple; // Color when checkbox is selected
-              }
-              return DrivenColors.grey; // Color when checkbox is unselected
-            },
-          ),
+          activeColor: isShowGreyCheckbox
+              ? DrivenColors.lighterGreyDisableBackground
+              : DrivenColors.brandPurple,
+          checkColor: isShowGreyCheckbox
+              ? DrivenColors.disabledButtonTextColor
+              : DrivenColors.white,
         ),
       ),
     );

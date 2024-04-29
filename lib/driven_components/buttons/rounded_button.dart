@@ -24,11 +24,11 @@ class RoundedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      style: _style(),
-      child: Semantics(
-        button: true,
+    return Semantics(
+      container: true,
+      child: TextButton(
+        onPressed: onPressed,
+        style: _style(),
         child: Text(
           text,
           style: buttonTextStyle,
