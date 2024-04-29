@@ -5,7 +5,6 @@ class DrivenDynatrace {
 
   static DrivenDynatrace init() {
     _dynatrace = Dynatrace();
-
     return DrivenDynatrace();
   }
 

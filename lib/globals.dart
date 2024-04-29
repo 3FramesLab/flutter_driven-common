@@ -1,5 +1,6 @@
 import 'package:driven_common/analytics/aep_core.dart';
 import 'package:driven_common/analytics/driven_analytics.dart';
+import 'package:driven_common/crashlytics/driven_crashlytics.dart';
 import 'package:driven_common/dynatrace/driven_dynatrace.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,6 +13,7 @@ class Globals {
 
   late DrivenDynatrace dynatrace;
   late AEPCore analytics;
+  late DrivenCrashlytics crashlytics;
   String? _appFlavor;
   bool isCardHolderLogin = false;
   late bool isComdata;
@@ -40,6 +42,7 @@ class Globals {
     this.isComdata = isComdata;
     initializeAnalytics();
     initializeDynatrace();
+    initFirebaseCrashlytics();
     setAppLogoPath(appLogoPath);
     await initializeSharedPreferences();
     launch = url_launcher.launchUrlString;
@@ -52,6 +55,10 @@ class Globals {
 
   void initializeDynatrace() {
     dynatrace = DrivenDynatrace.init();
+  }
+
+  void initFirebaseCrashlytics() {
+    crashlytics = DrivenCrashlytics.init();
   }
 
   Future<void> initializeSharedPreferences() async {
