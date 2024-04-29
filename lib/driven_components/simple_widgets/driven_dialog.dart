@@ -19,6 +19,7 @@ class DrivenDialog extends StatelessWidget {
   final void Function()? onClickableTextPressed;
   final CrossAxisAlignment crossAxisAlignment;
   final bool isAlignedLeft;
+  final bool hasSmallContentHeight;
 
   const DrivenDialog({
     required this.text,
@@ -39,6 +40,7 @@ class DrivenDialog extends StatelessWidget {
     this.onClickableTextPressed,
     this.crossAxisAlignment = CrossAxisAlignment.center,
     this.isAlignedLeft = false,
+    this.hasSmallContentHeight = false,
     super.key,
   });
 
@@ -88,7 +90,13 @@ class DrivenDialog extends StatelessWidget {
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
             width: width,
-            constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
+            constraints: BoxConstraints(
+              minHeight: hasSmallContentHeight
+                  ? 60
+                  : isDynamicAlert
+                      ? 170
+                      : 248,
+            ),
             child: DrivenColumn(
               crossAxisAlignment: crossAxisAlignment,
               padding: _dialogPadding(),
