@@ -9,6 +9,7 @@ class Body1Regular14 extends SemanticsWrappedText {
     TextAlign? textAlign,
     TextOverflow? overflow,
     double? textScaleFactor,
+    String? semanticLabel,
   }) : super(
           data,
           style: TextStyle(
@@ -20,6 +21,7 @@ class Body1Regular14 extends SemanticsWrappedText {
           textAlign: textAlign,
           overflow: overflow,
           textScaleFactor: textScaleFactor,
+          semanticLabel: semanticLabel,
         );
 }
 
@@ -32,6 +34,7 @@ class Body1Regular14Lh23 extends SemanticsWrappedText {
     TextOverflow? overflow,
     double? textScaleFactor,
     int? maxLines,
+    String? semanticLabel,
   }) : super(
           data,
           style: const TextStyle(
@@ -43,6 +46,7 @@ class Body1Regular14Lh23 extends SemanticsWrappedText {
           overflow: overflow,
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
+          semanticLabel: semanticLabel,
         );
 
   Body1Regular14Lh23.fixed(
@@ -92,6 +96,7 @@ class Body1SemiBold16Lh23 extends SemanticsWrappedText {
     TextOverflow? overflow,
     double? textScaleFactor,
     int? maxLines,
+    String? semanticLabel,
   }) : super(
           data,
           style: const TextStyle(
@@ -103,6 +108,7 @@ class Body1SemiBold16Lh23 extends SemanticsWrappedText {
           overflow: overflow,
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
+          semanticLabel: semanticLabel,
         );
 
   Body1SemiBold16Lh23.fixed(
@@ -131,6 +137,7 @@ class SemanticsWrappedText extends StatelessWidget {
   final TextOverflow? overflow;
   final double? textScaleFactor;
   final int? maxLines;
+  final String? semanticLabel;
 
   const SemanticsWrappedText(
     this.data, {
@@ -139,6 +146,7 @@ class SemanticsWrappedText extends StatelessWidget {
     this.overflow,
     this.textScaleFactor,
     this.maxLines,
+    this.semanticLabel,
     super.key,
   });
 
@@ -146,6 +154,9 @@ class SemanticsWrappedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
+      value: semanticLabel,
+      label: semanticLabel,
+      excludeSemantics: true,
       child: Text(
         data,
         style: style,
@@ -153,6 +164,7 @@ class SemanticsWrappedText extends StatelessWidget {
         overflow: overflow,
         textScaleFactor: textScaleFactor,
         maxLines: maxLines,
+        semanticsLabel: semanticLabel,
       ),
     );
   }
