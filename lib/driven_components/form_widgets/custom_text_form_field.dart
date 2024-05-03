@@ -60,9 +60,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      container: true,
-      textField: true,
       label: widget.semanticLabel,
+      value: widget.semanticLabel,
       child: TextFormField(
         textInputAction: TextInputAction.done,
         controller: widget.textEditingController,
