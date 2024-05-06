@@ -11,7 +11,8 @@ class DrivenTooltipIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
-      label: SemanticStrings.tooltipIcon,
+      label: tooltip,
+      value: tooltip,
       child: SizedBox(
         height: 18,
         width: 25,
