@@ -223,5 +223,6 @@ class DrivenFlashMessage {
     }
     _isVisible = false;
     _overlayEntry.remove();
+    _overlayEntry.dispose();
   }
 }

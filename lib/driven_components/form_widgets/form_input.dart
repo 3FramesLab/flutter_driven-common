@@ -22,6 +22,7 @@ class FormInput extends StatelessWidget {
   final bool? enabled;
   final String creditCheckInfoText;
   final bool isPasswordWithNewRule;
+  final String? semanticLabel;
 
   FormInput({
     required this.titleText,
@@ -44,6 +45,7 @@ class FormInput extends StatelessWidget {
     this.autoValidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
     this.creditCheckInfoText = '',
+    this.semanticLabel,
     this.isPasswordWithNewRule = false,
     Key? key,
   }) : super(key: key) {
@@ -69,15 +71,21 @@ class FormInput extends StatelessWidget {
   }
 
   Widget _label() {
-    return Semantics(
-      container: true,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(titleText, style: f14SemiboldGrey),
-          rightSlot ?? const SizedBox.shrink(),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Semantics(
+          container: true,
+          value: semanticLabel ?? titleText,
+          label: semanticLabel ?? titleText,
+          excludeSemantics: true,
+          child: Text(
+            titleText,
+            style: f14SemiboldGrey,
+          ),
+        ),
+        rightSlot ?? const SizedBox.shrink(),
+      ],
     );
   }
 
@@ -103,8 +111,9 @@ class FormInput extends StatelessWidget {
 
   Widget _textFormField() {
     return Semantics(
-      container: true,
-      textField: true,
+      label: '$titleText Input',
+      obscured: obscureText,
+      excludeSemantics: true,
       child: DrivenTextFormField(
         inputFormatters: inputFormatters + _universalFormatters(),
         onChanged: onChanged,
