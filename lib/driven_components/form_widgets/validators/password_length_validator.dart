@@ -6,6 +6,6 @@ class PasswordLengthValidator extends Validator {
 
   @override
   bool isValid(String? value) {
-    return value != null && value.length >= 8;
+    return value != null && value.length >= 12;
   }
 }
