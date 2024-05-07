@@ -96,7 +96,6 @@ part 'form_widgets/validators/must_be_less_validator.dart';
 part 'form_widgets/validators/must_equal_delete_validator.dart';
 part 'form_widgets/validators/name_validator.dart';
 part 'form_widgets/validators/no_po_box_validator.dart';
-part 'form_widgets/validators/password_length_validator.dart';
 part 'form_widgets/validators/password_regex_validator.dart';
 part 'form_widgets/validators/password_validator.dart';
 part 'form_widgets/validators/passwords_match_validator.dart';
