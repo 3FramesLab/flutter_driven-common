@@ -131,3 +131,6 @@ enum TimeDiffUnits {
 String convertHrsToAmPm(String text) {
   return DateFormat('hh a').format(DateFormat('HH:mm').parse(text));
 }
+
+int getDaysDiff({required DateTime fromDate, required DateTime toDate}) =>
+    toDate.difference(fromDate).inDays;
