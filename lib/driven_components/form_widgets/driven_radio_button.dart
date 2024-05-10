@@ -34,7 +34,7 @@ class DrivenRadioButton extends StatelessWidget {
             onChanged: isEnabled ? onChange : null,
           ),
         ),
-        Semantics(container: true, child: label),
+        label,
       ],
     );
   }
