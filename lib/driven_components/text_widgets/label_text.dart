@@ -11,7 +11,6 @@ class LabelText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
-      label: label,
       child: Text(
         label,
         style: f14SemiboldGrey,
