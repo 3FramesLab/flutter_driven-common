@@ -45,7 +45,7 @@ class FormInput extends StatelessWidget {
     this.autoValidateMode = AutovalidateMode.onUserInteraction,
     this.enabled = true,
     this.creditCheckInfoText = '',
-    this.semanticLabel,
+    this.semanticLabel = 'FormInput',
     this.isPasswordWithNewRule = false,
     Key? key,
   }) : super(key: key) {
