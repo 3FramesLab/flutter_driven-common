@@ -9,6 +9,7 @@ class MenuRow extends StatelessWidget {
     this.backgroundColor = Colors.transparent,
     this.subTitle,
     this.subTitleStyle,
+    this.svgImage = '',
     super.key,
   });
 
@@ -19,6 +20,7 @@ class MenuRow extends StatelessWidget {
   final Color backgroundColor;
   final String? subTitle;
   final TextStyle? subTitleStyle;
+  final String svgImage;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class MenuRow extends StatelessWidget {
       onTap: buttonAction,
       title: _buildTitle(context),
       subtitle: _buildSubTitle(),
-      leading: _leading(),
+      leading: svgImage.isNotEmpty ? _leadingSvgIcon() : _leading(),
     );
   }
 
@@ -55,6 +57,7 @@ class MenuRow extends StatelessWidget {
   Widget _buildTitle(BuildContext context) {
     Widget titleWidget = Text(
       title,
+      textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.titleMedium,
     );
 
@@ -83,6 +86,15 @@ class MenuRow extends StatelessWidget {
       backgroundImage: imageIcon,
       backgroundColor: backgroundColor,
       child: icon,
+    );
+  }
+
+  dynamic _leadingSvgIcon() {
+    return SvgPicture.asset(
+      svgImage,
+      semanticsLabel: svgImage,
+      height: 42,
+      width: 42,
     );
   }
 }
