@@ -154,9 +154,6 @@ class SemanticsWrappedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Semantics(
       container: true,
-      value: semanticLabel,
-      label: semanticLabel,
-      excludeSemantics: true,
       child: Text(
         data,
         style: style,
