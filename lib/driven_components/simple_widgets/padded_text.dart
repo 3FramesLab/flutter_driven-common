@@ -20,11 +20,14 @@ class PaddedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
-      child: Text(
-        data,
-        overflow: overflow,
-        style: style,
-        textAlign: textAlign,
+      child: Semantics(
+        container: true,
+        child: Text(
+          data,
+          overflow: overflow,
+          style: style,
+          textAlign: textAlign,
+        ),
       ),
     );
   }

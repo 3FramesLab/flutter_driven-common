@@ -57,7 +57,6 @@ class MenuRow extends StatelessWidget {
   Widget _buildTitle(BuildContext context) {
     Widget titleWidget = Text(
       title,
-      textAlign: TextAlign.center,
       style: Theme.of(context).textTheme.titleMedium,
     );
 
