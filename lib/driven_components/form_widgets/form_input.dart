@@ -76,7 +76,6 @@ class FormInput extends StatelessWidget {
       children: [
         Semantics(
           container: true,
-          value: semanticLabel ?? titleText,
           label: semanticLabel ?? titleText,
           excludeSemantics: true,
           child: Text(
@@ -111,6 +110,7 @@ class FormInput extends StatelessWidget {
 
   Widget _textFormField() {
     return Semantics(
+      container: true,
       label: '$titleText Input',
       obscured: obscureText,
       excludeSemantics: true,
