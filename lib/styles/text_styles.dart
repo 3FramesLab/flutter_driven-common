@@ -9,6 +9,7 @@ const black60 = DrivenColors.black60;
 const black90 = DrivenColors.black90;
 const blackDark = Colors.black;
 const green = DrivenColors.green;
+const flashGreen = DrivenColors.flashGreen;
 const red = DrivenColors.red;
 const darkBlue = DrivenColors.darkBlue;
 const brandPrimaryColor = DrivenColors.black;
