@@ -12,6 +12,11 @@ extension TextSizeWidth on String {
     )..layout();
     return textPainter.size.width + DrivenDimensions.dp60;
   }
+
+  bool containsIgnoreCase(String secondString) =>
+      toLowerCase().contains(secondString.toLowerCase());
+
+  bool equalsIgnoreCase(String value) => toLowerCase() == value.toLowerCase();
 }
 
 extension StringExtensions on String? {

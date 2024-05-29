@@ -1,6 +1,6 @@
 name: driven_common
 description: A new Flutter plugin project.
-version: 0.0.3
+version: 0.0.4
 homepage:
 
 environment:
@@ -8,7 +8,10 @@ environment:
   flutter: ">=2.5.0"
 
 dependencies:
+  dio: ^4.0.6
+  device_info_plus: ^3.2.1
   dynatrace_flutter_plugin: ^3.279.2
+  firebase_crashlytics: ^3.3.7
   flash: ^2.0.0
   flutter:
     sdk: flutter
@@ -19,7 +22,6 @@ dependencies:
   flutter_aepedgeconsent: ">= 2.0.0 <3.0.0"
   flutter_aepedgeidentity: ">= 2.0.0 <3.0.0"
   flutter_aepuserprofile: ">= 1.0.0 <2.0.0"
-
   get: ^4.6.5
   intersperse: ^2.0.0
   intl: ^0.17.0
@@ -27,6 +29,7 @@ dependencies:
   money2: ^3.1.2
   shared_preferences: ^2.0.8
   sliding_up_panel: ^2.0.0+1
+  shimmer: ^2.0.0
   plugin_platform_interface: ^2.0.2
   url_launcher: ^6.1.5
   flutter_svg: ^2.0.5

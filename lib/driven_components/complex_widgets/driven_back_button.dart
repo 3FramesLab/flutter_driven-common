@@ -4,12 +4,18 @@ class DrivenBackButton extends StatelessWidget {
   final void Function()? onPressed;
   final Color color;
   final MainAxisSize mainAxisSize;
+  final String buttonLabelText;
+  final TextStyle? textStyle;
+  final double? verticalSpacing;
 
   const DrivenBackButton({
     super.key,
     this.onPressed,
+    this.textStyle,
     this.color = DrivenColors.purple,
     this.mainAxisSize = MainAxisSize.max,
+    this.buttonLabelText = DrivenConstants.back,
+    this.verticalSpacing = 0,
   });
 
   @override
@@ -29,14 +35,15 @@ class DrivenBackButton extends StatelessWidget {
               color: color,
             ),
           ),
-          SizedBox(
-            width: 42,
+          SizedBox(width: verticalSpacing),
+          Flexible(
             child: Text(
-              DrivenConstants.back,
-              style: TextStyle(
-                fontSize: 17,
-                color: color,
-              ),
+              buttonLabelText,
+              style: textStyle ??
+                  TextStyle(
+                    fontSize: 17,
+                    color: color,
+                  ),
               textScaleFactor: 1,
             ),
           ),

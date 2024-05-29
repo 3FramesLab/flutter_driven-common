@@ -27,7 +27,7 @@ class OtpFields extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  OtpFieldsState createState() => OtpFieldsState();
+  State<OtpFields> createState() => OtpFieldsState();
 }
 
 class OtpFieldsState extends State<OtpFields> with TickerProviderStateMixin {

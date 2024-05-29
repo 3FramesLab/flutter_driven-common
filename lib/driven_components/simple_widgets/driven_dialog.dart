@@ -9,23 +9,31 @@ class DrivenDialog extends StatelessWidget {
   final bool isDynamicAlert;
   final bool enableBackPress;
   final double height;
+  final double? width;
   final bool? has3CTAButtons;
   final bool isScrollable;
   final String? secondaryLeftButtonText;
   final String? secondaryRightButtonText;
+  final String? clickableText;
   final void Function()? secondaryLeftButtonOnPressed;
   final void Function()? secondaryRightButtonOnPressed;
   final TextStyle? secondaryRightButtonTextStyle;
+  final void Function()? onClickableTextPressed;
+  final CrossAxisAlignment crossAxisAlignment;
+  final bool isAlignedLeft;
+  final bool hasSmallContentHeight;
 
   const DrivenDialog({
     required this.text,
     this.titleWidget,
     this.primaryButton,
     this.secondaryButton,
+    this.clickableText,
     this.secondaryBody,
     this.isDynamicAlert = false,
     this.enableBackPress = true,
     this.height = 105,
+    this.width,
     this.has3CTAButtons = false,
     this.isScrollable = false,
     this.secondaryLeftButtonText,
@@ -33,6 +41,10 @@ class DrivenDialog extends StatelessWidget {
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
     this.secondaryRightButtonTextStyle,
+    this.onClickableTextPressed,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.isAlignedLeft = false,
+    this.hasSmallContentHeight = false,
     super.key,
   });
 
@@ -46,12 +58,24 @@ class DrivenDialog extends StatelessWidget {
     );
   }
 
-  Widget _dialogTextView() => isDynamicAlert
-      ? Align(child: DrivenRichText([...text]))
-      : SizedBox(
-          height: height,
-          child: Align(child: DrivenRichText([...text])),
-        );
+  Widget _clickableText() {
+    return UnderlinedButton.black(
+      onPressed: onClickableTextPressed,
+      text: clickableText!,
+    );
+  }
+
+  Widget _dialogTextView() => isAlignedLeft
+      ? DrivenRichText(
+          [...text],
+          textAlign: TextAlign.start,
+        )
+      : isDynamicAlert
+          ? Align(child: DrivenRichText([...text]))
+          : SizedBox(
+              height: height,
+              child: Align(child: DrivenRichText([...text])),
+            );
 
   Widget _dialogSecondaryBody() {
     return secondaryBody != null ? secondaryBody! : const SizedBox();
@@ -64,10 +88,19 @@ class DrivenDialog extends StatelessWidget {
       onWillPop: () => Future.value(enableBackPress),
       child: TextScaleClamp(
         child: Dialog(
+          backgroundColor: DrivenColors.white,
+          surfaceTintColor: Colors.transparent,
           insetPadding: const EdgeInsets.all(8),
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
-            constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
+            width: width,
+            constraints: BoxConstraints(
+              minHeight: hasSmallContentHeight
+                  ? 60
+                  : isDynamicAlert
+                      ? 170
+                      : 248,
+            ),
             child: isScrollable
                 ? drivenScrollableColumn(body)
                 : drivenColumn(body),
@@ -86,6 +119,7 @@ class DrivenDialog extends StatelessWidget {
 
   Widget drivenColumn(List<Widget> body) {
     return DrivenColumn(
+      crossAxisAlignment: crossAxisAlignment,
       padding: _dialogPadding(),
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       mainAxisSize: MainAxisSize.min,
@@ -116,6 +150,7 @@ class DrivenDialog extends StatelessWidget {
           if (secondaryButton != null) _secondaryButton(),
           if (secondaryRightButtonText != null)
             _secondaryRightButton(secondaryRightButtonText),
+          if (clickableText != null) _clickableText(),
         ],
       );
     }

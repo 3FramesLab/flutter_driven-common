@@ -21,10 +21,22 @@ TapGestureRecognizer _showEmailPopUp() {
 }
 
 Future<void> _makeTapActionForEmail() async {
-  final Uri emailUrl = Uri(
+  final Uri params = Uri(
     scheme: 'mailto',
     path: DrivenConstants.contactEmail,
     query: '', //add subject and body here
   );
-  await launchUrl(emailUrl);
+
+  final url = params.toString();
+  if (await safeLaunchAsync(
+    DrivenConstants.canLaunchEmail,
+    tryAction: () => Globals().canLaunch(url),
+    catchAction: () => Future.value(false),
+  )) {
+    await safeLaunchAsync(
+      DrivenConstants.launchEmail,
+      tryAction: () => Globals().launch(url),
+      catchAction: () => Future.value(false),
+    );
+  }
 }

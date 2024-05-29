@@ -1,3 +1,5 @@
+import 'package:driven_common/common/semantic_strings.dart';
+import 'package:driven_common/globals.dart';
 import 'package:flutter/material.dart';
 
 class AppLogo extends StatefulWidget {
@@ -16,14 +18,17 @@ class AppLogo extends StatefulWidget {
 class _AppLogoState extends State<AppLogo> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: widget.topPadding ?? 40),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [_appLogo],
+    return Semantics(
+      label: SemanticStrings.appLogo,
+      child: Padding(
+        padding: EdgeInsets.only(top: widget.topPadding ?? 40),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [_appLogo],
+        ),
       ),
     );
   }
 
-  Widget get _appLogo => Image.asset(widget.appLogoPath ?? '');
+  Widget get _appLogo => Image.asset(Globals().appLogoPath);
 }
