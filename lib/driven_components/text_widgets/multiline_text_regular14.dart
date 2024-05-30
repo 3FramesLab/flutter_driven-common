@@ -1,6 +1,6 @@
 part of driven_components_module;
 
-class MultilineTextRegular14 extends Text {
+class MultilineTextRegular14 extends SemanticsWrappedText {
   MultilineTextRegular14(
     String data, {
     super.key,

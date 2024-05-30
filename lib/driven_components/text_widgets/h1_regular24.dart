@@ -1,6 +1,6 @@
 part of driven_components_module;
 
-class H1Regular24 extends Text {
+class H1Regular24 extends SemanticsWrappedText {
   // Should this have line height 41?
   H1Regular24(
     String data, {
