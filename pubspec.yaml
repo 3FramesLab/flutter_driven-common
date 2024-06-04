@@ -1,6 +1,6 @@
 name: driven_common
 description: A new Flutter plugin project.
-version: 0.0.2
+version: 0.0.3
 homepage:
 
 environment:
@@ -29,6 +29,7 @@ dependencies:
   sliding_up_panel2: ^3.3.0+1
   plugin_platform_interface: ^2.1.3
   url_launcher: ^6.2.2
+  flutter_svg: ^2.0.5
 
 
 dev_dependencies:
