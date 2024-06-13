@@ -4,7 +4,7 @@ class DrivenConstants {
   static const contactEmail = 'drivensupport@fleetcor.com';
   static const canLaunchEmail = 'canLaunchEmail';
   static const launchEmail = 'launchEmail';
-  static const ok = 'Ok';
+  static const ok = 'OK';
   static const other = 'Other';
   static const nullString = 'null';
   static const password = 'Password';
