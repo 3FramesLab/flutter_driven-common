@@ -22,7 +22,7 @@ class DrivenColors {
   static const sliderGreen = Color(0xFF00D081);
   static const sliderBorderGreen = Color(0xFF008A55);
   static const limeGreen = Color(0xFF36d011);
-  static const green = Color(0xFF1A845A);
+  static const green = Color(0xFF2e7d32);
   static const flashGreen = Color.fromRGBO(46, 125, 50, 1);
   static const orange = Color.fromRGBO(206, 58, 30, 1);
   static const lightOrange = Color.fromRGBO(206, 58, 13, 1);
