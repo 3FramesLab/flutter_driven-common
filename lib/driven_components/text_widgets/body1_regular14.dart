@@ -1,6 +1,6 @@
 part of driven_components_module;
 
-class Body1Regular14 extends Text {
+class Body1Regular14 extends SemanticsWrappedText {
   Body1Regular14(
     String data, {
     super.key,
@@ -9,6 +9,7 @@ class Body1Regular14 extends Text {
     TextAlign? textAlign,
     TextOverflow? overflow,
     double? textScaleFactor,
+    String? semanticLabel,
   }) : super(
           data,
           style: TextStyle(
@@ -20,10 +21,11 @@ class Body1Regular14 extends Text {
           textAlign: textAlign,
           overflow: overflow,
           textScaleFactor: textScaleFactor,
+          semanticLabel: semanticLabel,
         );
 }
 
-class Body1Regular14Lh23 extends Text {
+class Body1Regular14Lh23 extends SemanticsWrappedText {
   Body1Regular14Lh23(
     String data, {
     super.key,
@@ -32,6 +34,7 @@ class Body1Regular14Lh23 extends Text {
     TextOverflow? overflow,
     double? textScaleFactor,
     int? maxLines,
+    String? semanticLabel,
   }) : super(
           data,
           style: const TextStyle(
@@ -43,6 +46,7 @@ class Body1Regular14Lh23 extends Text {
           overflow: overflow,
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
+          semanticLabel: semanticLabel,
         );
 
   Body1Regular14Lh23.fixed(
@@ -83,7 +87,7 @@ class Body1Semibold14Lh23 extends Body1Regular14Lh23 {
         );
 }
 
-class Body1SemiBold16Lh23 extends Text {
+class Body1SemiBold16Lh23 extends SemanticsWrappedText {
   Body1SemiBold16Lh23(
     String data, {
     super.key,
@@ -92,6 +96,7 @@ class Body1SemiBold16Lh23 extends Text {
     TextOverflow? overflow,
     double? textScaleFactor,
     int? maxLines,
+    String? semanticLabel,
   }) : super(
           data,
           style: const TextStyle(
@@ -103,6 +108,7 @@ class Body1SemiBold16Lh23 extends Text {
           overflow: overflow,
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
+          semanticLabel: semanticLabel,
         );
 
   Body1SemiBold16Lh23.fixed(
@@ -122,4 +128,41 @@ class Body1SemiBold16Lh23 extends Text {
           textAlign: textAlign,
           textScaleFactor: 1,
         );
+}
+
+class SemanticsWrappedText extends StatelessWidget {
+  final String data;
+  final TextStyle style;
+  final TextAlign? textAlign;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final int? maxLines;
+  final String? semanticLabel;
+
+  const SemanticsWrappedText(
+    this.data, {
+    this.style = const TextStyle(),
+    this.textAlign,
+    this.overflow,
+    this.textScaleFactor,
+    this.maxLines,
+    this.semanticLabel,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      container: true,
+      child: Text(
+        data,
+        style: style,
+        textAlign: textAlign,
+        overflow: overflow,
+        textScaleFactor: textScaleFactor,
+        maxLines: maxLines,
+        semanticsLabel: semanticLabel,
+      ),
+    );
+  }
 }

@@ -12,11 +12,14 @@ class DrivenEllipsisText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      data,
-      overflow: TextOverflow.ellipsis,
-      style: style,
-      softWrap: false,
+    return Semantics(
+      container: true,
+      child: Text(
+        data,
+        overflow: TextOverflow.ellipsis,
+        style: style,
+        softWrap: false,
+      ),
     );
   }
 }

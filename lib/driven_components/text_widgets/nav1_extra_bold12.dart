@@ -1,6 +1,6 @@
 part of driven_components_module;
 
-class Nav1ExtraBold12 extends Text {
+class Nav1ExtraBold12 extends SemanticsWrappedText {
   Nav1ExtraBold12.fixed(
     String data, {
     TextStyle style = const TextStyle(),

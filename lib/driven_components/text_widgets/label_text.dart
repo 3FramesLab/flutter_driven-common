@@ -7,7 +7,6 @@ class LabelText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      textDirection: TextDirection.ltr,
       container: true,
       child: Text(
         label,
