@@ -40,6 +40,7 @@ class DrivenTextFormField extends TextFormField {
           scrollPadding: EdgeInsets.only(bottom: bottomScrollPadding ?? 0),
           enabled: enabled,
           autocorrect: autocorrect,
+          textInputAction: TextInputAction.next,
         );
 
   static List<TextInputFormatter> _universalFormatters() {
