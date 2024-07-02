@@ -66,4 +66,5 @@ class DrivenColors {
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
   static const purpleActiveColor = Color(0xFF8154F2);
   static const cpDarkBlue = Color(0xFF276E8A);
+  static const redAccent = Color(0xFFCE3A0E);
 }
