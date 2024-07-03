@@ -12,6 +12,7 @@ class DrivenColors {
   static const lighterGrey = Color(0xFFe1e1e1);
   static const lighterGreyBackground = Color(0x04000000);
   static const lighterGreyDisableBackground = Color(0xFFE6E7E6);
+  static const lightGreyLight = Color.fromRGBO(245, 245, 245, 1);
   static const accountTextColor = Color(0xFF333333);
   static const grey = Color(0xFF616161);
   static const darkerGrey = Color(0xFF999999);
@@ -47,6 +48,7 @@ class DrivenColors {
   static const enableBorderColor = Color.fromRGBO(224, 224, 224, 1);
   static const textBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
   static const checkboxBorderColor = Color.fromARGB(255, 73, 4, 157);
+  static const darkBlueButtonColor = Color.fromRGBO(0, 97, 121, 1);
   static const dividerColor = Color(0xFFD6DAE0);
 
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);

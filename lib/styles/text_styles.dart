@@ -85,6 +85,7 @@ const f20RegularBlack2 = DrivenTextStyle(20, regular, black2);
 const f20RegularBlackDark = DrivenTextStyle(20, regular, black2);
 const f20SemiboldBlackDark = DrivenTextStyle(20, semiBold, blackDark);
 const f20BoldBlackDark = DrivenTextStyle(20, bold, blackDark);
+const f20BoldGreenDark = DrivenTextStyle(20, bold, green);
 
 const f22SemiboldBlack = DrivenTextStyle(22, semiBold, black);
 
