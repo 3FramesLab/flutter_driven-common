@@ -67,4 +67,5 @@ class DrivenColors {
   static const purpleActiveColor = Color(0xFF8154F2);
   static const cpDarkBlue = Color(0xFF276E8A);
   static const redAccent = Color(0xFFCE3A0E);
+  static const orangeAccent = Color(0xFFEF6C00);
 }
