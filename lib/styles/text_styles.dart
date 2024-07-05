@@ -76,6 +76,7 @@ const f16ExtraBoldBlackDark = DrivenTextStyle(16, extraBold, blackDark);
 const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
 const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
+const f16BoldGreenDark = DrivenTextStyle(16, bold, green);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
 
