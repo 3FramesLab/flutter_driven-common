@@ -1,6 +1,6 @@
 part of driven_components_module;
 
-class Subtitle1Regular16 extends Text {
+class Subtitle1Regular16 extends SemanticsWrappedText {
   Subtitle1Regular16(
     String data, {
     super.key,

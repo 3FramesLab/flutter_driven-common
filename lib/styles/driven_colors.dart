@@ -12,6 +12,7 @@ class DrivenColors {
   static const lighterGrey = Color(0xFFe1e1e1);
   static const lighterGreyBackground = Color(0x04000000);
   static const lighterGreyDisableBackground = Color(0xFFE6E7E6);
+  static const lightGreyLight = Color.fromRGBO(245, 245, 245, 1);
   static const accountTextColor = Color(0xFF333333);
   static const grey = Color(0xFF616161);
   static const darkerGrey = Color(0xFF999999);
@@ -22,7 +23,7 @@ class DrivenColors {
   static const sliderGreen = Color(0xFF00D081);
   static const sliderBorderGreen = Color(0xFF008A55);
   static const limeGreen = Color(0xFF36d011);
-  static const green = Color(0xFF1A845A);
+  static const green = Color(0xFF2e7d32);
   static const flashGreen = Color.fromRGBO(46, 125, 50, 1);
   static const orange = Color.fromRGBO(206, 58, 30, 1);
   static const lightOrange = Color.fromRGBO(206, 58, 13, 1);
@@ -47,6 +48,7 @@ class DrivenColors {
   static const enableBorderColor = Color.fromRGBO(224, 224, 224, 1);
   static const textBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
   static const checkboxBorderColor = Color.fromARGB(255, 73, 4, 157);
+  static const darkBlueButtonColor = Color.fromRGBO(0, 97, 121, 1);
   static const dividerColor = Color(0xFFD6DAE0);
 
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);
@@ -66,4 +68,6 @@ class DrivenColors {
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
   static const purpleActiveColor = Color(0xFF8154F2);
   static const cpDarkBlue = Color(0xFF276E8A);
+  static const redAccent = Color(0xFFCE3A0E);
+  static const orangeAccent = Color(0xFFEF6C00);
 }

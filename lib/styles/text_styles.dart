@@ -9,6 +9,7 @@ const black60 = DrivenColors.black60;
 const black90 = DrivenColors.black90;
 const blackDark = Colors.black;
 const green = DrivenColors.green;
+const flashGreen = DrivenColors.flashGreen;
 const red = DrivenColors.red;
 const darkBlue = DrivenColors.darkBlue;
 const brandPrimaryColor = DrivenColors.black;
@@ -23,6 +24,7 @@ const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
 
 const f10RegularBlack = DrivenTextStyle(10, regular, black);
+const f10RegularWhite = DrivenTextStyle(10, regular, white);
 const f10RegularGrey = DrivenTextStyle(10, regular, grey);
 
 const f12SemiboldBlack = DrivenTextStyle(12, semiBold, black);
@@ -75,6 +77,7 @@ const f16ExtraBoldBlackDark = DrivenTextStyle(16, extraBold, blackDark);
 const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
 const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
+const f16BoldGreenDark = DrivenTextStyle(16, bold, green);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
 

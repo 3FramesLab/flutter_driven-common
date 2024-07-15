@@ -9,6 +9,7 @@ class Validation {
   static const pinsMustMatch = 'PINs must match';
   static const defaultFieldsMustMatch = 'Fields must match';
   static const mustBeValidEmail = 'Must be valid email';
+  static const mustBeValidMobile = 'Must be valid mobile number';
   static const mustMatch = 'must match';
   static const onlyLettersNumbersSpaces =
       'Only letters, numbers and spaces are allowed';
@@ -27,8 +28,6 @@ class Validation {
   static const spacesNotAllowed = 'Spaces not allowed';
   static const userNameRequired = 'Should not be empty';
   static const enterValidEmail = 'Enter valid email';
-  static const newPasswordMustBeLength = 'Must be at least 12 characters';
-  static const passwordMustBeLength = 'Must be at least 8 characters';
   static const enterValidAnswer = 'Enter a valid answer';
   static const mustMeetPasswordFormatRules = 'Must meet all format rules';
   static const passwordsMustMatch = 'Passwords must match';

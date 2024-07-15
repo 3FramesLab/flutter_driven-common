@@ -14,6 +14,7 @@ class AutoCompleteInput<T extends NameIdObject> extends StatelessWidget
   final bool isDefaultValueRequired;
   final int maxLength;
   final bool allowMaxLength;
+  final AutovalidateMode? autovalidateMode;
 
   const AutoCompleteInput({
     required this.options,
@@ -28,6 +29,7 @@ class AutoCompleteInput<T extends NameIdObject> extends StatelessWidget
     this.isDefaultValueRequired = false,
     this.maxLength = 30,
     this.allowMaxLength = true,
+    this.autovalidateMode = AutovalidateMode.onUserInteraction,
     super.key,
   });
 
@@ -72,7 +74,7 @@ class AutoCompleteInput<T extends NameIdObject> extends StatelessWidget
       ),
       style: const TextStyle(fontSize: 14),
       validator: validate,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      autovalidateMode: autovalidateMode,
       onChanged: onClear,
       bottomScrollPadding: DrivenDimensions.bottomScrollPadding,
     );
