@@ -18,7 +18,7 @@ class DrivenTooltipIcon extends StatelessWidget {
         width: 25,
         child: IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () => _launchToolTip(context),
+          onPressed: () => _launchToolTip(context, tooltip),
           icon: icon,
         ),
       ),
@@ -30,12 +30,19 @@ class DrivenTooltipIcon extends StatelessWidget {
     return false;
   }
 
-  void _launchToolTip(BuildContext context) {
+
+  void _launchToolTip(BuildContext context, String tooltip) {
     completer(Completer());
-    showAlignedDialog(
-      context: context, builder: (BuildContext context) { 
-        return TextScaleClamp(child: Text(tooltip));
-       },
+    AlertDialog alert = AlertDialog(
+      content: TextScaleClamp(child: Text(tooltip)),
+    );
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
+
+
 }
