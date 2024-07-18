@@ -24,6 +24,7 @@ const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
 
 const f10RegularBlack = DrivenTextStyle(10, regular, black);
+const f10RegularWhite = DrivenTextStyle(10, regular, white);
 const f10RegularGrey = DrivenTextStyle(10, regular, grey);
 
 const f12SemiboldBlack = DrivenTextStyle(12, semiBold, black);
