@@ -33,15 +33,7 @@ class DrivenTooltipIcon extends StatelessWidget {
 
   void _launchToolTip(BuildContext context, String tooltip) {
     completer(Completer());
-    AlertDialog alert = AlertDialog(
-      content: TextScaleClamp(child: Text(tooltip)),
-    );
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
+    Tooltip(message: tooltip);
   }
 
 
