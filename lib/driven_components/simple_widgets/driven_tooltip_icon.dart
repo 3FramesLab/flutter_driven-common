@@ -18,7 +18,7 @@ class DrivenTooltipIcon extends StatelessWidget {
         width: 25,
         child: IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () => _launchToolTip(context, tooltip),
+          onPressed: () => _launchToolTip(context),
           icon: icon,
         ),
       ),
@@ -30,11 +30,15 @@ class DrivenTooltipIcon extends StatelessWidget {
     return false;
   }
 
-
-  void _launchToolTip(BuildContext context, String tooltip) {
+  void _launchToolTip(BuildContext context) {
     completer(Completer());
-    Tooltip(message: tooltip);
-  }
-
-
+    context.showFlash(
+      builder: (context, controller) {
+        return Align(
+          alignment: Alignment.center,
+          child: Flash(
+            controller: controller,
+            position: FlashPosition.bottom, child: TextScaleClamp(child: Text(tooltip))));});
+  
+}
 }
