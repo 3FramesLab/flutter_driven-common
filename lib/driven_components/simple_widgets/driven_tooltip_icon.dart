@@ -32,13 +32,28 @@ class DrivenTooltipIcon extends StatelessWidget {
 
   void _launchToolTip(BuildContext context) {
     completer(Completer());
-    context.showFlash(
-      builder: (context, controller) {
-        return Align(
-          alignment: Alignment.center,
-          child: Flash(
-            controller: controller,
-            position: FlashPosition.bottom, child: TextScaleClamp(child: Text(tooltip))));});
-  
-}
+    context.showFlash(builder: (context, controller) {
+    return Align(
+      alignment: Alignment.bottomCenter,
+      child: Flash(
+        controller: controller,
+        position: FlashPosition.bottom,
+        dismissDirections: [FlashDismissDirection.startToEnd],
+        child: SizedBox(
+          width: double.infinity,
+          child: Material(
+            elevation: 24,
+            child: SafeArea(
+              top: false,
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: TextScaleClamp(child: Text(tooltip)),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+});
+  }
 }
