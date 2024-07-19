@@ -38,22 +38,15 @@ class DrivenTooltipIcon extends StatelessWidget {
       child: FlashBar(
         controller: controller,
         behavior: FlashBehavior.floating,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(16)),
-            side: BorderSide(
-              color: Colors.yellow,
-              strokeAlign: BorderSide.strokeAlignInside,
-            ),
-          ),
-        dismissDirections: const [FlashDismissDirection.startToEnd],
+          backgroundColor: Colors.transparent,
+        dismissDirections: const [FlashDismissDirection.vertical],
         content: SizedBox(
           width: double.infinity,
           child: Material(
             elevation: 24,
-            child: SafeArea(
-              top: false,
+            child: Center(
               child: Padding(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: TextScaleClamp(child: Text(tooltip)),
               ),
             ),
