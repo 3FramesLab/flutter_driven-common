@@ -34,12 +34,19 @@ class DrivenTooltipIcon extends StatelessWidget {
     completer(Completer());
     context.showFlash(builder: (context, controller) {
     return Align(
-      alignment: Alignment.bottomCenter,
-      child: Flash(
+      alignment: Alignment.center,
+      child: FlashBar(
         controller: controller,
-        position: FlashPosition.bottom,
-        dismissDirections: [FlashDismissDirection.startToEnd],
-        child: SizedBox(
+        behavior: FlashBehavior.floating,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16)),
+            side: BorderSide(
+              color: Colors.yellow,
+              strokeAlign: BorderSide.strokeAlignInside,
+            ),
+          ),
+        dismissDirections: const [FlashDismissDirection.startToEnd],
+        content: SizedBox(
           width: double.infinity,
           child: Material(
             elevation: 24,
