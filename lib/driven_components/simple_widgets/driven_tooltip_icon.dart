@@ -31,12 +31,11 @@ class DrivenTooltipIcon extends StatelessWidget {
       context: context,
       builder: (_) {
         return AlertDialog(
-          contentTextStyle: f13RegularGrey,
-          contentPadding: const EdgeInsets.all(4),
-          content: Text(
-            tooltip,
-            style: f13RegularGrey,
-          ));});
+          content: SubTitleText(
+              title: tooltip,
+              color: Colors.grey[800],
+            ),
+          );});
 
   }
 }
