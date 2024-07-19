@@ -25,40 +25,17 @@ class DrivenTooltipIcon extends StatelessWidget {
     );
   }
 
-  Future<bool> _dismissTooltip() async {
-    completer().complete();
-    return false;
-  }
-
   void _launchToolTip(BuildContext context) {
     completer(Completer());
     showDialog(
-                    context: context,
-                    builder: (_) {
-                      return AlertDialog(
-                        content: TextScaleClamp(child: Text(tooltip)));});
-//     context.showFlash(builder: (context, controller) {
-//     return Align(
-//       alignment: Alignment.center,
-//       child: FlashBar(
-//         controller: controller,
-//         behavior: FlashBehavior.floating,
-//           backgroundColor: Colors.transparent,
-//         dismissDirections: const [FlashDismissDirection.vertical],
-//         content: SizedBox(
-//           width: double.infinity,
-//           child: Material(
-//             elevation: 24,
-//             child: Center(
-//               child: Padding(
-//                 padding: const EdgeInsets.all(16),
-//                 child: TextScaleClamp(child: Text(tooltip)),
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-// });
+      context: context,
+      builder: (_) {
+        return AlertDialog(
+          contentTextStyle: f14SemiboldGrey,
+          content: Text(
+            tooltip,
+            style: f14SemiboldGrey,
+          ));});
+
   }
 }
