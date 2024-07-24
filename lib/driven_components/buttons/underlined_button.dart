@@ -13,8 +13,11 @@ class _UnderlinedButtonStyle extends TextStyle {
 const _underlinedBlack = _UnderlinedButtonStyle(Colors.black);
 const _underlinedPurple = _UnderlinedButtonStyle(DrivenColors.brandPurple);
 const _underlinedWhite = _UnderlinedButtonStyle(Colors.white);
+const _underlinedDarkBlue = _UnderlinedButtonStyle(DrivenColors.cpDarkBlue);
 const _underlinedBlackf16 = _UnderlinedButtonStyle(Colors.black, fontSize: 16);
 const _underlinedWhitef16 = _UnderlinedButtonStyle(Colors.white, fontSize: 16);
+const _underlinedDarkBluef16 =
+    _UnderlinedButtonStyle(DrivenColors.cpDarkBlue, fontSize: 16);
 
 class UnderlinedButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -39,6 +42,12 @@ class UnderlinedButton extends StatelessWidget {
     super.key,
   }) : style = _underlinedWhite;
 
+  const UnderlinedButton.darkBlue({
+    required this.onPressed,
+    required this.text,
+    super.key,
+  }) : style = _underlinedDarkBlue;
+
   const UnderlinedButton.blackf16({
     required this.onPressed,
     required this.text,
@@ -50,6 +59,12 @@ class UnderlinedButton extends StatelessWidget {
     required this.text,
     super.key,
   }) : style = _underlinedWhitef16;
+
+  const UnderlinedButton.darkBluef16({
+    required this.onPressed,
+    required this.text,
+    super.key,
+  }) : style = _underlinedDarkBluef16;
 
   @override
   Widget build(BuildContext context) {
