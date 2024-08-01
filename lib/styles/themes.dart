@@ -16,6 +16,8 @@ class Themes {
   ThemeData get primary {
     return ThemeData(
       useMaterial3: false,
+      textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Colors.black),
       scaffoldBackgroundColor: DrivenColors.lightestGrey,
       primaryColor: DrivenColors.black,
       fontFamily: DrivenFonts.avertaFontFamily,
