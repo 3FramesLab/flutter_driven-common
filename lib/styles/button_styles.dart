@@ -27,9 +27,10 @@ class DrivenButtonStyle {
   static ButtonStyle primaryText() {
     return styleFrom(
       primary: DrivenColors.brandPurple,
-      textStyle: const TextStyle(
-        fontWeight: DrivenFonts.fontWeightSemibold,
-      ),
+      textStyle: f16SemiboldBlack,
+      // const TextStyle(
+      //   fontWeight: DrivenFonts.fontWeightSemibold,
+      // ),
     );
   }
 
