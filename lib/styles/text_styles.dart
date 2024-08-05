@@ -180,7 +180,7 @@ const f14RegularTextStyle = TextStyle(
   fontWeight: DrivenFonts.fontWeightRegular,
 );
 
-const f16Regular = TextStyle(
+const f16Semibold = TextStyle(
   fontSize: 16,
   fontWeight: DrivenFonts.fontWeightSemibold,
   fontFamily: DrivenFonts.avertaFontFamily,
@@ -192,11 +192,12 @@ class DrivenTextStyle extends TextStyle {
     FontWeight fontWeight,
     Color color, {
     TextDecoration decoration = TextDecoration.none,
-    String fontFamily = DrivenFonts.avertaFontFamily,
+    // String fontFamily = DrivenFonts.avertaFontFamily,
   }) : super(
             fontSize: fontSize,
             fontWeight: fontWeight,
             color: color,
             decoration: decoration,
-            fontFamily: fontFamily);
+            // fontFamily: fontFamily
+            );
 }

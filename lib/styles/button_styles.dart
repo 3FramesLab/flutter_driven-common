@@ -25,13 +25,7 @@ class DrivenButtonStyle {
   }
 
   static ButtonStyle primaryText() {
-    return styleFrom(
-      primary: DrivenColors.brandPurple,
-      textStyle: f16SemiboldBlack,
-      // const TextStyle(
-      //   fontWeight: DrivenFonts.fontWeightSemibold,
-      // ),
-    );
+    return styleFrom(primary: DrivenColors.brandPurple, textStyle: f16Semibold);
   }
 
   static ButtonStyle transparentOverlay() {
