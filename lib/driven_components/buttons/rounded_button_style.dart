@@ -20,9 +20,9 @@ class RoundedButtonStyle extends ButtonStyle {
         );
 
   static MaterialStateProperty<TextStyle>? _textStyle() {
-    return ButtonStyleButton.allOrNull<TextStyle>(
-      const TextStyle(fontSize: 16, fontWeight: DrivenFonts.fontWeightSemibold),
-    );
+    return ButtonStyleButton.allOrNull<TextStyle>(f16SemiboldBlack
+        // const TextStyle(fontSize: 16, fontWeight: DrivenFonts.fontWeightSemibold),
+        );
   }
 
   static DrivenMaterialColor _textColor(Color? color) {
