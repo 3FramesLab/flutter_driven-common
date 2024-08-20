@@ -11,7 +11,6 @@ import 'package:driven_common/common/validation.dart';
 import 'package:driven_common/extensions/extensions_module.dart';
 import 'package:driven_common/styles/styles_module.dart';
 import 'package:driven_common/utils/utils_module.dart';
-import 'package:flash/flash.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
