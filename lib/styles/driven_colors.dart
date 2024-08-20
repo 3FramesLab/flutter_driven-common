@@ -54,7 +54,7 @@ class DrivenColors {
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);
   static const black54 = Colors.black54;
 
-  //admin_module colors
+  // admin_module colors
   static const grey700 = Color(0xFF616161);
   static const grey100 = Color(0xFFf5f5f5);
   static const lightGolden = Color.fromRGBO(242, 181, 93, 1);
@@ -70,4 +70,10 @@ class DrivenColors {
   static const cpDarkBlue = Color(0xFF276E8A);
   static const redAccent = Color(0xFFCE3A0E);
   static const orangeAccent = Color(0xFFEF6C00);
+
+  // Amazon colors
+  static const primaryAmazon = Color.fromRGBO(1, 97, 121, 1);
+  static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
+  static const primaryButtonColorAmazon = primaryAmazon;
+  static const primaryButtonTextColorAmazon = white;
 }

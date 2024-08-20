@@ -80,6 +80,8 @@ const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
 const f16BoldGreenDark = DrivenTextStyle(16, bold, green);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
+const f24ExtraboldPrimary =
+    DrivenTextStyle(24, extraBold, DrivenColors.primaryAmazon);
 
 const f20RegularGrey = DrivenTextStyle(20, regular, grey);
 const f20RegularBlack = DrivenTextStyle(20, regular, blackDark);
