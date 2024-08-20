@@ -192,12 +192,11 @@ class DrivenTextStyle extends TextStyle {
     FontWeight fontWeight,
     Color color, {
     TextDecoration decoration = TextDecoration.none,
-    // String fontFamily = DrivenFonts.avertaFontFamily,
+    String fontFamily = DrivenFonts.avertaFontFamily,
   }) : super(
             fontSize: fontSize,
             fontWeight: fontWeight,
             color: color,
             decoration: decoration,
-            // fontFamily: fontFamily
-            );
+            fontFamily: fontFamily);
 }
