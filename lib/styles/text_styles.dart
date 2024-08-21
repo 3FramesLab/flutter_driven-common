@@ -1,5 +1,6 @@
 part of styles_module;
 
+const primaryAmazon = DrivenColors.primaryAmazon;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
 const lightGrey = DrivenColors.lightGrey;
@@ -100,6 +101,8 @@ const f24BoldBlackDark = DrivenTextStyle(24, bold, blackDark);
 const f26BoldWhite = DrivenTextStyle(26, bold, white);
 
 const f28ExtraboldBlackDark = DrivenTextStyle(28, extraBold, blackDark);
+
+const f36ExtraBoldPrimary = DrivenTextStyle(36, extraBold, primaryAmazon);
 
 const f45RegularBlackDark = DrivenTextStyle(45, regular, blackDark);
 const f45RegularLightGrey = DrivenTextStyle(45, regular, lightGrey);
