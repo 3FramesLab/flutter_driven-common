@@ -18,12 +18,15 @@ class CustomTextFormField extends StatefulWidget {
   final String? errorText;
   final InputDecoration? inputDecoration;
   final bool? enabled;
+  final String titleText;
   final String? hintText;
   final String? semanticLabel;
   final bool isShowErrorBorder;
   final bool autocorrect;
   final TextCapitalization textCapitalization;
   final Color fillColor;
+  final Color? suffixIconColor;
+  final bool autoFocus;
 
   const CustomTextFormField({
     Key? key,
@@ -44,12 +47,15 @@ class CustomTextFormField extends StatefulWidget {
     this.errorText,
     this.inputDecoration,
     this.enabled,
+    this.titleText = '',
     this.hintText,
     this.isShowErrorBorder = false,
     this.autocorrect = true,
     this.semanticLabel = 'InputText',
     this.textCapitalization = TextCapitalization.none,
     this.fillColor = DrivenColors.textBackgroundColor,
+    this.suffixIconColor = DrivenColors.black,
+    this.autoFocus = true,
   }) : super(key: key);
 
   @override
@@ -59,6 +65,18 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
+    return SizedBox(
+      child: Column(
+        children: [
+          _label(),
+          const SizedBox(height: 10),
+          _textFormField(),
+        ],
+      ),
+    );
+  }
+
+  Semantics _textFormField() {
     return Semantics(
       label: widget.semanticLabel,
       value: widget.semanticLabel,
@@ -76,6 +94,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         decoration: widget.inputDecoration ?? _inputDecoration(),
         maxLength: widget.textMaxLength,
         enabled: widget.enabled,
+        autofocus: widget.autoFocus,
         textCapitalization: widget.textCapitalization,
         scrollPadding: const EdgeInsets.only(bottom: 80),
         autocorrect: widget.autocorrect,
@@ -95,6 +114,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       enabledBorder: _focusedBorder(),
       errorText: _errorText(),
       hintText: widget.hintText,
+      hintStyle: f14RegularLightGrey,
       errorMaxLines: 2,
     );
   }
@@ -110,7 +130,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onPressed: widget.onSuffixIconPressed,
       icon: Icon(
         widget.suffixIcon!,
-        color: DrivenColors.black54,
+        color: widget.suffixIconColor,
       ),
     );
   }
@@ -134,5 +154,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             borderSide: const BorderSide(color: DrivenColors.enableBorderColor),
             borderRadius: BorderRadius.circular(4),
           );
+  }
+
+  Widget _label() {
+    return Semantics(
+      container: true,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(widget.titleText, style: f14SemiboldGrey),
+        ],
+      ),
+    );
   }
 }
