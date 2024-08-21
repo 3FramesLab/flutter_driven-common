@@ -43,4 +43,9 @@ class UiHelper {
 
     return height <= 700;
   }
+
+  static final MaskTextInputFormatter routeIdInputMask = MaskTextInputFormatter(
+    mask: '########-##',
+    filter: {'#': RegExp('[0-9]')},
+  );
 }
