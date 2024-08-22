@@ -56,7 +56,7 @@ class CustomTextFormField extends StatefulWidget {
     this.textCapitalization = TextCapitalization.none,
     this.fillColor = DrivenColors.textBackgroundColor,
     this.suffixIconColor = DrivenColors.black,
-    this.autoFocus = true,
+    this.autoFocus = false,
     this.enableSuggestions = true,
   }) : super(key: key);
 
