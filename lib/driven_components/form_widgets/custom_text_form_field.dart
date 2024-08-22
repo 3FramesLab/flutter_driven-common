@@ -27,6 +27,7 @@ class CustomTextFormField extends StatefulWidget {
   final Color fillColor;
   final Color? suffixIconColor;
   final bool autoFocus;
+  final bool enableSuggestions;
 
   const CustomTextFormField({
     Key? key,
@@ -56,6 +57,7 @@ class CustomTextFormField extends StatefulWidget {
     this.fillColor = DrivenColors.textBackgroundColor,
     this.suffixIconColor = DrivenColors.black,
     this.autoFocus = true,
+    this.enableSuggestions = false,
   }) : super(key: key);
 
   @override
@@ -99,6 +101,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         scrollPadding: const EdgeInsets.only(bottom: 80),
         autocorrect: widget.autocorrect,
         onEditingComplete: widget.onEditComplete,
+        enableSuggestions: widget.enableSuggestions,
       ),
     );
   }
