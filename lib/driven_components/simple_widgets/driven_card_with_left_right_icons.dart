@@ -26,21 +26,24 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
   }
 
   Widget _content() {
-    return Row(
-      children: [
-        SvgPicture.asset(leftIcon),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Text(
-            text,
-            style: f16SemiboldBlack,
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        children: [
+          SvgPicture.asset(leftIcon),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              text,
+              style: f16SemiboldBlack,
+            ),
           ),
-        ),
-        Icon(
-          rightIcon,
-          color: DrivenColors.primaryAmazon,
-        )
-      ],
+          Icon(
+            rightIcon,
+            color: DrivenColors.primaryAmazon,
+          )
+        ],
+      ),
     );
   }
 
