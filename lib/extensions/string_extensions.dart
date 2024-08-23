@@ -19,6 +19,12 @@ extension StringExtensions on String? {
       this == null || this!.isEmpty || this!.trim().isEmpty;
 
   bool get isNotNullEmptyOrWhitespace => !isNullEmptyOrWhitespace;
+
+  bool isValidCardNumber([int expectedLength = 16]) {
+    return isNotNullEmptyOrWhitespace &&
+        this!.length == expectedLength &&
+        int.tryParse(this!) != null;
+  }
 }
 
 extension ConvertToDouble on String? {
