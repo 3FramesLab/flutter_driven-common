@@ -76,4 +76,5 @@ class DrivenColors {
   static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
   static const primaryButtonColorAmazon = primaryAmazon;
   static const primaryButtonTextColorAmazon = white;
+  static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
 }

@@ -195,6 +195,7 @@ class DrivenTextStyle extends TextStyle {
           fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
+          fontFamily: DrivenFonts.avertaFontFamily,
           decoration: decoration,
         );
 }
