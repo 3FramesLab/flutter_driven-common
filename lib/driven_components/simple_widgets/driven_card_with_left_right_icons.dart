@@ -16,11 +16,14 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: _decoration(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
-        child: _content(),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: _decoration(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+          child: _content(),
+        ),
       ),
     );
   }
