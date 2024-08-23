@@ -7,6 +7,7 @@ class CameraScannerOverlay extends StatelessWidget {
   final Color primaryButtonBackgroundColor;
   final VoidCallback onPrimaryButtonPressed;
   final VoidCallback onBackButtonPressed;
+  final Widget? secondaryButtonWidget;
 
   const CameraScannerOverlay({
     required this.cameraOverlayLayout,
@@ -14,6 +15,7 @@ class CameraScannerOverlay extends StatelessWidget {
     required this.primaryButtonText,
     required this.onPrimaryButtonPressed,
     required this.onBackButtonPressed,
+    this.secondaryButtonWidget,
     this.primaryButtonBackgroundColor = DrivenColors.primaryButtonColor,
     super.key,
   });
@@ -73,10 +75,14 @@ class CameraScannerOverlay extends StatelessWidget {
         bottom: 16,
         left: 16,
         right: 16,
-        child: PrimaryButton(
-          onPressed: onPrimaryButtonPressed,
-          text: primaryButtonText,
-          backgroundColor: primaryButtonBackgroundColor,
+        child: Column(
+          children: [
+            PrimaryButton(
+              onPressed: onPrimaryButtonPressed,
+              text: primaryButtonText,
+            ),
+            if (secondaryButtonWidget != null) secondaryButtonWidget!
+          ],
         ),
       );
 }
