@@ -80,6 +80,7 @@ class CameraScannerOverlay extends StatelessWidget {
             PrimaryButton(
               onPressed: onPrimaryButtonPressed,
               text: primaryButtonText,
+              backgroundColor: primaryButtonBackgroundColor,
             ),
             if (secondaryButtonWidget != null) secondaryButtonWidget!
           ],
