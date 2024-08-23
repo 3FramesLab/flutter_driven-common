@@ -46,20 +46,14 @@ class ScanFailureDialog extends StatelessWidget {
       );
 
   Widget get _primaryButton => PrimaryButton(
-        onPressed: () {
-          onPrimaryButtonTap?.call();
-          Get.back();
-        },
+        onPressed: onPrimaryButtonTap?.call,
         text: 'Scan Again',
         backgroundColor: DrivenColors.primaryAmazon,
       );
 
   Widget get _secondaryButton => ClickableText(
         title: 'Enter Card Number Manually',
-        onTap: () {
-          onSecondaryButtonTap?.call();
-          Get.back();
-        },
+        onTap: onSecondaryButtonTap?.call,
         textColor: DrivenColors.primaryAmazon,
       );
 }
