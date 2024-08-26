@@ -127,6 +127,7 @@ part 'simple_widgets/review_panel.dart';
 part 'simple_widgets/signup_page_message.dart';
 part 'simple_widgets/signup_page_title.dart';
 part 'simple_widgets/driven_card_with_left_right_icons.dart';
+part 'simple_widgets/driven_card_with_center_top_icon.dart';
 part 'switch/driven_cupertino_switch.dart';
 part 'templates/padded_content.dart';
 part 'text_widgets/body1_regular14.dart';
