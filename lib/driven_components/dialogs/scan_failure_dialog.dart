@@ -6,6 +6,7 @@ class ScanFailureDialog extends StatelessWidget {
   final String primaryButtonText;
   final String secondaryButtonText;
   final String title;
+  final VoidCallback? onPopInvoked;
 
   const ScanFailureDialog({
     required this.title,
@@ -13,13 +14,20 @@ class ScanFailureDialog extends StatelessWidget {
     required this.secondaryButtonText,
     this.onPrimaryButtonTap,
     this.onSecondaryButtonTap,
+    this.onPopInvoked,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (_) => Future.value(false),
+      canPop: false,
+      onPopInvoked: (value) {
+        if (value) {
+          return;
+        }
+        onPopInvoked?.call();
+      },
       child: Dialog(
         insetPadding: const EdgeInsets.all(8),
         child: Container(
