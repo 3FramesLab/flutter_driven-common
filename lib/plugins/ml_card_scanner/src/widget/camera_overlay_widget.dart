@@ -4,11 +4,13 @@ class CameraOverlayWidget extends StatelessWidget {
   final CardOrientation cardOrientation;
   final double overlayBorderRadius;
   final Color overlayColorFilter;
+  final Color? innerBoxColor;
 
   const CameraOverlayWidget({
     required this.cardOrientation,
     required this.overlayBorderRadius,
     required this.overlayColorFilter,
+    this.innerBoxColor,
     super.key,
   });
 
@@ -27,6 +29,7 @@ class CameraOverlayWidget extends StatelessWidget {
               : size.width * 0.8,
           overlayColor: const Color.fromRGBO(0, 0, 0, 80),
           radius: const Radius.circular(0),
+          innerBoxColor: innerBoxColor,
         ),
       ),
     );

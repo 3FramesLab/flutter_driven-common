@@ -9,6 +9,7 @@ class ScannerOverlayShape extends ShapeBorder {
     this.borderLength = 20,
     this.strokeWidth = 4,
     this.cornerBorderColor = Colors.white,
+    this.innerBoxColor,
   });
 
   final Color overlayColor;
@@ -18,6 +19,7 @@ class ScannerOverlayShape extends ShapeBorder {
   final double borderLength;
   final double strokeWidth;
   final Color cornerBorderColor;
+  final Color? innerBoxColor;
 
   @override
   EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
@@ -66,7 +68,7 @@ class ScannerOverlayShape extends ShapeBorder {
     );
 
     final cornerBorder = Paint()
-      ..color = cornerBorderColor
+      ..color = innerBoxColor != null ? innerBoxColor! : cornerBorderColor
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.fill
       ..strokeWidth = strokeWidth;
@@ -77,7 +79,7 @@ class ScannerOverlayShape extends ShapeBorder {
         ? minimumSide / 2
         : borderLength;
 
-    const padding = 5.0;
+    const padding = 6.0;
 
     final topLeftWithPadding =
         cutOutRect.topLeft + const Offset(-padding, -padding);
@@ -137,8 +139,22 @@ class ScannerOverlayShape extends ShapeBorder {
           bottomRightWithPadding,
           Offset(bottomRightWithPadding.dx - mBorderLength,
               bottomRightWithPadding.dy),
-          cornerBorder)
-      ..restore();
+          cornerBorder);
+
+    if (innerBoxColor != null) {
+      final innerBoxLine = Paint()
+        ..color = innerBoxColor!
+        ..strokeCap = StrokeCap.round
+        ..style = PaintingStyle.fill
+        ..strokeWidth = 2;
+
+      canvas
+        ..drawLine(cutOutRect.bottomLeft, cutOutRect.topLeft, innerBoxLine)
+        ..drawLine(cutOutRect.topLeft, cutOutRect.topRight, innerBoxLine)
+        ..drawLine(cutOutRect.topRight, cutOutRect.bottomRight, innerBoxLine)
+        ..drawLine(cutOutRect.bottomRight, cutOutRect.bottomLeft, innerBoxLine);
+    }
+    canvas.restore();
   }
 
   @override
