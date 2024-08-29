@@ -9,6 +9,7 @@ class ScannerOverlayShape extends ShapeBorder {
     this.borderLength = 20,
     this.strokeWidth = 4,
     this.cornerBorderColor = Colors.white,
+    this.showInnerBorder = false,
   });
 
   final Color overlayColor;
@@ -18,6 +19,7 @@ class ScannerOverlayShape extends ShapeBorder {
   final double borderLength;
   final double strokeWidth;
   final Color cornerBorderColor;
+  final bool showInnerBorder;
 
   @override
   EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
@@ -48,7 +50,6 @@ class ScannerOverlayShape extends ShapeBorder {
   void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
     final width = rect.width;
     final height = rect.height;
-
     final backgroundPaint = Paint()
       ..color = overlayColor
       ..style = PaintingStyle.fill;
@@ -64,7 +65,46 @@ class ScannerOverlayShape extends ShapeBorder {
       cutOutWidth,
       cutOutHeight,
     );
+    paintBorder(
+      canvas,
+      rect,
+      cutOutRect,
+      cutOutPaint,
+      backgroundPaint,
+      8,
+    );
+    if (showInnerBorder) {
+      paintBorder(
+        canvas,
+        rect,
+        cutOutRect,
+        cutOutPaint,
+        backgroundPaint,
+        2,
+        isInnerBorder: true,
+      );
+    }
+  }
 
+  @override
+  ShapeBorder scale(double t) {
+    return ScannerOverlayShape(
+      overlayColor: overlayColor,
+      cutOutWidth: cutOutWidth,
+      cutOutHeight: cutOutHeight,
+      radius: Radius.zero,
+    );
+  }
+
+  void paintBorder(
+    Canvas canvas,
+    Rect rect,
+    Rect cutOutRect,
+    Paint cutOutPaint,
+    Paint backgroundPaint,
+    double padding, {
+    bool isInnerBorder = false,
+  }) {
     final cornerBorder = Paint()
       ..color = cornerBorderColor
       ..strokeCap = StrokeCap.round
@@ -74,39 +114,49 @@ class ScannerOverlayShape extends ShapeBorder {
     final minimumSide = min(cutOutHeight, cutOutWidth);
 
     final mBorderLength = borderLength > minimumSide / 2 + strokeWidth * 2
-        ? minimumSide / 2
+        ? minimumSide * 2
         : borderLength;
 
-    const padding = 5.0;
-
-    final topLeftWithPadding =
-        cutOutRect.topLeft + const Offset(-padding, -padding);
-    final topRightWithPadding =
-        cutOutRect.topRight + const Offset(padding, -padding);
+    final topLeftWithPadding = cutOutRect.topLeft + Offset(-padding, -padding);
+    final topRightWithPadding = cutOutRect.topRight + Offset(padding, -padding);
     final bottomLeftWithPadding =
-        cutOutRect.bottomLeft + const Offset(-padding, padding);
+        cutOutRect.bottomLeft + Offset(-padding, padding);
     final bottomRightWithPadding =
-        cutOutRect.bottomRight + const Offset(padding, padding);
+        cutOutRect.bottomRight + Offset(padding, padding);
+
+    final innerShapBackgroundPaint = Paint()..color = Colors.transparent;
 
     canvas
       ..saveLayer(rect, backgroundPaint)
-      ..drawRect(rect, backgroundPaint)
+      ..drawRect(
+          rect, isInnerBorder ? innerShapBackgroundPaint : backgroundPaint)
       ..drawRRect(RRect.fromRectAndRadius(cutOutRect, radius), cutOutPaint)
       // topLeftVertical
       ..drawLine(
           topLeftWithPadding,
-          Offset(topLeftWithPadding.dx, topLeftWithPadding.dy + mBorderLength),
+          Offset(
+              topLeftWithPadding.dx,
+              isInnerBorder
+                  ? topLeftWithPadding.dy + 200
+                  : topLeftWithPadding.dy + mBorderLength),
           cornerBorder)
       // topLeftHorizontal
       ..drawLine(
           topLeftWithPadding,
-          Offset(topLeftWithPadding.dx + mBorderLength, topLeftWithPadding.dy),
+          Offset(
+              isInnerBorder
+                  ? topLeftWithPadding.dx + 300
+                  : topLeftWithPadding.dx + mBorderLength,
+              topLeftWithPadding.dy),
           cornerBorder)
       // topRightVertical
       ..drawLine(
           topRightWithPadding,
           Offset(
-              topRightWithPadding.dx, topRightWithPadding.dy + mBorderLength),
+              topRightWithPadding.dx,
+              isInnerBorder
+                  ? topRightWithPadding.dy + 200
+                  : topRightWithPadding.dy + mBorderLength),
           cornerBorder)
       // topRightHorizontal
       ..drawLine(
@@ -123,7 +173,10 @@ class ScannerOverlayShape extends ShapeBorder {
       // bottomLeftHorizontal
       ..drawLine(
           bottomLeftWithPadding,
-          Offset(bottomLeftWithPadding.dx + mBorderLength,
+          Offset(
+              isInnerBorder
+                  ? bottomLeftWithPadding.dx + 300
+                  : bottomLeftWithPadding.dx + mBorderLength,
               bottomLeftWithPadding.dy),
           cornerBorder)
       // bottomRightVertical
@@ -139,15 +192,5 @@ class ScannerOverlayShape extends ShapeBorder {
               bottomRightWithPadding.dy),
           cornerBorder)
       ..restore();
-  }
-
-  @override
-  ShapeBorder scale(double t) {
-    return ScannerOverlayShape(
-      overlayColor: overlayColor,
-      cutOutWidth: cutOutWidth,
-      cutOutHeight: cutOutHeight,
-      radius: Radius.zero,
-    );
   }
 }

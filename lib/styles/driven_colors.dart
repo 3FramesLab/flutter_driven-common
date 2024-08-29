@@ -77,4 +77,7 @@ class DrivenColors {
   static const primaryButtonColorAmazon = primaryAmazon;
   static const primaryButtonTextColorAmazon = white;
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
+  static const validateSuccessGreen = Color(0xFF2E7D32);
+  static const scanSuccessGreen = Color.fromRGBO(100, 187, 80, 1);
+  static const scanFailureRed = Color.fromRGBO(176, 0, 32, 1);
 }
