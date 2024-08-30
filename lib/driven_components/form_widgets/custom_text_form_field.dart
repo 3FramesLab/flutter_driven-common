@@ -28,6 +28,7 @@ class CustomTextFormField extends StatefulWidget {
   final Color? suffixIconColor;
   final bool autoFocus;
   final bool enableSuggestions;
+  final bool showSuccessBorder;
 
   const CustomTextFormField({
     Key? key,
@@ -58,6 +59,7 @@ class CustomTextFormField extends StatefulWidget {
     this.suffixIconColor = DrivenColors.black,
     this.autoFocus = false,
     this.enableSuggestions = true,
+    this.showSuccessBorder = false,
   }) : super(key: key);
 
   @override
@@ -151,12 +153,21 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   }
 
   OutlineInputBorder _focusedBorder() {
-    return widget.isShowErrorBorder
-        ? const OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
-        : OutlineInputBorder(
-            borderSide: const BorderSide(color: DrivenColors.enableBorderColor),
-            borderRadius: BorderRadius.circular(4),
-          );
+    if (widget.showSuccessBorder) {
+      return const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: DrivenColors.green,
+        ),
+      );
+    } else {
+      return widget.isShowErrorBorder
+          ? const OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
+          : OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: DrivenColors.enableBorderColor),
+              borderRadius: BorderRadius.circular(4),
+            );
+    }
   }
 
   Widget _label() {
