@@ -4,12 +4,14 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   final String icon;
   final String text;
   final VoidCallback onTap;
+  final bool isDisabled;
 
   const DrivenCardWithCenterTopIcon({
     super.key,
     required this.icon,
     required this.text,
     required this.onTap,
+    this.isDisabled = false,
   });
 
   @override
@@ -17,7 +19,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: GestureDetector(
-        onTap: onTap,
+        onTap: !isDisabled ? onTap : null,
         child: Container(
           height: 90,
           width: double.infinity,
@@ -39,7 +41,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
         Expanded(
           child: DrivenText(
             text: text,
-            style: f14SemiboldBlack,
+            style: isDisabled ? f14SemiboldDisabled : f14SemiboldBlack,
           ),
         ),
       ],
@@ -48,7 +50,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
 
   BoxDecoration _decoration() {
     return BoxDecoration(
-      color: Colors.white,
+      color: isDisabled ? DrivenColors.grey100 : Colors.white,
       borderRadius: const BorderRadius.all(Radius.circular(10)),
       boxShadow: [
         BoxShadow(
