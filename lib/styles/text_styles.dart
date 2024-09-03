@@ -20,6 +20,7 @@ const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
 const cpDarkBlue = DrivenColors.cpDarkBlue;
+const disabled = DrivenColors.disabledButtonTextColor;
 
 const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
@@ -46,6 +47,7 @@ const f14RegularBlackDark = DrivenTextStyle(14, regular, blackDark);
 const f14RegularDarkBlue = DrivenTextStyle(14, regular, cpDarkBlue);
 const f14RegularSemiboldBlack = DrivenTextStyle(14, semiBold, blackDark);
 const f14SemiboldBlack = DrivenTextStyle(14, semiBold, black);
+const f14SemiboldDisabled = DrivenTextStyle(14, semiBold, disabled);
 const f14SemiboldWhite = DrivenTextStyle(14, semiBold, white);
 const f14BoldWhite = DrivenTextStyle(14, bold, white);
 const f14SemiboldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
