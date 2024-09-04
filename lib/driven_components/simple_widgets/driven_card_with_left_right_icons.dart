@@ -19,7 +19,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: _decoration(),
+        decoration: UiHelper.drivenCardBoxDecoration(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           child: _content(),
@@ -43,21 +43,6 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
           rightIcon,
           color: DrivenColors.primaryAmazon,
         )
-      ],
-    );
-  }
-
-  BoxDecoration _decoration() {
-    return BoxDecoration(
-      color: Colors.white,
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-      boxShadow: [
-        BoxShadow(
-          color: DrivenColors.lightGrey.withOpacity(0.2),
-          spreadRadius: 5,
-          blurRadius: 7,
-          offset: const Offset(0, 3),
-        ),
       ],
     );
   }

@@ -23,7 +23,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
         child: Container(
           height: 90,
           width: double.infinity,
-          decoration: _decoration(),
+          decoration: UiHelper.drivenCardBoxDecoration(),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: _content(),
@@ -43,21 +43,6 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
             text: text,
             style: isDisabled ? f14SemiboldDisabled : f14SemiboldBlack,
           ),
-        ),
-      ],
-    );
-  }
-
-  BoxDecoration _decoration() {
-    return BoxDecoration(
-      color: isDisabled ? DrivenColors.grey100 : Colors.white,
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
-      boxShadow: [
-        BoxShadow(
-          color: DrivenColors.lightGrey.withOpacity(0.2),
-          spreadRadius: 5,
-          blurRadius: 7,
-          offset: const Offset(0, 3),
         ),
       ],
     );
