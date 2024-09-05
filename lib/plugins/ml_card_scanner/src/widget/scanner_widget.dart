@@ -128,8 +128,8 @@ class _ScannerWidgetState extends State<ScannerWidget>
   }
 
   Future<bool> _initializeCamera() async {
-    final status = await Permission.camera.request();
-    if (!status.isGranted) {
+    final status = await Permission.camera.isGranted;
+    if (!status) {
       _handleError(const ScannerPermissionIsNotGrantedException());
       return false;
     }
