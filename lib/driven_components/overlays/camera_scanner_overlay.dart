@@ -38,6 +38,7 @@ class CameraScannerOverlay extends StatelessWidget {
       child: DrivenBackButton(
         color: DrivenColors.white,
         onPressed: onBackButtonPressed,
+        mainAxisSize: MainAxisSize.min,
       ),
     );
   }
