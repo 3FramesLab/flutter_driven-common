@@ -36,6 +36,8 @@ class _ScannerWidgetState extends State<ScannerWidget>
   late CameraDescription _camera;
   late ScannerWidgetController _scannerController;
   CameraController? _cameraController;
+  bool cameraPreviewEnabled = true;
+  bool scanningEnabled = true;
 
   @override
   void initState() {
@@ -173,13 +175,13 @@ class _ScannerWidgetState extends State<ScannerWidget>
 
   Future<void> _detect(InputImage image) async {
     debugPrint(
-        'debug-print: in _detect() cardListenerInvoked = $cardListenerInvoked');
-    if (cardListenerInvoked) {
+        'debug-print: in _detect() cardListenerInvoked = $cardListenerInvoked , cameraPreviewEnabled = $cameraPreviewEnabled');
+
+    if (cardListenerInvoked || !cameraPreviewEnabled || !scanningEnabled) {
       return;
     }
     cardListenerInvoked = true;
     final resultCard = await _cardParser.detectCardContent(image);
-    Logger.log('Detect Card Details', resultCard.toString());
     debugPrint('debug-print: Detect Card Details: ${resultCard.toString()}');
 
     if (resultCard != null) {
@@ -195,14 +197,20 @@ class _ScannerWidgetState extends State<ScannerWidget>
   }
 
   void _scanParamsListener() {
+    debugPrint(
+        'debug-print: in _scanParamsListener() scanningEnabled = ${_scannerController.scanningEnabled}');
     if (_scannerController.scanningEnabled) {
+      scanningEnabled = true;
       _cameraKey.currentState?.startCameraStream();
     } else {
+      scanningEnabled = false;
       _cameraKey.currentState?.stopCameraStream();
     }
     if (_scannerController.cameraPreviewEnabled) {
+      cameraPreviewEnabled = true;
       _cameraController?.resumePreview();
     } else {
+      cameraPreviewEnabled = false;
       _cameraController?.pausePreview();
     }
   }
