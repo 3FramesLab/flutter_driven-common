@@ -64,6 +64,7 @@ part 'form_widgets/text_formatters/express_code_formatter.dart';
 part 'form_widgets/text_formatters/filtering_formatters.dart';
 part 'form_widgets/text_formatters/masking_formatters.dart';
 part 'form_widgets/text_formatters/text_formatters.dart';
+part 'form_widgets/text_formatters/space_after_every_four_input_formatter.dart';
 part 'form_widgets/text_formatters/upper_case_formatter.dart';
 part 'form_widgets/validators/autocomplete_required_validator.dart';
 part 'form_widgets/validators/business_name_comdata_validator.dart';

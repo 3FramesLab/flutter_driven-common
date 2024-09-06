@@ -31,10 +31,13 @@ class _ScannerWidgetState extends State<ScannerWidget>
   final CardParserUtil _cardParser = CardParserUtil();
   final GlobalKey<CameraViewState> _cameraKey = GlobalKey();
   final ValueNotifier<bool> _isCameraInitialized = ValueNotifier(false);
+  bool cardListenerInvoked = false;
 
   late CameraDescription _camera;
   late ScannerWidgetController _scannerController;
   CameraController? _cameraController;
+  bool cameraPreviewEnabled = true;
+  bool scanningEnabled = true;
 
   @override
   void initState() {
@@ -171,26 +174,43 @@ class _ScannerWidgetState extends State<ScannerWidget>
   }
 
   Future<void> _detect(InputImage image) async {
+    debugPrint(
+        'debug-print: in _detect() cardListenerInvoked = $cardListenerInvoked , cameraPreviewEnabled = $cameraPreviewEnabled');
+
+    if (cardListenerInvoked || !cameraPreviewEnabled || !scanningEnabled) {
+      return;
+    }
+    cardListenerInvoked = true;
     final resultCard = await _cardParser.detectCardContent(image);
-    Logger.log('Detect Card Details', resultCard.toString());
+    debugPrint('debug-print: Detect Card Details: ${resultCard.toString()}');
 
     if (resultCard != null) {
+      debugPrint('debug-print: invoke the listener');
       if (widget.oneShotScanning) {
         _scannerController.disableScanning();
       }
       _handleData(resultCard);
     }
+    cardListenerInvoked = false;
+    debugPrint(
+        'debug-print: out _detect() cardListenerInvoked = $cardListenerInvoked');
   }
 
   void _scanParamsListener() {
+    debugPrint(
+        'debug-print: in _scanParamsListener() scanningEnabled = ${_scannerController.scanningEnabled}');
     if (_scannerController.scanningEnabled) {
+      scanningEnabled = true;
       _cameraKey.currentState?.startCameraStream();
     } else {
+      scanningEnabled = false;
       _cameraKey.currentState?.stopCameraStream();
     }
     if (_scannerController.cameraPreviewEnabled) {
+      cameraPreviewEnabled = true;
       _cameraController?.resumePreview();
     } else {
+      cameraPreviewEnabled = false;
       _cameraController?.pausePreview();
     }
   }
