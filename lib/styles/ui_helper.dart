@@ -43,4 +43,30 @@ class UiHelper {
 
     return height <= 700;
   }
+
+  static final MaskTextInputFormatter routeIdInputMask = MaskTextInputFormatter(
+    mask: '########-##',
+    filter: {'#': RegExp('[0-9]')},
+  );
+
+  static drivenCardBoxDecoration() {
+    return BoxDecoration(
+      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      boxShadow: [
+        BoxShadow(
+          color: DrivenColors.grey.withOpacity(0.3),
+          offset: const Offset(0, 1),
+          blurRadius: 8,
+          spreadRadius: 0,
+        ),
+        BoxShadow(
+          color: DrivenColors.grey.withOpacity(0.3),
+          offset: const Offset(0, 2),
+          blurRadius: 3,
+          spreadRadius: -2,
+        )
+      ],
+      color: DrivenColors.white,
+    );
+  }
 }

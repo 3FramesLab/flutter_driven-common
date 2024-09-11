@@ -1,5 +1,6 @@
 part of styles_module;
 
+const primaryAmazon = DrivenColors.primaryAmazon;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
 const lightGrey = DrivenColors.lightGrey;
@@ -19,6 +20,7 @@ const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
 const cpDarkBlue = DrivenColors.cpDarkBlue;
+const disabled = DrivenColors.disabledButtonTextColor;
 
 const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
@@ -45,6 +47,7 @@ const f14RegularBlackDark = DrivenTextStyle(14, regular, blackDark);
 const f14RegularDarkBlue = DrivenTextStyle(14, regular, cpDarkBlue);
 const f14RegularSemiboldBlack = DrivenTextStyle(14, semiBold, blackDark);
 const f14SemiboldBlack = DrivenTextStyle(14, semiBold, black);
+const f14SemiboldDisabled = DrivenTextStyle(14, semiBold, disabled);
 const f14SemiboldWhite = DrivenTextStyle(14, semiBold, white);
 const f14BoldWhite = DrivenTextStyle(14, bold, white);
 const f14SemiboldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
@@ -80,6 +83,8 @@ const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
 const f16BoldGreenDark = DrivenTextStyle(16, bold, green);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
+const f24ExtraboldPrimary =
+    DrivenTextStyle(24, extraBold, DrivenColors.primaryAmazon);
 
 const f20RegularGrey = DrivenTextStyle(20, regular, grey);
 const f20RegularBlack = DrivenTextStyle(20, regular, blackDark);
@@ -98,6 +103,8 @@ const f24BoldBlackDark = DrivenTextStyle(24, bold, blackDark);
 const f26BoldWhite = DrivenTextStyle(26, bold, white);
 
 const f28ExtraboldBlackDark = DrivenTextStyle(28, extraBold, blackDark);
+
+const f36ExtraBoldPrimary = DrivenTextStyle(36, extraBold, primaryAmazon);
 
 const f45RegularBlackDark = DrivenTextStyle(45, regular, blackDark);
 const f45RegularLightGrey = DrivenTextStyle(45, regular, lightGrey);

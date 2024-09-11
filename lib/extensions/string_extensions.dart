@@ -19,6 +19,56 @@ extension StringExtensions on String? {
       this == null || this!.isEmpty || this!.trim().isEmpty;
 
   bool get isNotNullEmptyOrWhitespace => !isNullEmptyOrWhitespace;
+
+  bool isValidCardNumber([int expectedLength = 16]) {
+    return isNotNullEmptyOrWhitespace &&
+        RegExp(r'^\d{' + expectedLength.toString() + r'}$').hasMatch(this!);
+  }
+
+  bool validateCardBinNumber(List<String> cardBinWhiteList) {
+    if (isNullEmptyOrWhitespace) {
+      return false;
+    }
+    bool isValid = true;
+    if (cardBinWhiteList.isNotEmpty) {
+      // RegExp(r'^55673\d{11}$')
+
+      for (int i = 0; i < cardBinWhiteList.length; i++) {
+        int prefixLength = cardBinWhiteList[i].length;
+        if (RegExp('^${cardBinWhiteList[i]}'
+                r'\d{'
+                '${(16 - prefixLength).toString()}'
+                r'}$')
+            .hasMatch(this!)) {
+          isValid = true;
+          break;
+        } else {
+          isValid = false;
+        }
+      }
+    }
+
+    if (!isValid) {
+      return false;
+    }
+
+    int sum = 0;
+    bool doubleDigit = false;
+
+    // Iterate through the card number from right to left
+    for (int i = this!.length - 1; i >= 0; i--) {
+      int digit = int.parse(this![i]);
+      if (doubleDigit) {
+        digit = digit * 2;
+        digit = digit > 9 ? digit - 9 : digit;
+      }
+
+      sum += digit;
+      doubleDigit = !doubleDigit;
+    }
+
+    return sum % 10 == 0;
+  }
 }
 
 extension ConvertToDouble on String? {
