@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 part of driven_components_module;
 
 class CameraScannerOverlay extends StatelessWidget {
@@ -8,8 +10,10 @@ class CameraScannerOverlay extends StatelessWidget {
   final VoidCallback onPrimaryButtonPressed;
   final VoidCallback onBackButtonPressed;
   final Widget? secondaryButtonWidget;
+  final CardOrientation cardOrientation;
+  double deviceHeight = 631;
 
-  const CameraScannerOverlay({
+  CameraScannerOverlay({
     required this.cameraOverlayLayout,
     required this.scannerMessage,
     required this.primaryButtonText,
@@ -17,11 +21,13 @@ class CameraScannerOverlay extends StatelessWidget {
     required this.onBackButtonPressed,
     this.secondaryButtonWidget,
     this.primaryButtonBackgroundColor = DrivenColors.primaryButtonColor,
+    this.cardOrientation = CardOrientation.landscape,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
+    deviceHeight = MediaQuery.sizeOf(context).height;
     return Stack(
       children: [
         cameraOverlayLayout,
@@ -51,8 +57,15 @@ class CameraScannerOverlay extends StatelessWidget {
   }
 
   Widget _scannerMessageText(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
+
+    final cutOutHeight = Utils.getCameraCutoutHeight(context, cardOrientation);
+
+    final scannerMessageTopPadding =
+        (size.height / 2) + (cutOutHeight / 2) + 40;
+
     return Positioned(
-      bottom: (MediaQuery.sizeOf(context).height / 5),
+      top: scannerMessageTopPadding,
       left: 16,
       right: 16,
       child: Text(
@@ -83,7 +96,8 @@ class CameraScannerOverlay extends StatelessWidget {
               text: primaryButtonText,
               backgroundColor: primaryButtonBackgroundColor,
             ),
-            if (secondaryButtonWidget != null) secondaryButtonWidget!
+            if (secondaryButtonWidget != null) secondaryButtonWidget!,
+            SizedBox(height: deviceHeight < 680 ? 8 : 16),
           ],
         ),
       );
