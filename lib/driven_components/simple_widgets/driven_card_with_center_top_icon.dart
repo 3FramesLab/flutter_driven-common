@@ -16,17 +16,22 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8),
-      child: GestureDetector(
-        onTap: !isDisabled ? onTap : null,
-        child: Container(
-          height: 90,
-          width: double.infinity,
-          decoration: UiHelper.drivenCardBoxDecoration(),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: _content(),
+    return Container(
+      decoration: UiHelper.drivenCardBoxDecoration(),
+      child: Material(
+        color: DrivenColors.transparent,
+        child: InkWell(
+          onTap: !isDisabled ? onTap : null,
+          borderRadius: BorderRadius.circular(10),
+          splashColor: Colors.blue.withOpacity(0.3),
+          highlightColor: Colors.blue.withOpacity(0.1),
+          child: Ink(
+            height: 90,
+            width: double.infinity,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: _content(),
+            ),
           ),
         ),
       ),
