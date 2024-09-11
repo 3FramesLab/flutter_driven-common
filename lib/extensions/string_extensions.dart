@@ -29,13 +29,27 @@ extension StringExtensions on String? {
     if (isNullEmptyOrWhitespace) {
       return false;
     }
+    bool isValid = true;
     if (cardBinWhiteList.isNotEmpty) {
+      // RegExp(r'^55673\d{11}$')
+
       for (int i = 0; i < cardBinWhiteList.length; i++) {
-        // if (!RegExp(r'^55673\d{10}$').hasMatch(cardNumber)) {
-        if (!RegExp('^${cardBinWhiteList[0]}' r'\d{10}$').hasMatch(this!)) {
-          return false;
+        int prefixLength = cardBinWhiteList[i].length;
+        if (RegExp('^${cardBinWhiteList[i]}'
+                r'\d{'
+                '${(16 - prefixLength).toString()}'
+                r'}$')
+            .hasMatch(this!)) {
+          isValid = true;
+          break;
+        } else {
+          isValid = false;
         }
       }
+    }
+
+    if (!isValid) {
+      return false;
     }
 
     int sum = 0;
