@@ -24,6 +24,37 @@ extension StringExtensions on String? {
     return isNotNullEmptyOrWhitespace &&
         RegExp(r'^\d{' + expectedLength.toString() + r'}$').hasMatch(this!);
   }
+
+  bool validateCardBinNumber(List<String> cardBinWhiteList) {
+    if (isNullEmptyOrWhitespace) {
+      return false;
+    }
+    if (cardBinWhiteList.isNotEmpty) {
+      for (int i = 0; i < cardBinWhiteList.length; i++) {
+        // if (!RegExp(r'^55673\d{10}$').hasMatch(cardNumber)) {
+        if (!RegExp('^${cardBinWhiteList[0]}' r'\d{10}$').hasMatch(this!)) {
+          return false;
+        }
+      }
+    }
+
+    int sum = 0;
+    bool doubleDigit = false;
+
+    // Iterate through the card number from right to left
+    for (int i = this!.length - 1; i >= 0; i--) {
+      int digit = int.parse(this![i]);
+      if (doubleDigit) {
+        digit = digit * 2;
+        digit = digit > 9 ? digit - 9 : digit;
+      }
+
+      sum += digit;
+      doubleDigit = !doubleDigit;
+    }
+
+    return sum % 10 == 0;
+  }
 }
 
 extension ConvertToDouble on String? {
