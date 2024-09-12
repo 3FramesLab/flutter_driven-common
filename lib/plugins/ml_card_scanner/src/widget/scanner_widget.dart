@@ -174,31 +174,22 @@ class _ScannerWidgetState extends State<ScannerWidget>
   }
 
   Future<void> _detect(InputImage image) async {
-    debugPrint(
-        'debug-print: in _detect() cardListenerInvoked = $cardListenerInvoked , cameraPreviewEnabled = $cameraPreviewEnabled');
-
     if (cardListenerInvoked || !cameraPreviewEnabled || !scanningEnabled) {
       return;
     }
     cardListenerInvoked = true;
     final resultCard = await _cardParser.detectCardContent(image);
-    debugPrint('debug-print: Detect Card Details: ${resultCard.toString()}');
 
     if (resultCard != null) {
-      debugPrint('debug-print: invoke the listener');
       if (widget.oneShotScanning) {
         _scannerController.disableScanning();
       }
       _handleData(resultCard);
     }
     cardListenerInvoked = false;
-    debugPrint(
-        'debug-print: out _detect() cardListenerInvoked = $cardListenerInvoked');
   }
 
   void _scanParamsListener() {
-    debugPrint(
-        'debug-print: in _scanParamsListener() scanningEnabled = ${_scannerController.scanningEnabled}');
     if (_scannerController.scanningEnabled) {
       scanningEnabled = true;
       _cameraKey.currentState?.startCameraStream();
