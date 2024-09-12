@@ -9,6 +9,7 @@ import 'package:driven_common/common/name_id_object.dart';
 import 'package:driven_common/common/semantic_strings.dart';
 import 'package:driven_common/common/validation.dart';
 import 'package:driven_common/extensions/extensions_module.dart';
+import 'package:driven_common/plugins/ml_card_scanner/ml_card_scanner.dart';
 import 'package:driven_common/styles/styles_module.dart';
 import 'package:driven_common/utils/utils_module.dart';
 import 'package:flutter/cupertino.dart';

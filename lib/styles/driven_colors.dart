@@ -79,4 +79,7 @@ class DrivenColors {
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
   static const successGreenColor = Color(0xff64bb50);
   static const failureRedColor = Color(0xffb00020);
+
+  // MC SL
+  static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
 }

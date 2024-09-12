@@ -20,13 +20,9 @@ class CameraOverlayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
 
-    final cutOutHeight = cardOrientation == CardOrientation.portrait
-        ? (size.width * 0.75) * 1.6
-        : (size.width * 0.95) / 1.8;
+    final cutOutHeight = Utils.getCameraCutoutHeight(context, cardOrientation);
 
-    final cutOutWidth = cardOrientation == CardOrientation.portrait
-        ? size.width * 0.75
-        : size.width * 0.8;
+    final cutOutWidth = Utils.getCameraCutoutWidth(context, cardOrientation);
 
     final iconTopPadding =
         (size.height / 2) - (cutOutHeight / 2) - iconSize - 20;
