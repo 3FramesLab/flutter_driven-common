@@ -193,11 +193,16 @@ class DrivenDialog extends StatelessWidget {
 }
 
 class DefaultDialogCloseButton extends StatelessWidget {
-  const DefaultDialogCloseButton({super.key});
+  final Color backgroundColor;
+  const DefaultDialogCloseButton({
+    super.key,
+    this.backgroundColor = DrivenColors.primaryButtonColor,
+  });
 
   @override
   Widget build(BuildContext context) {
     return DialogButton(
+      backgroundColor: backgroundColor,
       onPressed: () => Navigator.pop(context),
       text: DrivenConstants.ok,
     );
