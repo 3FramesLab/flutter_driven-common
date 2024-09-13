@@ -28,19 +28,21 @@ class ScanFailureDialog extends StatelessWidget {
         }
         onPopInvoked?.call();
       },
-      child: Dialog(
-        insetPadding: const EdgeInsets.all(8),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-          constraints: const BoxConstraints(minHeight: 248),
-          child: DrivenColumn(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Flexible(child: _titleText),
-              _primaryButton,
-              _secondaryButton,
-            ],
+      child: TextScaleClamp(
+        child: Dialog(
+          insetPadding: const EdgeInsets.all(8),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+            constraints: const BoxConstraints(minHeight: 248),
+            child: DrivenColumn(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(child: _titleText),
+                _primaryButton,
+                _secondaryButton,
+              ],
+            ),
           ),
         ),
       ),
