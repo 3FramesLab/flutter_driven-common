@@ -2,23 +2,21 @@ part of '../../ml_card_scanner.dart';
 
 class ScannerWidget extends StatefulWidget {
   final CardOrientation overlayOrientation;
-  final OverlayBuilder? overlayBuilder;
+  final Widget? overlay;
   final int scannerDelay;
   final bool oneShotScanning;
   final CameraResolution cameraResolution;
   final ScannerWidgetController? controller;
   final CameraPreviewBuilder? cameraPreviewBuilder;
-  final OverlayTextBuilder? overlayTextBuilder;
 
   const ScannerWidget({
-    this.overlayBuilder,
+    this.overlay,
     this.controller,
     this.scannerDelay = 400,
     this.oneShotScanning = true,
     this.overlayOrientation = CardOrientation.portrait,
     this.cameraResolution = CameraResolution.high,
     this.cameraPreviewBuilder,
-    this.overlayTextBuilder,
     super.key,
   });
 
@@ -109,12 +107,7 @@ class _ScannerWidgetState extends State<ScannerWidget>
             return const SizedBox.shrink();
           },
         ),
-        widget.overlayBuilder?.call(context) ??
-            CameraOverlayWidget(
-              cardOrientation: widget.overlayOrientation,
-              overlayBorderRadius: 25,
-              overlayColorFilter: const Color.fromRGBO(0, 0, 0, 80),
-            ),
+        if (widget.overlay != null) widget.overlay!,
       ],
     );
   }
