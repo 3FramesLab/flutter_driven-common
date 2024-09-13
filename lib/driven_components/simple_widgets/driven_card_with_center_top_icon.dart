@@ -3,15 +3,15 @@ part of driven_components_module;
 class DrivenCardWithCenterTopIcon extends StatelessWidget {
   final String icon;
   final String text;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final bool isDisabled;
 
   const DrivenCardWithCenterTopIcon({
     super.key,
     required this.icon,
     required this.text,
-    required this.onTap,
     this.isDisabled = false,
+    this.onTap,
   });
 
   @override
@@ -23,8 +23,8 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
         child: InkWell(
           onTap: !isDisabled ? onTap : null,
           borderRadius: BorderRadius.circular(10),
-          splashColor: Colors.blue.withOpacity(0.3),
-          highlightColor: Colors.blue.withOpacity(0.1),
+          splashColor: DrivenColors.blue.withOpacity(0.3),
+          highlightColor: DrivenColors.blue.withOpacity(0.1),
           child: Ink(
             height: 90,
             width: double.infinity,
@@ -53,3 +53,4 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
     );
   }
 }
+
