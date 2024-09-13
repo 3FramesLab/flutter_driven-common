@@ -33,7 +33,7 @@ class ScanFailureDialog extends StatelessWidget {
           insetPadding: const EdgeInsets.all(8),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-            constraints: const BoxConstraints(minHeight: 248),
+            constraints: const BoxConstraints(minHeight: 208),
             child: DrivenColumn(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               mainAxisSize: MainAxisSize.min,
