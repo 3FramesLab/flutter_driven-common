@@ -29,6 +29,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool autoFocus;
   final bool enableSuggestions;
   final bool showSuccessBorder;
+  final bool readOnly;
 
   const CustomTextFormField({
     Key? key,
@@ -60,6 +61,7 @@ class CustomTextFormField extends StatefulWidget {
     this.autoFocus = false,
     this.enableSuggestions = true,
     this.showSuccessBorder = false,
+    this.readOnly = false,
   }) : super(key: key);
 
   @override
@@ -104,6 +106,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         autocorrect: widget.autocorrect,
         onEditingComplete: widget.onEditComplete,
         enableSuggestions: widget.enableSuggestions,
+        readOnly: widget.readOnly,
       ),
     );
   }
