@@ -10,9 +10,12 @@ class UiHelper {
           context: context,
           barrierDismissible: false,
           builder: (context) {
-            return const Center(
-              child: CircularProgressIndicator(
-                color: DrivenColors.lightGrey,
+            return const PopScope(
+              canPop: false,
+              child: Center(
+                child: CircularProgressIndicator(
+                  color: DrivenColors.lightGrey,
+                ),
               ),
             );
           });
