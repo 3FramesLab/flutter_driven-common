@@ -26,7 +26,6 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
           splashColor: DrivenColors.blue.withOpacity(0.3),
           highlightColor: DrivenColors.blue.withOpacity(0.1),
           child: Ink(
-            height: 90,
             width: double.infinity,
             child: Padding(
               padding: const EdgeInsets.all(16),
@@ -39,18 +38,21 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   }
 
   Widget _content() {
-    return Column(
-      children: [
-        SvgPicture.asset(icon),
-        const SizedBox(height: 2),
-        Expanded(
-          child: DrivenText(
-            text: text,
-            style: isDisabled ? f14SemiboldDisabled : f14SemiboldBlack,
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SvgPicture.asset(icon),
+          const SizedBox(height: 2),
+          Flexible(
+            child: DrivenText(
+              text: text,
+              style: isDisabled ? f14SemiboldDisabled : f14SemiboldBlack,
+              textAlign: TextAlign.center,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
-
