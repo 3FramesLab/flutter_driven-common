@@ -44,18 +44,21 @@ class DrivenImageDialog extends StatelessWidget {
       insetPadding: const EdgeInsets.all(16),
       child: Container(
         padding: const EdgeInsets.all(8),
-        child: DrivenColumn(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image(image: AssetImage(image)),
-            _divider(),
-            _titleText,
-            _divider(value: 14),
-            _descriptionText,
-            _divider(),
-            _primaryButton,
-            _divider(),
-          ],
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: DrivenColumn(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image(image: AssetImage(image)),
+              _divider(),
+              _titleText,
+              _divider(value: 14),
+              _descriptionText,
+              _divider(),
+              _primaryButton,
+              _divider(),
+            ],
+          ),
         ),
       ),
     );
