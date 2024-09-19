@@ -201,9 +201,10 @@ class DrivenTextStyle extends TextStyle {
     TextDecoration decoration = TextDecoration.none,
     String fontFamily = DrivenFonts.avertaFontFamily,
   }) : super(
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-            color: color,
-            decoration: decoration,
-            fontFamily: fontFamily);
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          color: color,
+          decoration: decoration,
+          fontFamily: fontFamily,
+        );
 }
