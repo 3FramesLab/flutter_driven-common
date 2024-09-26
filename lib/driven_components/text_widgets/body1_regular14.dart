@@ -35,6 +35,7 @@ class Body1Regular14Lh23 extends SemanticsWrappedText {
     double? textScaleFactor,
     int? maxLines,
     String? semanticLabel,
+    bool? softWrap,
   }) : super(
           data,
           style: const TextStyle(
@@ -46,6 +47,7 @@ class Body1Regular14Lh23 extends SemanticsWrappedText {
           overflow: overflow,
           textScaleFactor: textScaleFactor,
           maxLines: maxLines,
+          softWrap: softWrap,
           semanticLabel: semanticLabel,
         );
 
@@ -138,6 +140,7 @@ class SemanticsWrappedText extends StatelessWidget {
   final double? textScaleFactor;
   final int? maxLines;
   final String? semanticLabel;
+  final bool? softWrap;
 
   const SemanticsWrappedText(
     this.data, {
@@ -147,6 +150,7 @@ class SemanticsWrappedText extends StatelessWidget {
     this.textScaleFactor,
     this.maxLines,
     this.semanticLabel,
+    this.softWrap,
     super.key,
   });
 
@@ -162,6 +166,7 @@ class SemanticsWrappedText extends StatelessWidget {
         textScaleFactor: textScaleFactor,
         maxLines: maxLines,
         semanticsLabel: semanticLabel,
+        softWrap: softWrap,
       ),
     );
   }

@@ -66,6 +66,10 @@ class Validation {
     return 'Must be $n';
   }
 
+  static String customError(String error) {
+    return error;
+  }
+
   static String fieldsMustMatch(String? fieldName) {
     return (fieldName == null || fieldName.isEmpty)
         ? defaultFieldsMustMatch
