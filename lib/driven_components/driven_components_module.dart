@@ -45,7 +45,6 @@ part 'complex_widgets/text_scale_clamp.dart';
 part 'complex_widgets/toggle_switch_container.dart';
 part 'dialogs/aligned_dialog.dart';
 part 'dialogs/connectivity_error_dialog.dart';
-part 'dialogs/scan_failure_dialog.dart';
 part 'form_widgets/autocomplete_input.dart';
 part 'form_widgets/borderless_input_field.dart';
 part 'form_widgets/custom_text_field.dart';
