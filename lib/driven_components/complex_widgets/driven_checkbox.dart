@@ -6,6 +6,8 @@ class DrivenCheckbox extends StatelessWidget {
   final bool value;
   final Widget textWidget;
   final bool isShowGreyCheckbox;
+  final Color activeColor;
+  final Color borderSideColor;
 
   const DrivenCheckbox({
     required this.onTap,
@@ -13,6 +15,8 @@ class DrivenCheckbox extends StatelessWidget {
     required this.value,
     required this.textWidget,
     this.isShowGreyCheckbox = false,
+    this.activeColor = DrivenColors.brandPurple,
+    this.borderSideColor = DrivenColors.grey700,
     super.key,
   });
 
@@ -51,10 +55,11 @@ class DrivenCheckbox extends StatelessWidget {
           onChanged: onChanged,
           activeColor: isShowGreyCheckbox
               ? DrivenColors.lighterGreyDisableBackground
-              : DrivenColors.brandPurple,
+              : activeColor,
           checkColor: isShowGreyCheckbox
               ? DrivenColors.disabledButtonTextColor
               : DrivenColors.white,
+          side: BorderSide(color: borderSideColor),
         ),
       ),
     );
