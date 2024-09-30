@@ -111,6 +111,9 @@ const f45RegularLightGrey = DrivenTextStyle(45, regular, lightGrey);
 
 const f14Link = DrivenTextStyle(14, regular, brandPrimaryColor,
     decoration: TextDecoration.underline);
+const f14LinkTeal = DrivenTextStyle(14, regular, primaryAmazon,
+    decoration: TextDecoration.underline);
+
 const f16SemiBoldLink = DrivenTextStyle(16, semiBold, brandPrimaryColor,
     decoration: TextDecoration.underline);
 const f16SemiBoldLinkWhite =
