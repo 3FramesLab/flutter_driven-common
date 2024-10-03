@@ -6,19 +6,19 @@ class ScanFailureDialog extends StatelessWidget {
   final Widget? icon;
   final String primaryButtonText;
   final String secondaryButtonText;
-  final String titleText;
+  final String title;
   final TextStyle titleTextStyle;
-  final String? subTitleText;
-  final TextStyle? subTitleTextStyle;
+  final String? subTitle;
+  final TextStyle subTitleTextStyle;
   final VoidCallback? onPopInvoked;
 
   const ScanFailureDialog({
-    required this.titleText,
-    required this.titleTextStyle,
+    required this.title,
     required this.primaryButtonText,
     required this.secondaryButtonText,
-    this.subTitleText,
-    this.subTitleTextStyle,
+    this.titleTextStyle = f14RegularBlack,
+    this.subTitle,
+    this.subTitleTextStyle = f14RegularBlack,
     this.onPrimaryButtonTap,
     this.onSecondaryButtonTap,
     this.onPopInvoked,
@@ -69,19 +69,19 @@ class ScanFailureDialog extends StatelessWidget {
       );
 
   Widget get _titleText => Text(
-        titleText,
+        title,
         style: titleTextStyle,
         textAlign: TextAlign.center,
       );
 
   Widget _subTitleText() {
-    if (subTitleText == null) {
+    if (subTitle == null) {
       return const SizedBox.shrink();
     } else {
       return Flexible(
           child: Text(
-        subTitleText!,
-        style: subTitleTextStyle ?? f14RegularBlack,
+        subTitle!,
+        style: subTitleTextStyle,
         textAlign: TextAlign.center,
       ));
     }
