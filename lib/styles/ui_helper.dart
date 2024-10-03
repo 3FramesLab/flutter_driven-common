@@ -52,7 +52,7 @@ class UiHelper {
     filter: {'#': RegExp('[0-9]')},
   );
 
-  static drivenCardBoxDecoration() {
+  static BoxDecoration drivenCardBoxDecoration() {
     return BoxDecoration(
       borderRadius: const BorderRadius.all(Radius.circular(10)),
       boxShadow: [
