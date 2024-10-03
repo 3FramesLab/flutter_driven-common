@@ -5,11 +5,11 @@ class ScanFailureDialog extends StatelessWidget {
   final VoidCallback? onSecondaryButtonTap;
   final String primaryButtonText;
   final String secondaryButtonText;
-  final String title;
+  final List<TextSpan> text;
   final VoidCallback? onPopInvoked;
 
   const ScanFailureDialog({
-    required this.title,
+    required this.text,
     required this.primaryButtonText,
     required this.secondaryButtonText,
     this.onPrimaryButtonTap,
@@ -49,10 +49,17 @@ class ScanFailureDialog extends StatelessWidget {
     );
   }
 
-  Widget get _titleText => Text(
-        title,
+  Widget get _titleText => Text.rich(
+        TextSpan(
+          style: const TextStyle(
+            color: DrivenColors.black90,
+            fontSize: 15,
+            fontWeight: DrivenFonts.fontWeightRegular,
+            height: 1.4,
+          ),
+          children: text,
+        ),
         textAlign: TextAlign.center,
-        style: f14RegularBlack,
       );
 
   Widget get _primaryButton => PrimaryButton(

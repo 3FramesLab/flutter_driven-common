@@ -62,6 +62,9 @@ const f14RegularLightGrey = DrivenTextStyle(14, regular, lightGrey);
 const f14RegularWhite = DrivenTextStyle(14, regular, white);
 const f14RegularRed = DrivenTextStyle(14, regular, red);
 const f14SemiBoldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
+const f14SemiBoldGreen = DrivenTextStyle(14, semiBold, green);
+const f14SemiBoldRed = DrivenTextStyle(14, semiBold, red);
+const f14BoldRed = DrivenTextStyle(14, bold, red);
 
 const f15RegularWhite = DrivenTextStyle(15, regular, white);
 const f15RegularBlack = DrivenTextStyle(15, regular, black);
