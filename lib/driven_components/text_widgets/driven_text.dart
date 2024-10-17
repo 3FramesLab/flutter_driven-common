@@ -4,6 +4,7 @@ class DrivenText extends StatelessWidget {
   final TextStyle? style;
   final String text;
   final TextAlign? textAlign;
+
   const DrivenText({
     super.key,
     required this.text,

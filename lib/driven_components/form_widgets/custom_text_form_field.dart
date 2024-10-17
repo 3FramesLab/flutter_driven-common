@@ -71,6 +71,12 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
+    return widget.titleText.isNotNullEmptyOrWhitespace
+        ? _labelWithTextFormField()
+        : _textFormField();
+  }
+
+  Widget _labelWithTextFormField() {
     return SizedBox(
       child: Column(
         children: [
