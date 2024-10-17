@@ -7,6 +7,7 @@ class _UnderlinedButtonStyle extends TextStyle {
           fontWeight: DrivenFonts.fontWeightSemibold,
           color: color,
           decoration: TextDecoration.underline,
+          fontFamily: DrivenFonts.avertaFontFamily,
         );
 }
 
