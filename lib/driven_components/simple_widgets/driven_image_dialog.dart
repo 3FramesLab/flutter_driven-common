@@ -12,6 +12,7 @@ class DrivenImageDialog extends StatelessWidget {
   final String primaryButtonText;
   final VoidCallback? onPopInvoked;
   final Color buttonBackgroundColor;
+  final TextStyle? descriptionStyle;
 
   const DrivenImageDialog({
     required this.title,
@@ -21,6 +22,7 @@ class DrivenImageDialog extends StatelessWidget {
     this.onPrimaryButtonTap,
     this.onPopInvoked,
     this.buttonBackgroundColor = DrivenColors.primaryAmazon,
+    this.descriptionStyle,
     super.key,
   });
 
@@ -90,7 +92,7 @@ class DrivenImageDialog extends StatelessWidget {
           child: Text(
             description ?? '',
             textAlign: TextAlign.center,
-            style: f14SemiboldBlackDark,
+            style: descriptionStyle ?? f14SemiboldBlackDark,
           ),
         ),
       );
