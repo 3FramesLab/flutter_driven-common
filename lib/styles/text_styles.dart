@@ -85,6 +85,9 @@ const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
 const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
 const f16BoldGreenDark = DrivenTextStyle(16, bold, green);
+const f16RegularRed = DrivenTextStyle(16, regular, red);
+const f16BoldRed = DrivenTextStyle(16, bold, red);
+const f16SemiboldRed = DrivenTextStyle(16, semiBold, red);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
 const f24ExtraboldPrimary =
@@ -120,6 +123,9 @@ const f14SemiBoldLinkTeal = DrivenTextStyle(14, semiBold, primaryAmazon,
 
 const f16SemiBoldLink = DrivenTextStyle(16, semiBold, brandPrimaryColor,
     decoration: TextDecoration.underline);
+const f16SemiBoldLinkTeal = DrivenTextStyle(16, semiBold, primaryAmazon,
+    decoration: TextDecoration.underline);
+
 const f16SemiBoldLinkWhite =
     DrivenTextStyle(16, semiBold, white, decoration: TextDecoration.underline);
 const f14SemiBoldLinkWhite =
