@@ -16,6 +16,7 @@ class DrivenDialog extends StatelessWidget {
   final void Function()? secondaryLeftButtonOnPressed;
   final void Function()? secondaryRightButtonOnPressed;
   final TextStyle? secondaryRightButtonTextStyle;
+  final double? textSize;
 
   const DrivenDialog({
     required this.text,
@@ -33,6 +34,7 @@ class DrivenDialog extends StatelessWidget {
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
     this.secondaryRightButtonTextStyle,
+    this.textSize,
     super.key,
   });
 
@@ -47,10 +49,18 @@ class DrivenDialog extends StatelessWidget {
   }
 
   Widget _dialogTextView() => isDynamicAlert
-      ? Align(child: DrivenRichText([...text]))
+      ? Align(
+          child: DrivenRichText(
+          [...text],
+          fontSize: textSize,
+        ))
       : SizedBox(
           height: height,
-          child: Align(child: DrivenRichText([...text])),
+          child: Align(
+              child: DrivenRichText(
+            [...text],
+            fontSize: textSize,
+          )),
         );
 
   Widget _dialogSecondaryBody() {
@@ -194,16 +204,18 @@ class DrivenDialog extends StatelessWidget {
 
 class DefaultDialogCloseButton extends StatelessWidget {
   final Color backgroundColor;
+  final Function()? onButtonTap;
   const DefaultDialogCloseButton({
     super.key,
     this.backgroundColor = DrivenColors.primaryButtonColor,
+    this.onButtonTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return DialogButton(
       backgroundColor: backgroundColor,
-      onPressed: () => Navigator.pop(context),
+      onPressed: onButtonTap != null ? onButtonTap?.call : Get.back,
       text: DrivenConstants.ok,
     );
   }

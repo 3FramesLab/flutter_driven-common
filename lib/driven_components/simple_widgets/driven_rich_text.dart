@@ -3,10 +3,12 @@ part of driven_components_module;
 class DrivenRichText extends StatelessWidget {
   final List<TextSpan> text;
   final TextAlign textAlign;
+  final double? fontSize;
 
   const DrivenRichText(
     this.text, {
     this.textAlign = TextAlign.center,
+    this.fontSize,
     super.key,
   });
 
@@ -14,9 +16,9 @@ class DrivenRichText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(
-        style: const TextStyle(
+        style: TextStyle(
           color: DrivenColors.black90,
-          fontSize: 15,
+          fontSize: fontSize ?? 15,
           fontWeight: DrivenFonts.fontWeightRegular,
           height: 1.4,
         ),

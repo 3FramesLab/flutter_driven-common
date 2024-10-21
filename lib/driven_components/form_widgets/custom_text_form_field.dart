@@ -30,6 +30,9 @@ class CustomTextFormField extends StatefulWidget {
   final bool enableSuggestions;
   final bool showSuccessBorder;
   final bool readOnly;
+  final TextStyle? labelStyle;
+  final TextStyle? errorStyle;
+  final TextStyle? style;
 
   const CustomTextFormField({
     Key? key,
@@ -62,6 +65,9 @@ class CustomTextFormField extends StatefulWidget {
     this.enableSuggestions = true,
     this.showSuccessBorder = false,
     this.readOnly = false,
+    this.labelStyle,
+    this.errorStyle,
+    this.style,
   }) : super(key: key);
 
   @override
@@ -101,7 +107,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         obscureText: widget.suffixIcon == Icons.visibility_off_outlined,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         inputFormatters: widget.textInputFormatters,
-        style: f14SemiboldBlack,
+        style: widget.style ?? f14SemiboldBlack,
         validator: widget.onValidate,
         decoration: widget.inputDecoration ?? _inputDecoration(),
         maxLength: widget.textMaxLength,
@@ -127,6 +133,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       filled: true,
       enabledBorder: _focusedBorder(),
       errorText: _errorText(),
+      errorStyle: widget.errorStyle,
       hintText: widget.hintText,
       hintStyle: f14RegularLightGrey,
       errorMaxLines: 2,
@@ -185,7 +192,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(widget.titleText, style: f14SemiboldGrey),
+          Text(widget.titleText, style: widget.labelStyle ?? f14SemiboldGrey),
         ],
       ),
     );
