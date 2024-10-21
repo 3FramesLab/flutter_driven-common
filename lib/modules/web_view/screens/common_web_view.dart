@@ -34,6 +34,8 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
         ),
         webViewTitle = Get.arguments[CommonRouteArguments.webViewTitle],
         primaryColor = Get.arguments[CommonRouteArguments.webViewPrimaryColor],
+        _commonWebViewController.onLoadStopJavascript =
+            Get.arguments[CommonRouteArguments.webViewOnLoadStopJavascript],
       };
 
   @override
