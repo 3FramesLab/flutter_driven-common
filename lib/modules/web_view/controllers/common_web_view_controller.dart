@@ -5,12 +5,21 @@ class CommonWebViewController extends GetxController {
 
   RxBool isLoading = true.obs;
 
+  String? onLoadStopJavascript = '';
+
   void onLoadStart(InAppWebViewController controller, Uri? url) {
     isLoading(true);
   }
 
   Future<void> onLoadStop(InAppWebViewController controller, Uri? url) async {
     isLoading(false);
+    await executeOnLoadStopJavascript();
+  }
+
+  Future<void> executeOnLoadStopJavascript() async {
+    if (onLoadStopJavascript != null) {
+      await webViewController.evaluateJavascript(source: onLoadStopJavascript!);
+    }
   }
 
   void onError(

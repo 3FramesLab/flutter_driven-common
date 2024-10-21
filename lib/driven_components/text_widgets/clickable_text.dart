@@ -6,6 +6,8 @@ class ClickableText extends StatelessWidget {
   final MainAxisAlignment alignment;
   final VoidCallback? onTap;
   final TextDecoration decoration;
+  final EdgeInsetsGeometry? padding;
+  final HitTestBehavior? behavior;
 
   const ClickableText({
     required this.title,
@@ -13,6 +15,8 @@ class ClickableText extends StatelessWidget {
     this.textColor = DrivenColors.black,
     this.alignment = MainAxisAlignment.center,
     this.decoration = TextDecoration.underline,
+    this.padding,
+    this.behavior,
     super.key,
   });
 
@@ -24,14 +28,18 @@ class ClickableText extends StatelessWidget {
         Semantics(
           container: true,
           child: GestureDetector(
+            behavior: behavior,
             onTap: onTap,
-            child: Text(
-              title,
-              style: DrivenTextStyle(
-                DrivenDimensions.large,
-                DrivenFonts.fontWeightSemibold,
-                textColor,
-                decoration: decoration,
+            child: Padding(
+              padding: padding ?? EdgeInsets.zero,
+              child: Text(
+                title,
+                style: DrivenTextStyle(
+                  DrivenDimensions.large,
+                  DrivenFonts.fontWeightSemibold,
+                  textColor,
+                  decoration: decoration,
+                ),
               ),
             ),
           ),
