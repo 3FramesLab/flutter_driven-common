@@ -20,6 +20,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool? enabled;
   final String titleText;
   final String? hintText;
+  final TextStyle hintStyle;
   final String? semanticLabel;
   final bool isShowErrorBorder;
   final bool autocorrect;
@@ -65,6 +66,7 @@ class CustomTextFormField extends StatefulWidget {
     this.enableSuggestions = true,
     this.showSuccessBorder = false,
     this.readOnly = false,
+    this.hintStyle = f14RegularLightGrey,
     this.labelStyle,
     this.errorStyle,
     this.style,
@@ -135,7 +137,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       errorText: _errorText(),
       errorStyle: widget.errorStyle,
       hintText: widget.hintText,
-      hintStyle: f14RegularLightGrey,
+      hintStyle: widget.hintStyle,
       errorMaxLines: 2,
     );
   }

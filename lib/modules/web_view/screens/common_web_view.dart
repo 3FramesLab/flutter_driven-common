@@ -17,6 +17,7 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
   final InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
     crossPlatform: InAppWebViewOptions(
       useShouldOverrideUrlLoading: true,
+      transparentBackground: true,
     ),
   );
 
