@@ -3,6 +3,7 @@ part of styles_module;
 const primaryAmazon = DrivenColors.primaryAmazon;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
+const greyBlue = DrivenColors.greyBlue;
 const lightGrey = DrivenColors.lightGrey;
 const black = DrivenColors.textColor;
 const black2 = DrivenColors.accountTextColor;
@@ -65,6 +66,7 @@ const f14SemiBoldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
 const f14SemiBoldGreen = DrivenTextStyle(14, semiBold, green);
 const f14SemiBoldRed = DrivenTextStyle(14, semiBold, red);
 const f14BoldRed = DrivenTextStyle(14, bold, red);
+const f14RegularGreyBlue = DrivenTextStyle(14, regular, greyBlue);
 
 const f15RegularWhite = DrivenTextStyle(15, regular, white);
 const f15RegularBlack = DrivenTextStyle(15, regular, black);
