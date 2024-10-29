@@ -3,6 +3,8 @@ part of driven_components_module;
 class DrivenCardWithCenterTopIcon extends StatelessWidget {
   final String icon;
   final String text;
+  final TextStyle? textStyle;
+  final Color? borderColor;
   final VoidCallback? onTap;
   final bool isDisabled;
 
@@ -10,6 +12,8 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
+    this.textStyle,
+    this.borderColor,
     this.isDisabled = false,
     this.onTap,
   });
@@ -17,7 +21,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: UiHelper.drivenCardBoxDecoration(),
+      decoration: _boxDecoration,
       child: Material(
         color: DrivenColors.transparent,
         child: InkWell(
@@ -26,7 +30,6 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
           splashColor: DrivenColors.blue.withOpacity(0.3),
           highlightColor: DrivenColors.blue.withOpacity(0.1),
           child: Ink(
-            height: 90,
             width: double.infinity,
             child: Padding(
               padding: const EdgeInsets.all(16),
@@ -38,6 +41,16 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
     );
   }
 
+  BoxDecoration get _boxDecoration =>
+      UiHelper.drivenCardBoxDecoration().copyWith(
+        border: borderColor == null
+            ? null
+            : Border.all(
+                color: borderColor!,
+                width: 2,
+              ),
+      );
+
   Widget _content() {
     return Center(
       child: Column(
@@ -48,7 +61,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
           Flexible(
             child: DrivenText(
               text: text,
-              style: isDisabled ? f14SemiboldDisabled : f14SemiboldBlack,
+              style: _textStyle,
               textAlign: TextAlign.center,
             ),
           ),
@@ -56,4 +69,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
       ),
     );
   }
+
+  TextStyle get _textStyle =>
+      textStyle ?? (isDisabled ? f14SemiboldDisabled : f14SemiboldBlack);
 }
