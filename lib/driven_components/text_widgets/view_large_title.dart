@@ -20,6 +20,7 @@ class ViewLargeTitle extends StatelessWidget {
           title,
           textAlign: TextAlign.left,
           style: f24ExtraboldBlackDark,
+          maxLines: 2,
         ),
       ),
     );
