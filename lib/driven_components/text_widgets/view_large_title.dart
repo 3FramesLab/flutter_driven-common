@@ -1,5 +1,4 @@
-import 'package:driven_common/styles/styles_module.dart';
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class ViewLargeTitle extends StatelessWidget {
   final String title;
@@ -20,7 +19,7 @@ class ViewLargeTitle extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.left,
-          style: f28ExtraboldBlackDark,
+          style: f24ExtraboldBlackDark,
         ),
       ),
     );

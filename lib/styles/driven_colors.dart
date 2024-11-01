@@ -1,6 +1,7 @@
 part of styles_module;
 
 class DrivenColors {
+  static const primary = Color.fromRGBO(1, 97, 121, 1); // 0xFF276E8A
   static const black = Colors.black;
   static const white = Colors.white;
   static const brandPurple = Color(0xFF8154F2);
@@ -40,7 +41,7 @@ class DrivenColors {
   static const activeCardDot = Color(0xFF3b3b3b);
   static const lightGreyBlue = Color(0x00123456);
 
-  static const primaryButtonColor = black;
+  static const primaryButtonColor = primary;
   static const primaryButtonTextColor = white;
   static const disabledButtonColor = Color(0xFFe0e0e0); // RGB(224, 224, 224)
   static const disabledButtonTextColor =
@@ -72,9 +73,8 @@ class DrivenColors {
   static const orangeAccent = Color(0xFFEF6C00);
 
   // Amazon colors
-  static const primaryAmazon = Color.fromRGBO(1, 97, 121, 1);
   static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
-  static const primaryButtonColorAmazon = primaryAmazon;
+  static const primaryButtonColorAmazon = primary;
   static const primaryButtonTextColorAmazon = white;
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
   static const successGreenColor = Color(0xff64bb50);

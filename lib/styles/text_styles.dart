@@ -1,6 +1,6 @@
 part of styles_module;
 
-const primaryAmazon = DrivenColors.primaryAmazon;
+const primary = DrivenColors.primary;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
 const greyBlue = DrivenColors.greyBlue;
@@ -93,7 +93,7 @@ const f16SemiboldRed = DrivenTextStyle(16, semiBold, red);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
 const f24ExtraboldPrimary =
-    DrivenTextStyle(24, extraBold, DrivenColors.primaryAmazon);
+    DrivenTextStyle(24, extraBold, DrivenColors.primary);
 
 const f20RegularGrey = DrivenTextStyle(20, regular, grey);
 const f20RegularBlack = DrivenTextStyle(20, regular, blackDark);
@@ -113,19 +113,19 @@ const f26BoldWhite = DrivenTextStyle(26, bold, white);
 
 const f28ExtraboldBlackDark = DrivenTextStyle(28, extraBold, blackDark);
 
-const f36ExtraBoldPrimary = DrivenTextStyle(36, extraBold, primaryAmazon);
+const f36ExtraBoldPrimary = DrivenTextStyle(36, extraBold, primary);
 
 const f45RegularBlackDark = DrivenTextStyle(45, regular, blackDark);
 const f45RegularLightGrey = DrivenTextStyle(45, regular, lightGrey);
 
 const f14Link = DrivenTextStyle(14, regular, brandPrimaryColor,
     decoration: TextDecoration.underline);
-const f14SemiBoldLinkTeal = DrivenTextStyle(14, semiBold, primaryAmazon,
+const f14SemiBoldLinkTeal = DrivenTextStyle(14, semiBold, primary,
     decoration: TextDecoration.underline);
 
 const f16SemiBoldLink = DrivenTextStyle(16, semiBold, brandPrimaryColor,
     decoration: TextDecoration.underline);
-const f16SemiBoldLinkTeal = DrivenTextStyle(16, semiBold, primaryAmazon,
+const f16SemiBoldLinkTeal = DrivenTextStyle(16, semiBold, primary,
     decoration: TextDecoration.underline);
 
 const f16SemiBoldLinkWhite =
@@ -174,6 +174,19 @@ const f16SemiboldWhiteUnderline = TextStyle(
   decoration: TextDecoration.underline,
 );
 
+const f16Semibold = TextStyle(
+  fontSize: 16,
+  fontWeight: DrivenFonts.fontWeightSemibold,
+  fontFamily: DrivenFonts.avertaFontFamily,
+);
+
+const f16SemiboldPrimary = TextStyle(
+  fontSize: 16,
+  color: DrivenColors.primary,
+  fontFamily: DrivenFonts.avertaFontFamily,
+  fontWeight: DrivenFonts.fontWeightSemibold,
+);
+
 const f16SemiboldWhiteUnderlineHeight = TextStyle(
     fontSize: 16,
     shadows: [Shadow(offset: Offset(0, -3), color: Colors.transparent)],
@@ -200,12 +213,6 @@ const f14RegularTextStyle = TextStyle(
   fontSize: 14,
   fontFamily: DrivenFonts.avertaFontFamily,
   fontWeight: DrivenFonts.fontWeightRegular,
-);
-
-const f16Semibold = TextStyle(
-  fontSize: 16,
-  fontWeight: DrivenFonts.fontWeightSemibold,
-  fontFamily: DrivenFonts.avertaFontFamily,
 );
 
 class DrivenTextStyle extends TextStyle {

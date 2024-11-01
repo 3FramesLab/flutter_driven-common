@@ -90,12 +90,12 @@ class ScanFailureDialog extends StatelessWidget {
   Widget get _primaryButton => PrimaryButton(
         onPressed: onPrimaryButtonTap?.call,
         text: primaryButtonText,
-        backgroundColor: DrivenColors.primaryAmazon,
+        backgroundColor: DrivenColors.primary,
       );
 
   Widget get _secondaryButton => ClickableText(
         title: secondaryButtonText,
         onTap: onSecondaryButtonTap?.call,
-        textColor: DrivenColors.primaryAmazon,
+        textColor: DrivenColors.primary,
       );
 }
