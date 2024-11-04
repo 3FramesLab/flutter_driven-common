@@ -150,5 +150,4 @@ part 'text_widgets/subtitle1_regular16.dart';
 part 'text_widgets/title_text.dart';
 part 'text_widgets/rich_text_with_bold_title.dart';
 part 'text_widgets/driven_text.dart';
-part 'text_widgets/view_large_title.dart';
 part 'overlays/camera_scanner_overlay.dart';
