@@ -1,7 +1,9 @@
 part of styles_module;
 
+const primaryAmazon = DrivenColors.primaryAmazon;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
+const greyBlue = DrivenColors.greyBlue;
 const lightGrey = DrivenColors.lightGrey;
 const black = DrivenColors.textColor;
 const black2 = DrivenColors.accountTextColor;
@@ -19,6 +21,7 @@ const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
 const cpDarkBlue = DrivenColors.cpDarkBlue;
+const disabled = DrivenColors.disabledButtonTextColor;
 
 const fwbold = TextStyle(fontWeight: extraBold);
 const fwsemibold = TextStyle(fontWeight: semiBold);
@@ -45,6 +48,7 @@ const f14RegularBlackDark = DrivenTextStyle(14, regular, blackDark);
 const f14RegularDarkBlue = DrivenTextStyle(14, regular, cpDarkBlue);
 const f14RegularSemiboldBlack = DrivenTextStyle(14, semiBold, blackDark);
 const f14SemiboldBlack = DrivenTextStyle(14, semiBold, black);
+const f14SemiboldDisabled = DrivenTextStyle(14, semiBold, disabled);
 const f14SemiboldWhite = DrivenTextStyle(14, semiBold, white);
 const f14BoldWhite = DrivenTextStyle(14, bold, white);
 const f14SemiboldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
@@ -59,6 +63,10 @@ const f14RegularLightGrey = DrivenTextStyle(14, regular, lightGrey);
 const f14RegularWhite = DrivenTextStyle(14, regular, white);
 const f14RegularRed = DrivenTextStyle(14, regular, red);
 const f14SemiBoldBlackDark = DrivenTextStyle(14, semiBold, blackDark);
+const f14SemiBoldGreen = DrivenTextStyle(14, semiBold, green);
+const f14SemiBoldRed = DrivenTextStyle(14, semiBold, red);
+const f14BoldRed = DrivenTextStyle(14, bold, red);
+const f14RegularGreyBlue = DrivenTextStyle(14, regular, greyBlue);
 
 const f15RegularWhite = DrivenTextStyle(15, regular, white);
 const f15RegularBlack = DrivenTextStyle(15, regular, black);
@@ -68,6 +76,7 @@ const f16SemiBoldGrey = DrivenTextStyle(16, semiBold, grey);
 const f16SemiBoldWhite = DrivenTextStyle(16, semiBold, white);
 const f16SemiBoldCpGrey = DrivenTextStyle(16, semiBold, cpLightGrey);
 const f16RegularBlack = DrivenTextStyle(16, regular, black);
+const f16RegularBlackDark = DrivenTextStyle(16, regular, blackDark);
 const f16RegularWhite = DrivenTextStyle(16, regular, white);
 const f16SemiboldBlack = DrivenTextStyle(16, semiBold, black);
 const f16SemiboldBlackDark = DrivenTextStyle(16, semiBold, blackDark);
@@ -78,8 +87,13 @@ const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
 const f16ExtraboldGrey = DrivenTextStyle(16, extraBold, grey);
 const f16BoldGreenDark = DrivenTextStyle(16, bold, green);
+const f16RegularRed = DrivenTextStyle(16, regular, red);
+const f16BoldRed = DrivenTextStyle(16, bold, red);
+const f16SemiboldRed = DrivenTextStyle(16, semiBold, red);
 
 const f18SemiboldBlackDark = DrivenTextStyle(18, semiBold, blackDark);
+const f24ExtraboldPrimary =
+    DrivenTextStyle(24, extraBold, DrivenColors.primaryAmazon);
 
 const f20RegularGrey = DrivenTextStyle(20, regular, grey);
 const f20RegularBlack = DrivenTextStyle(20, regular, blackDark);
@@ -99,13 +113,21 @@ const f26BoldWhite = DrivenTextStyle(26, bold, white);
 
 const f28ExtraboldBlackDark = DrivenTextStyle(28, extraBold, blackDark);
 
+const f36ExtraBoldPrimary = DrivenTextStyle(36, extraBold, primaryAmazon);
+
 const f45RegularBlackDark = DrivenTextStyle(45, regular, blackDark);
 const f45RegularLightGrey = DrivenTextStyle(45, regular, lightGrey);
 
 const f14Link = DrivenTextStyle(14, regular, brandPrimaryColor,
     decoration: TextDecoration.underline);
+const f14SemiBoldLinkTeal = DrivenTextStyle(14, semiBold, primaryAmazon,
+    decoration: TextDecoration.underline);
+
 const f16SemiBoldLink = DrivenTextStyle(16, semiBold, brandPrimaryColor,
     decoration: TextDecoration.underline);
+const f16SemiBoldLinkTeal = DrivenTextStyle(16, semiBold, primaryAmazon,
+    decoration: TextDecoration.underline);
+
 const f16SemiBoldLinkWhite =
     DrivenTextStyle(16, semiBold, white, decoration: TextDecoration.underline);
 const f14SemiBoldLinkWhite =
@@ -180,16 +202,24 @@ const f14RegularTextStyle = TextStyle(
   fontWeight: DrivenFonts.fontWeightRegular,
 );
 
+const f16Semibold = TextStyle(
+  fontSize: 16,
+  fontWeight: DrivenFonts.fontWeightSemibold,
+  fontFamily: DrivenFonts.avertaFontFamily,
+);
+
 class DrivenTextStyle extends TextStyle {
   const DrivenTextStyle(
     double fontSize,
     FontWeight fontWeight,
     Color color, {
     TextDecoration decoration = TextDecoration.none,
+    String fontFamily = DrivenFonts.avertaFontFamily,
   }) : super(
           fontSize: fontSize,
           fontWeight: fontWeight,
           color: color,
           decoration: decoration,
+          fontFamily: fontFamily,
         );
 }

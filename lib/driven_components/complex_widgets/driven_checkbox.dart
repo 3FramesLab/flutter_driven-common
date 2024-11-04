@@ -6,6 +6,10 @@ class DrivenCheckbox extends StatelessWidget {
   final bool value;
   final Widget textWidget;
   final bool isShowGreyCheckbox;
+  final Color activeColor;
+  final Color borderSideColor;
+  final bool enableTextTap;
+  final EdgeInsets checkBoxExtraPadding;
 
   const DrivenCheckbox({
     required this.onTap,
@@ -13,6 +17,11 @@ class DrivenCheckbox extends StatelessWidget {
     required this.value,
     required this.textWidget,
     this.isShowGreyCheckbox = false,
+    this.activeColor = DrivenColors.brandPurple,
+    this.borderSideColor = DrivenColors.grey700,
+    this.enableTextTap = true,
+    this.checkBoxExtraPadding =
+        const EdgeInsets.only(left: 11, top: 5, bottom: 5),
     super.key,
   });
 
@@ -30,17 +39,34 @@ class DrivenCheckbox extends StatelessWidget {
   Widget _checkboxContainer(List<Widget> body) {
     return Column(
       children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Row(
-            children: body,
-          ),
-        ),
+        enableTextTap
+            ? GestureDetector(
+                onTap: onTap,
+                child: Row(
+                  children: body,
+                ),
+              )
+            : Row(
+                children: body,
+              ),
       ],
     );
   }
 
   Widget _checkbox() {
+    return enableTextTap
+        ? _rawCheckBox()
+        : GestureDetector(
+            behavior: HitTestBehavior.translucent,
+            onTap: onTap,
+            child: Padding(
+              padding: checkBoxExtraPadding,
+              child: _rawCheckBox(),
+            ),
+          );
+  }
+
+  SizedBox _rawCheckBox() {
     return SizedBox(
       height: 24,
       width: 24,
@@ -51,10 +77,11 @@ class DrivenCheckbox extends StatelessWidget {
           onChanged: onChanged,
           activeColor: isShowGreyCheckbox
               ? DrivenColors.lighterGreyDisableBackground
-              : DrivenColors.brandPurple,
+              : activeColor,
           checkColor: isShowGreyCheckbox
               ? DrivenColors.disabledButtonTextColor
               : DrivenColors.white,
+          side: BorderSide(color: borderSideColor),
         ),
       ),
     );

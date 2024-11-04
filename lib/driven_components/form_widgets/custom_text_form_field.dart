@@ -18,12 +18,22 @@ class CustomTextFormField extends StatefulWidget {
   final String? errorText;
   final InputDecoration? inputDecoration;
   final bool? enabled;
+  final String titleText;
   final String? hintText;
+  final TextStyle hintStyle;
   final String? semanticLabel;
   final bool isShowErrorBorder;
   final bool autocorrect;
   final TextCapitalization textCapitalization;
   final Color fillColor;
+  final Color? suffixIconColor;
+  final bool autoFocus;
+  final bool enableSuggestions;
+  final bool showSuccessBorder;
+  final bool readOnly;
+  final TextStyle? labelStyle;
+  final TextStyle? errorStyle;
+  final TextStyle? style;
 
   const CustomTextFormField({
     Key? key,
@@ -44,12 +54,22 @@ class CustomTextFormField extends StatefulWidget {
     this.errorText,
     this.inputDecoration,
     this.enabled,
+    this.titleText = '',
     this.hintText,
     this.isShowErrorBorder = false,
     this.autocorrect = true,
     this.semanticLabel = 'InputText',
     this.textCapitalization = TextCapitalization.none,
     this.fillColor = DrivenColors.textBackgroundColor,
+    this.suffixIconColor = DrivenColors.black,
+    this.autoFocus = false,
+    this.enableSuggestions = true,
+    this.showSuccessBorder = false,
+    this.readOnly = false,
+    this.hintStyle = f14RegularLightGrey,
+    this.labelStyle,
+    this.errorStyle,
+    this.style,
   }) : super(key: key);
 
   @override
@@ -59,6 +79,24 @@ class CustomTextFormField extends StatefulWidget {
 class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
+    return widget.titleText.isNotNullEmptyOrWhitespace
+        ? _labelWithTextFormField()
+        : _textFormField();
+  }
+
+  Widget _labelWithTextFormField() {
+    return SizedBox(
+      child: Column(
+        children: [
+          _label(),
+          const SizedBox(height: 10),
+          _textFormField(),
+        ],
+      ),
+    );
+  }
+
+  Semantics _textFormField() {
     return Semantics(
       label: widget.semanticLabel,
       value: widget.semanticLabel,
@@ -71,15 +109,18 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         obscureText: widget.suffixIcon == Icons.visibility_off_outlined,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         inputFormatters: widget.textInputFormatters,
-        style: f14SemiboldBlack,
+        style: widget.style ?? f14SemiboldBlack,
         validator: widget.onValidate,
         decoration: widget.inputDecoration ?? _inputDecoration(),
         maxLength: widget.textMaxLength,
         enabled: widget.enabled,
+        autofocus: widget.autoFocus,
         textCapitalization: widget.textCapitalization,
         scrollPadding: const EdgeInsets.only(bottom: 80),
         autocorrect: widget.autocorrect,
         onEditingComplete: widget.onEditComplete,
+        enableSuggestions: widget.enableSuggestions,
+        readOnly: widget.readOnly,
       ),
     );
   }
@@ -94,7 +135,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       filled: true,
       enabledBorder: _focusedBorder(),
       errorText: _errorText(),
+      errorStyle: widget.errorStyle,
       hintText: widget.hintText,
+      hintStyle: widget.hintStyle,
       errorMaxLines: 2,
     );
   }
@@ -110,7 +153,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       onPressed: widget.onSuffixIconPressed,
       icon: Icon(
         widget.suffixIcon!,
-        color: DrivenColors.black54,
+        color: widget.suffixIconColor,
       ),
     );
   }
@@ -128,11 +171,32 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   }
 
   OutlineInputBorder _focusedBorder() {
-    return widget.isShowErrorBorder
-        ? const OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
-        : OutlineInputBorder(
-            borderSide: const BorderSide(color: DrivenColors.enableBorderColor),
-            borderRadius: BorderRadius.circular(4),
-          );
+    if (widget.showSuccessBorder) {
+      return const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: DrivenColors.green,
+        ),
+      );
+    } else {
+      return widget.isShowErrorBorder
+          ? const OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
+          : OutlineInputBorder(
+              borderSide:
+                  const BorderSide(color: DrivenColors.enableBorderColor),
+              borderRadius: BorderRadius.circular(4),
+            );
+    }
+  }
+
+  Widget _label() {
+    return Semantics(
+      container: true,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(widget.titleText, style: widget.labelStyle ?? f14SemiboldGrey),
+        ],
+      ),
+    );
   }
 }

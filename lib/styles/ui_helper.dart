@@ -10,9 +10,12 @@ class UiHelper {
           context: context,
           barrierDismissible: false,
           builder: (context) {
-            return const Center(
-              child: CircularProgressIndicator(
-                color: DrivenColors.lightGrey,
+            return const PopScope(
+              canPop: false,
+              child: Center(
+                child: CircularProgressIndicator(
+                  color: DrivenColors.lightGrey,
+                ),
               ),
             );
           });
@@ -42,5 +45,31 @@ class UiHelper {
     final double height = size.height;
 
     return height <= 700;
+  }
+
+  static final MaskTextInputFormatter routeIdInputMask = MaskTextInputFormatter(
+    mask: '########-##',
+    filter: {'#': RegExp('[0-9]')},
+  );
+
+  static BoxDecoration drivenCardBoxDecoration() {
+    return BoxDecoration(
+      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      boxShadow: [
+        BoxShadow(
+          color: DrivenColors.grey.withOpacity(0.3),
+          offset: const Offset(0, 1),
+          blurRadius: 8,
+          spreadRadius: 0,
+        ),
+        BoxShadow(
+          color: DrivenColors.grey.withOpacity(0.3),
+          offset: const Offset(0, 2),
+          blurRadius: 3,
+          spreadRadius: -2,
+        )
+      ],
+      color: DrivenColors.white,
+    );
   }
 }
