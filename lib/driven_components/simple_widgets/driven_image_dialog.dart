@@ -21,7 +21,7 @@ class DrivenImageDialog extends StatelessWidget {
     this.primaryButtonText = DrivenConstants.ok,
     this.onPrimaryButtonTap,
     this.onPopInvoked,
-    this.buttonBackgroundColor = DrivenColors.primaryAmazon,
+    this.buttonBackgroundColor = DrivenColors.primary,
     this.descriptionStyle,
     super.key,
   });

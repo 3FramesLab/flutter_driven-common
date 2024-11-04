@@ -1,16 +1,14 @@
 part of driven_components_module;
 
-class DrivenCardWithLeftRightIcons extends StatelessWidget {
+class DrivenCardWithLeftIcon extends StatelessWidget {
   final String leftIcon;
   final String text;
-  final IconData rightIcon;
   final VoidCallback onTap;
 
-  const DrivenCardWithLeftRightIcons({
+  const DrivenCardWithLeftIcon({
     super.key,
     required this.leftIcon,
     required this.text,
-    this.rightIcon = Icons.arrow_forward_ios_rounded,
     required this.onTap,
   });
 
@@ -39,10 +37,6 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
             style: f16SemiboldBlack,
           ),
         ),
-        Icon(
-          rightIcon,
-          color: DrivenColors.primary,
-        )
       ],
     );
   }

@@ -8,7 +8,7 @@ class DrivenBackButton extends StatelessWidget {
   const DrivenBackButton({
     super.key,
     this.onPressed,
-    this.color = DrivenColors.purple,
+    this.color = DrivenColors.primary,
     this.mainAxisSize = MainAxisSize.max,
   });
 
@@ -16,7 +16,7 @@ class DrivenBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
+        padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
       ),
       onPressed: onPressed ?? Get.back,
       child: Row(
@@ -29,15 +29,12 @@ class DrivenBackButton extends StatelessWidget {
               color: color,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 42,
             child: Text(
               DrivenConstants.back,
-              style: TextStyle(
-                fontSize: 17,
-                color: color,
-              ),
-              textScaleFactor: 1,
+              style: f16SemiboldPrimary,
+              textScaler: TextScaler.linear(1),
             ),
           ),
         ],
