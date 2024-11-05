@@ -1,7 +1,7 @@
 // part of common_module;
 
 class DrivenConstants {
-  static const contactEmail = 'drivensupport@fleetcor.com';
+  static const contactEmail = 'drivensupport@comdata.com';
   static const canLaunchEmail = 'canLaunchEmail';
   static const launchEmail = 'launchEmail';
   static const ok = 'OK';
