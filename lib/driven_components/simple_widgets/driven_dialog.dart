@@ -17,6 +17,7 @@ class DrivenDialog extends StatelessWidget {
   final void Function()? secondaryRightButtonOnPressed;
   final TextStyle? secondaryRightButtonTextStyle;
   final double? textSize;
+  final TextStyle? textStyle;
 
   const DrivenDialog({
     required this.text,
@@ -35,6 +36,7 @@ class DrivenDialog extends StatelessWidget {
     this.secondaryRightButtonOnPressed,
     this.secondaryRightButtonTextStyle,
     this.textSize,
+    this.textStyle,
     super.key,
   });
 
@@ -53,6 +55,7 @@ class DrivenDialog extends StatelessWidget {
           child: DrivenRichText(
           [...text],
           fontSize: textSize,
+          textStyle: textStyle,
         ))
       : SizedBox(
           height: height,
@@ -60,6 +63,7 @@ class DrivenDialog extends StatelessWidget {
               child: DrivenRichText(
             [...text],
             fontSize: textSize,
+            textStyle: textStyle,
           )),
         );
 
