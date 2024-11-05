@@ -36,11 +36,10 @@ class DrivenColors {
   static const barrierColor = Color(0x00123456);
   static const blue = Colors.blue;
   static const darkBlue = Color(0xFF1565C0);
-
   static const inactiveCardDot = Color(0xFFd6d6d6);
   static const activeCardDot = Color(0xFF3b3b3b);
   static const lightGreyBlue = Color(0x00123456);
-
+  static const lightBlue = Color(0xF3E3F2FD);
   static const primaryButtonColor = primary;
   static const primaryButtonTextColor = white;
   static const disabledButtonColor = Color(0xFFe0e0e0); // RGB(224, 224, 224)
@@ -49,7 +48,6 @@ class DrivenColors {
   static const enableBorderColor = Color.fromRGBO(224, 224, 224, 1);
   static const textBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
   static const checkboxBorderColor = Color.fromARGB(255, 73, 4, 157);
-  static const darkBlueButtonColor = Color.fromRGBO(0, 97, 121, 1);
   static const dividerColor = Color(0xFFD6DAE0);
 
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);
@@ -74,8 +72,6 @@ class DrivenColors {
 
   // Amazon colors
   static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
-  static const primaryButtonColorAmazon = primary;
-  static const primaryButtonTextColorAmazon = white;
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
   static const successGreenColor = Color(0xff64bb50);
   static const failureRedColor = Color(0xffb00020);
