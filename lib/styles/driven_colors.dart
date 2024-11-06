@@ -4,7 +4,7 @@ class DrivenColors {
   static const primary = Color.fromRGBO(1, 97, 121, 1); // 0xFF276E8A
   static const black = Colors.black;
   static const white = Colors.white;
-  static const transparentWhite = Color.fromRGBO(255, 255, 255, 50);
+  static const transparentWhite = Color.fromRGBO(255, 255, 255, 0.89);
   static const brandPurple = Color(0xFF8154F2);
   static const black60 = Color(0x99000000);
   static const black90 = Color(0xE6000000);
