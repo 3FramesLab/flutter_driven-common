@@ -29,12 +29,12 @@ class DrivenBackButton extends StatelessWidget {
               color: color,
             ),
           ),
-          const SizedBox(
+          SizedBox(
             width: 42,
             child: Text(
               DrivenConstants.back,
-              style: f16SemiboldPrimary,
-              textScaler: TextScaler.linear(1),
+              style: f16SemiboldPrimary.copyWith(color: color),
+              textScaler: const TextScaler.linear(1),
             ),
           ),
         ],
