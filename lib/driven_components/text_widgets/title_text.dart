@@ -11,7 +11,7 @@ class TitleText extends StatelessWidget {
     super.key,
     this.color = DrivenColors.black,
     this.isPaddingRequired = true,
-    this.fontSize = DrivenDimensions.xxxLarge,
+    this.fontSize = DrivenDimensions.xxLarge,
     this.fontWeight = DrivenFonts.fontWeightExtraBold,
   });
 
