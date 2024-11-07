@@ -23,9 +23,9 @@ class DrivenBackButton extends StatelessWidget {
         mainAxisSize: mainAxisSize,
         children: [
           SizedBox(
-            width: 17,
+            width: 24,
             child: Icon(
-              Icons.arrow_back_ios,
+              Icons.navigate_before,
               color: color,
             ),
           ),
