@@ -22,8 +22,6 @@ import 'package:intersperse/intersperse.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'common_widgets/circle_icon.dart';
-
 part 'buttons/dialog_button.dart';
 part 'buttons/driven_button.dart';
 part 'buttons/edit_button.dart';
