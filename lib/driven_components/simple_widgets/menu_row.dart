@@ -3,20 +3,24 @@ part of driven_components_module;
 class MenuRow extends StatelessWidget {
   const MenuRow({
     required this.title,
-    required this.icon,
+    this.imageIcon,
     this.buttonAction,
+    this.icon,
     this.backgroundColor = Colors.transparent,
     this.subTitle,
     this.subTitleStyle,
+    this.svgImage = '',
     super.key,
   });
 
   final String title;
+  final AssetImage? imageIcon;
   final void Function()? buttonAction;
-  final IconData icon;
+  final Icon? icon;
   final Color backgroundColor;
   final String? subTitle;
   final TextStyle? subTitleStyle;
+  final String svgImage;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class MenuRow extends StatelessWidget {
       onTap: buttonAction,
       title: _buildTitle(context),
       subtitle: _buildSubTitle(),
-      leading: CircleIcon(icon: icon),
+      leading: svgImage.isNotEmpty ? _leadingSvgIcon() : _leading(),
     );
   }
 
@@ -74,5 +78,22 @@ class MenuRow extends StatelessWidget {
       );
     }
     return null;
+  }
+
+  dynamic _leading() {
+    return CircleAvatar(
+      backgroundImage: imageIcon,
+      backgroundColor: backgroundColor,
+      child: icon,
+    );
+  }
+
+  dynamic _leadingSvgIcon() {
+    return SvgPicture.asset(
+      svgImage,
+      semanticsLabel: svgImage,
+      height: 42,
+      width: 42,
+    );
   }
 }
