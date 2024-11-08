@@ -19,7 +19,7 @@ class DrivenCardWithLeftIcon extends StatelessWidget {
       child: Container(
         decoration: UiHelper.drivenCardBoxDecoration(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+          padding: const EdgeInsets.all(16),
           child: _content(),
         ),
       ),
