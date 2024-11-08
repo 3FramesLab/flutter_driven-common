@@ -51,7 +51,7 @@ class DrivenCard extends StatelessWidget {
           topLeft: Radius.circular(8),
           topRight: Radius.circular(8),
         ),
-        child: Expanded(child: mainContent),
+        child: mainContent,
       ));
 
   Widget get _bottomTitle => Container(
