@@ -29,11 +29,14 @@ class DrivenCardWithLeftIcon extends StatelessWidget {
   Widget _content() {
     return Row(
       children: [
-        SvgPicture.asset(leftIcon),
+        Semantics(
+          label: 'icon_$text',
+          child: SvgPicture.asset(leftIcon),
+        ),
         const SizedBox(width: 10),
         Expanded(
-          child: Text(
-            text,
+          child: DrivenText(
+            text: text,
             style: f16SemiboldBlack,
           ),
         ),

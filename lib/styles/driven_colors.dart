@@ -1,7 +1,7 @@
 part of styles_module;
 
 class DrivenColors {
-  static const primary = Color.fromRGBO(1, 97, 121, 1); // 0xFF276E8A
+  static const primary = Color.fromRGBO(1, 97, 121, 1); // Color(0xFF016179)
   static const black = Colors.black;
   static const white = Colors.white;
   static const transparentWhite = Color.fromRGBO(255, 255, 255, 0.89);
