@@ -56,7 +56,10 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(icon),
+          Semantics(
+            label: 'icon_$text',
+            child: SvgPicture.asset(icon),
+          ),
           const SizedBox(height: 2),
           Flexible(
             child: DrivenText(
