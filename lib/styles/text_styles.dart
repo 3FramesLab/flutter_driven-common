@@ -20,7 +20,7 @@ const regular = DrivenFonts.fontWeightRegular;
 const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
-const cpDarkBlue = DrivenColors.cpDarkBlue;
+const cpDarkBlue = DrivenColors.primary;
 const disabled = DrivenColors.disabledButtonTextColor;
 
 const fwbold = TextStyle(fontWeight: extraBold);
@@ -140,14 +140,14 @@ const menuRowSubTextGreen = DrivenTextStyle(14, regular, green);
 
 const f14SemiboldPurpleUnderline = TextStyle(
   fontSize: 14,
-  color: DrivenColors.brandPurple,
+  color: DrivenColors.primary,
   fontFamily: DrivenFonts.avertaFontFamily,
   decoration: TextDecoration.underline,
 );
 
 const f14RegularPurple = TextStyle(
   fontSize: 14,
-  color: DrivenColors.brandPurple,
+  color: DrivenColors.primary,
   fontFamily: DrivenFonts.avertaFontFamily,
 );
 
