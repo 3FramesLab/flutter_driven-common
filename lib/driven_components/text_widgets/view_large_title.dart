@@ -6,7 +6,7 @@ class ViewLargeTitle extends StatelessWidget {
 
   const ViewLargeTitle({
     required this.title,
-    this.padding = const EdgeInsets.fromLTRB(20, 15, 10, 20),
+    this.padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
     super.key,
   });
 
