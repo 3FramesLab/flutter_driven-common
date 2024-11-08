@@ -5,7 +5,6 @@ class DrivenColors {
   static const black = Colors.black;
   static const white = Colors.white;
   static const transparentWhite = Color.fromRGBO(255, 255, 255, 0.89);
-  static const brandPurple = Color(0xFF8154F2);
   static const black60 = Color(0x99000000);
   static const black90 = Color(0xE6000000);
   static const textColor = Color(0xFF3c3c3c); // RGB(60, 60, 60)
@@ -29,7 +28,6 @@ class DrivenColors {
   static const flashGreen = Color.fromRGBO(46, 125, 50, 1);
   static const orange = Color.fromRGBO(206, 58, 30, 1);
   static const lightOrange = Color.fromRGBO(206, 58, 13, 1);
-  static const purple = Color(0xFF7646F1);
   static const red = Color(0xFFb00020);
   static const pureRed = Color(0xFFFF0000);
   static const shimmerGrey = Color(0xFFF1F4F6);
@@ -60,14 +58,11 @@ class DrivenColors {
   static const lightGolden = Color.fromRGBO(242, 181, 93, 1);
   static const lightSkin = Color.fromRGBO(251, 224, 189, 1);
   static const grey900 = Color(0xFF3C3C3C);
-  static const purple200 = Color(0xFF8154F2);
   static const grey500 = Color(0xff9E9E9E);
   static const greyBlueLight = Color(0xffD6DADF);
   static const black38 = Colors.black38;
   static const normalGrey = Colors.grey;
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
-  static const purpleActiveColor = Color(0xFF8154F2);
-  static const cpDarkBlue = Color(0xFF276E8A);
   static const redAccent = Color(0xFFCE3A0E);
   static const orangeAccent = Color(0xFFEF6C00);
 

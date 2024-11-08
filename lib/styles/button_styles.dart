@@ -25,12 +25,12 @@ class DrivenButtonStyle {
   }
 
   static ButtonStyle primaryText() {
-    return styleFrom(primary: DrivenColors.brandPurple, textStyle: f16Semibold);
+    return styleFrom(primary: DrivenColors.primary, textStyle: f16Semibold);
   }
 
   static ButtonStyle transparentOverlay() {
     return ButtonStyle(
-      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+      overlayColor: WidgetStateProperty.resolveWith<Color?>(
         (states) {
           return Colors.transparent;
         },

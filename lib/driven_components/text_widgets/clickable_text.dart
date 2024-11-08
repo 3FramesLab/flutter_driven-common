@@ -13,7 +13,7 @@ class ClickableText extends StatelessWidget {
   const ClickableText({
     required this.title,
     this.onTap,
-    this.textColor = DrivenColors.black,
+    this.textColor = DrivenColors.primary,
     this.alignment = MainAxisAlignment.center,
     this.decoration = TextDecoration.underline,
     this.padding,

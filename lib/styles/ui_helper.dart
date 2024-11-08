@@ -29,7 +29,7 @@ class UiHelper {
   }
 
   static bool isTablet() {
-    final data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+    final data = MediaQueryData.fromView(WidgetsBinding.instance.window);
     return data.size.shortestSide > 600;
   }
 

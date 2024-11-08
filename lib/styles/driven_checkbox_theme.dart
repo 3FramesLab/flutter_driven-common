@@ -2,8 +2,8 @@ part of styles_module;
 
 class DrivenCheckboxTheme {
   static CheckboxThemeData theme = CheckboxThemeData(
-    fillColor: MaterialStateColor.resolveWith(_fillColor),
-    checkColor: MaterialStateColor.resolveWith((states) => Colors.white),
+    fillColor: WidgetStateColor.resolveWith(_fillColor),
+    checkColor: WidgetStateColor.resolveWith((states) => Colors.white),
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(
         Radius.circular(2),
@@ -12,9 +12,9 @@ class DrivenCheckboxTheme {
     side: const BorderSide(),
   );
 
-  static Color _fillColor(Set<MaterialState> state) {
-    if (state.contains(MaterialState.selected) ||
-        state.contains(MaterialState.focused)) {
+  static Color _fillColor(Set<WidgetState> state) {
+    if (state.contains(WidgetState.selected) ||
+        state.contains(WidgetState.focused)) {
       return DrivenColors.black;
     }
     return Colors.white;
