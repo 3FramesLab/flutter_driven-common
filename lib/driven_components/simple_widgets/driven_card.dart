@@ -44,7 +44,12 @@ class DrivenCard extends StatelessWidget {
   }
 
   Widget get _mainContentBody => Container(
-      decoration: const BoxDecoration(),
+      decoration: UiHelper.drivenCardBoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(10),
+          topRight: Radius.circular(10),
+        ),
+      ),
       width: Get.width,
       child: ClipRRect(
         borderRadius: const BorderRadius.only(
@@ -59,8 +64,8 @@ class DrivenCard extends StatelessWidget {
         decoration: const BoxDecoration(
           color: DrivenColors.lightBlue,
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(8),
-            bottomRight: Radius.circular(8),
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
           ),
         ),
         child: Center(

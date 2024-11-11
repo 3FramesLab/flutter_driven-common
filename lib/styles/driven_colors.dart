@@ -45,7 +45,7 @@ class DrivenColors {
   static const disabledButtonTextColor =
       Color(0xFF9e9e9e); // RGB(158, 158, 158)
   static const enableBorderColor = Color.fromRGBO(224, 224, 224, 1);
-  static const textBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
+  static const pageBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
   static const checkboxBorderColor = Color.fromARGB(255, 73, 4, 157);
   static const dividerColor = Color(0xFFD6DAE0);
 

@@ -67,7 +67,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       filled: true,
       counter: const SizedBox.shrink(),
       focusColor: DrivenColors.white,
-      fillColor: DrivenColors.textBackgroundColor,
+      fillColor: DrivenColors.pageBackgroundColor,
       suffixIcon: _handleSuffixIcon(),
       focusedBorder: _focusedBorder(),
       enabledBorder: _focusedBorder(),
