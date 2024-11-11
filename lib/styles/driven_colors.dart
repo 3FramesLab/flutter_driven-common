@@ -46,7 +46,7 @@ class DrivenColors {
       Color(0xFF9e9e9e); // RGB(158, 158, 158)
   static const enableBorderColor = Color.fromRGBO(224, 224, 224, 1);
   static const pageBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
-  static const checkboxBorderColor = Color.fromARGB(255, 73, 4, 157);
+  static const checkboxBorderColor = Color.fromRGBO(54, 87, 128, 1);
   static const dividerColor = Color(0xFFD6DAE0);
 
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);
