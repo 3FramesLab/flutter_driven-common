@@ -83,5 +83,5 @@ class DrivenColors {
   // MC SL
   static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
 
-  static const primaryDFC = Color.fromRGBO(1, 97, 121, 1);
+  static const primary = Color.fromRGBO(1, 97, 121, 1);
 }

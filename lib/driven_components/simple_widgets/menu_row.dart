@@ -24,7 +24,7 @@ class MenuRow extends StatelessWidget {
       onTap: buttonAction,
       title: _buildTitle(context),
       subtitle: _buildSubTitle(),
-      leading: CircleIcon(icon: icon),
+      leading: FilledCircleIcon(icon: icon),
     );
   }
 

@@ -1,16 +1,16 @@
 part of driven_components_module;
 
-class CircleIcon extends StatelessWidget {
+class FilledCircleIcon extends StatelessWidget {
   final double? circleRadius;
   final Color? circleColor;
   final Color? iconColor;
   final IconData icon;
   final double? iconSize;
 
-  const CircleIcon({
+  const FilledCircleIcon({
     super.key,
     required this.icon,
-    this.circleColor = DrivenColors.primaryDFC,
+    this.circleColor = DrivenColors.primary,
     this.iconColor = Colors.white,
     this.circleRadius = 20,
     this.iconSize = 24,
