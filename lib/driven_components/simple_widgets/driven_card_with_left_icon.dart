@@ -4,12 +4,16 @@ class DrivenCardWithLeftIcon extends StatelessWidget {
   final String leftIcon;
   final String text;
   final VoidCallback onTap;
+  final double iconWidth;
+  final double iconHeight;
 
   const DrivenCardWithLeftIcon({
     super.key,
     required this.leftIcon,
     required this.text,
     required this.onTap,
+    this.iconWidth = 54,
+    this.iconHeight = 44,
   });
 
   @override
@@ -31,13 +35,18 @@ class DrivenCardWithLeftIcon extends StatelessWidget {
       children: [
         Semantics(
           label: 'icon_$text',
-          child: SvgPicture.asset(leftIcon),
+          child: SvgPicture.asset(
+            leftIcon,
+            width: iconWidth,
+            height: iconHeight,
+          ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 20),
         Expanded(
           child: DrivenText(
             text: text,
             style: f16SemiboldBlack,
+            textAlign: TextAlign.left,
           ),
         ),
       ],

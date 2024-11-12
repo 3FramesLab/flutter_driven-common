@@ -12,6 +12,20 @@ class PageContent extends StatelessWidget {
       topRight: DrivenRectangleBorder.mediumRoundedRadius,
     ),
     color: Colors.white,
+    boxShadow: [
+      BoxShadow(
+        color: DrivenColors.lighterGrey,
+        offset: Offset(-1, -1),
+        blurRadius: 2,
+        spreadRadius: 0,
+      ),
+      BoxShadow(
+        color: DrivenColors.lighterGrey,
+        offset: Offset(1, -1),
+        blurRadius: 3,
+        spreadRadius: 0,
+      )
+    ],
   );
 
   const PageContent({
