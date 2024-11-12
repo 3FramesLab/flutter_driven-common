@@ -5,12 +5,14 @@ class StepperProgressIndicator extends StatelessWidget {
   final int currentStep;
   final double radius;
   final Color? stepBackgroundColor;
+  final Color defaultColor;
 
   const StepperProgressIndicator({
     required this.currentStep,
     this.totalSteps = 3,
     this.radius = 12,
     this.stepBackgroundColor = DrivenColors.white,
+    this.defaultColor = DrivenColors.primary,
     Key? key,
   }) : super(key: key);
 

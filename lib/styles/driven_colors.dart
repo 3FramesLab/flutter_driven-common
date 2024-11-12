@@ -48,11 +48,8 @@ class DrivenColors {
   static const pageBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
   static const checkboxBorderColor = Color.fromRGBO(54, 87, 128, 1);
   static const dividerColor = Color(0xFFD6DAE0);
-
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);
   static const black54 = Colors.black54;
-
-  // admin_module colors
   static const grey700 = Color(0xFF616161);
   static const grey100 = Color(0xFFf5f5f5);
   static const lightGolden = Color.fromRGBO(242, 181, 93, 1);
@@ -65,13 +62,9 @@ class DrivenColors {
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
   static const redAccent = Color(0xFFCE3A0E);
   static const orangeAccent = Color(0xFFEF6C00);
-
-  // Amazon colors
   static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
   static const successGreenColor = Color(0xff64bb50);
   static const failureRedColor = Color(0xffb00020);
-
-  // MC SL
   static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
 }

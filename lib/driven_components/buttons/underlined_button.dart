@@ -12,7 +12,7 @@ class _UnderlinedButtonStyle extends TextStyle {
 }
 
 const _underlinedBlack = _UnderlinedButtonStyle(Colors.black);
-const _underlinedPurple = _UnderlinedButtonStyle(DrivenColors.primary);
+const _underlinedPrimary = _UnderlinedButtonStyle(DrivenColors.primary);
 const _underlinedWhite = _UnderlinedButtonStyle(Colors.white);
 const _underlinedDarkBlue = _UnderlinedButtonStyle(DrivenColors.primary);
 const _underlinedBlackf16 = _UnderlinedButtonStyle(Colors.black, fontSize: 16);
@@ -31,11 +31,11 @@ class UnderlinedButton extends StatelessWidget {
     super.key,
   }) : style = _underlinedBlack;
 
-  const UnderlinedButton.purple({
+  const UnderlinedButton.primary({
     required this.onPressed,
     required this.text,
     super.key,
-  }) : style = _underlinedPurple;
+  }) : style = _underlinedPrimary;
 
   const UnderlinedButton.white({
     required this.onPressed,
