@@ -8,6 +8,8 @@ class DrivenCustomDropDown extends StatelessWidget {
   final RxBool _isDropDownClicked = false.obs;
   final String placeholder;
   final String creditCheckInfoText;
+  final Color borderColor;
+  final Color selectedItemBorderColor;
 
   DrivenCustomDropDown({
     required this.selectedItem,
@@ -15,6 +17,8 @@ class DrivenCustomDropDown extends StatelessWidget {
     required this.valueChanged,
     this.placeholder = '',
     this.creditCheckInfoText = '',
+    this.borderColor = DrivenColors.primary,
+    this.selectedItemBorderColor = DrivenColors.primary,
     super.key,
   });
 

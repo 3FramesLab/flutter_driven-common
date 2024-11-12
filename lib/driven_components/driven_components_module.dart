@@ -33,6 +33,7 @@ part 'buttons/rounded_button.dart';
 part 'buttons/rounded_button_style.dart';
 part 'buttons/underlined_button.dart';
 // common widgets
+part 'common_widgets/filled_circle_icon.dart';
 part 'common_widgets/cupertino_progress_indicator.dart';
 part 'common_widgets/driven_divider.dart';
 part 'common_widgets/stepper_progress_indicator.dart';

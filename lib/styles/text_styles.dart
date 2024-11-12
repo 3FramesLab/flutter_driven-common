@@ -153,6 +153,19 @@ const f14RegularPurple = TextStyle(
   fontFamily: DrivenFonts.avertaFontFamily,
 );
 
+const f14SemiboldPrimaryUnderline = TextStyle(
+  fontSize: 14,
+  color: DrivenColors.primary,
+  fontFamily: DrivenFonts.avertaFontFamily,
+  decoration: TextDecoration.underline,
+);
+
+const f14RegularPrimary = TextStyle(
+  fontSize: 14,
+  color: DrivenColors.primary,
+  fontFamily: DrivenFonts.avertaFontFamily,
+);
+
 const f16SemiboldBlack2Underline = TextStyle(
   fontSize: 16,
   color: DrivenColors.black90,

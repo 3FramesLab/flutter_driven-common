@@ -46,6 +46,10 @@ class Validation {
     return 'Must be at least $n characters';
   }
 
+  static String atLeastNDigits(int n) {
+    return 'Must be at least $n digits';
+  }
+
   static String greaterThan(int n) {
     return 'Must be greater than $n';
   }
