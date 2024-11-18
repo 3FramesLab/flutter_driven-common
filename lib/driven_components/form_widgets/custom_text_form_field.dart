@@ -109,7 +109,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         obscureText: widget.suffixIcon == Icons.visibility_off_outlined,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         inputFormatters: widget.textInputFormatters,
-        style: widget.style ?? f14SemiboldBlack,
+        style: widget.style ?? f14SemiBoldBlack,
         validator: widget.onValidate,
         decoration: widget.inputDecoration ?? _inputDecoration(),
         maxLength: widget.textMaxLength,

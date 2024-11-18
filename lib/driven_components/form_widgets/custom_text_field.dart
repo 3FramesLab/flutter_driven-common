@@ -53,7 +53,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       keyboardType: widget.keyboardType,
       obscureText: _handleObscureText,
       inputFormatters: widget.textInputFormatters,
-      style: f14SemiboldBlack,
+      style: f14SemiBoldBlack,
       decoration: widget.inputDecoration ?? _inputDecoration(),
       maxLength: widget.textMaxLength,
     );
