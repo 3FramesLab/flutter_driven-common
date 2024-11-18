@@ -60,7 +60,7 @@ class CustomTextFormField extends StatefulWidget {
     this.autocorrect = true,
     this.semanticLabel = 'InputText',
     this.textCapitalization = TextCapitalization.none,
-    this.fillColor = DrivenColors.pageBackgroundColor,
+    this.fillColor = DrivenColors.white,
     this.suffixIconColor = DrivenColors.black,
     this.autoFocus = false,
     this.enableSuggestions = true,
@@ -181,8 +181,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       return widget.isShowErrorBorder
           ? const OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
           : OutlineInputBorder(
-              borderSide:
-                  const BorderSide(color: DrivenColors.enableBorderColor),
+              borderSide: const BorderSide(
+                color: DrivenColors.grey500,
+                width: 1,
+              ),
               borderRadius: BorderRadius.circular(4),
             );
     }
