@@ -4,12 +4,14 @@ class DrivenBackButton extends StatelessWidget {
   final void Function()? onPressed;
   final Color color;
   final MainAxisSize mainAxisSize;
+  final FontWeight? fontWeight;
 
   const DrivenBackButton({
     super.key,
     this.onPressed,
     this.color = DrivenColors.purple,
     this.mainAxisSize = MainAxisSize.max,
+    this.fontWeight,
   });
 
   @override
@@ -36,6 +38,8 @@ class DrivenBackButton extends StatelessWidget {
               style: TextStyle(
                 fontSize: 17,
                 color: color,
+                fontFamily: DrivenFonts.avertaFontFamily,
+                fontWeight: fontWeight,
               ),
               textScaleFactor: 1,
             ),
