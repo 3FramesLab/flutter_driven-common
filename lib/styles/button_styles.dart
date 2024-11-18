@@ -9,7 +9,7 @@ class DrivenButtonStyle {
       disabledPrimary: Colors.white,
       minimumSize: const Size.fromHeight(48),
       shape: DrivenRectangleBorder.veryRounded,
-      textStyle: f16SemiboldBlack,
+      textStyle: f16SemiBoldBlack,
     );
   }
 
@@ -20,7 +20,7 @@ class DrivenButtonStyle {
       side: const BorderSide(width: 2, color: DrivenColors.lightGrey),
       minimumSize: const Size.fromHeight(48),
       shape: DrivenRectangleBorder.veryRounded,
-      textStyle: f16SemiboldBlack,
+      textStyle: f16SemiBoldBlack,
     );
   }
 

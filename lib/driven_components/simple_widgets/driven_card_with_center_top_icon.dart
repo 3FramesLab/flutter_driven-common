@@ -74,5 +74,5 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   }
 
   TextStyle get _textStyle =>
-      textStyle ?? (isDisabled ? f14SemiboldDisabled : f14SemiboldBlack);
+      textStyle ?? (isDisabled ? f14SemiboldDisabled : f14SemiBoldBlack);
 }

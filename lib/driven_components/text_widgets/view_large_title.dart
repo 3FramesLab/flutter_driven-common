@@ -19,7 +19,7 @@ class ViewLargeTitle extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.left,
-          style: f24ExtraboldBlackDark,
+          style: f24ExtraboldBlack,
           maxLines: 2,
         ),
       ),

@@ -45,7 +45,7 @@ class DrivenCardWithLeftIcon extends StatelessWidget {
         Expanded(
           child: DrivenText(
             text: text,
-            style: f16SemiboldBlack,
+            style: f16SemiBoldBlack,
             textAlign: TextAlign.left,
           ),
         ),

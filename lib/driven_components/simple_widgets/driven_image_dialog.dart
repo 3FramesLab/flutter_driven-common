@@ -92,7 +92,7 @@ class DrivenImageDialog extends StatelessWidget {
           child: Text(
             description ?? '',
             textAlign: TextAlign.center,
-            style: descriptionStyle ?? f14SemiboldBlackDark,
+            style: descriptionStyle ?? f14SemiBoldBlack,
           ),
         ),
       );
