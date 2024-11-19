@@ -67,6 +67,11 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
     );
   }
 
+  Set<Factory<DragGestureRecognizer>> get _gestureRecognizers => {
+        const Factory<VerticalDragGestureRecognizer>(
+            VerticalDragGestureRecognizer.new),
+      };
+
   PreferredSizeWidget get _appBar => DrivenAppBar(
         leading: DrivenBackButton(
           onPressed: _commonWebViewController.onBackPressed,
@@ -76,6 +81,7 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
 
   Widget _loadWebView(BuildContext context, URLRequest initialUrl) => Expanded(
         child: InAppWebView(
+          gestureRecognizers: _gestureRecognizers,
           initialOptions: options,
           initialUrlRequest: initialUrl,
           onWebViewCreated: _commonWebViewController.onWebViewCreated,
