@@ -5,6 +5,7 @@ class DrivenBackButton extends StatelessWidget {
   final Color color;
   final MainAxisSize mainAxisSize;
   final double width;
+  final FontWeight? fontWeight;
 
   const DrivenBackButton({
     super.key,
@@ -13,6 +14,7 @@ class DrivenBackButton extends StatelessWidget {
     this.mainAxisSize = MainAxisSize.max,
     // TO-DO (Shailendra): Make it 24 as default once we remove admin_template in super-app
     this.width = 17,
+    this.fontWeight,
   });
 
   @override

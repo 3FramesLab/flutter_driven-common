@@ -18,7 +18,7 @@ class DrivenConstants {
   static const errorCodeText = 'Error Code: ';
   static const systemErrorAlertMessage =
       'A system error has occurred. Please try again.  For further assistance call ';
-  static const helpPhoneNumber = '855-737-6849';
+  static const helpPhoneNumber = '800-741-3939';
   static const helpPhoneUrl = 'tel:+18557376849';
   static const viewMore = 'View More';
 
