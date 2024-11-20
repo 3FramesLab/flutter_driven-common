@@ -5,6 +5,7 @@ class DrivenColors {
   static const black = Colors.black;
   static const white = Colors.white;
   static const transparentWhite = Color.fromRGBO(255, 255, 255, 0.89);
+  static const black33 = Color.fromRGBO(33, 33, 33, 1);
   static const black60 = Color(0x99000000);
   static const black90 = Color(0xE6000000);
   static const textColor = Color(0xFF3c3c3c); // RGB(60, 60, 60)
@@ -61,6 +62,7 @@ class DrivenColors {
   static const normalGrey = Colors.grey;
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
   static const redAccent = Color(0xFFCE3A0E);
+  static const redAccent239 = Color.fromRGBO(239, 83, 80, 1);
   static const orangeAccent = Color(0xFFEF6C00);
   static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
