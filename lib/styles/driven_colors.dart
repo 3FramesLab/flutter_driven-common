@@ -15,7 +15,7 @@ class DrivenColors {
   static const lighterGreyDisableBackground = Color(0xFFE6E7E6);
   static const lightGreyLight = Color.fromRGBO(245, 245, 245, 1);
   static const accountTextColor = Color(0xFF333333);
-  static const grey = Color(0xFF616161);
+  static const grey = Color(0xFF616161); // rgb 97 97 97
   static const darkerGrey = Color(0xFF999999);
   static const grey600 = Color(0xFF7F7F7F);
   static const grey800 = Color(0xFF3C3C3C);

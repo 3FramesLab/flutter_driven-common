@@ -19,7 +19,7 @@ class Themes {
       textSelectionTheme:
           const TextSelectionThemeData(cursorColor: Colors.blue),
       scaffoldBackgroundColor: DrivenColors.lightestGrey,
-      primaryColor: DrivenColors.black,
+      primaryColor: DrivenColors.primary,
       fontFamily: DrivenFonts.avertaFontFamily,
       elevatedButtonTheme:
           ElevatedButtonThemeData(style: DrivenButtonStyle.primaryElevated()),

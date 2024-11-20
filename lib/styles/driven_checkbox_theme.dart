@@ -15,7 +15,7 @@ class DrivenCheckboxTheme {
   static Color _fillColor(Set<WidgetState> state) {
     if (state.contains(WidgetState.selected) ||
         state.contains(WidgetState.focused)) {
-      return DrivenColors.black;
+      return DrivenColors.primary;
     }
     return Colors.white;
   }
