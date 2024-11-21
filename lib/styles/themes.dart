@@ -16,10 +16,10 @@ class Themes {
   ThemeData get primary {
     return ThemeData(
       useMaterial3: false,
-      textSelectionTheme: const TextSelectionThemeData(
-          cursorColor: Colors.blue),
+      textSelectionTheme:
+          const TextSelectionThemeData(cursorColor: Colors.blue),
       scaffoldBackgroundColor: DrivenColors.lightestGrey,
-      primaryColor: DrivenColors.black,
+      primaryColor: DrivenColors.primary,
       fontFamily: DrivenFonts.avertaFontFamily,
       elevatedButtonTheme:
           ElevatedButtonThemeData(style: DrivenButtonStyle.primaryElevated()),
@@ -30,7 +30,7 @@ class Themes {
       textTheme: const TextTheme(
         bodyLarge: f14RegularBlack,
         titleLarge: f14RegularGrey,
-        titleMedium: f16SemiboldBlack2,
+        titleMedium: f16SemiBoldBlack2,
       ),
       inputDecorationTheme: inputDecorationTheme,
       dividerColor: DrivenColors.lightGrey,

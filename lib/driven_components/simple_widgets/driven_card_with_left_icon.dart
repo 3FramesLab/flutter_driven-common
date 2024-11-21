@@ -1,17 +1,19 @@
 part of driven_components_module;
 
-class DrivenCardWithLeftRightIcons extends StatelessWidget {
+class DrivenCardWithLeftIcon extends StatelessWidget {
   final String leftIcon;
   final String text;
-  final IconData rightIcon;
   final VoidCallback onTap;
+  final double iconWidth;
+  final double iconHeight;
 
-  const DrivenCardWithLeftRightIcons({
+  const DrivenCardWithLeftIcon({
     super.key,
     required this.leftIcon,
     required this.text,
-    this.rightIcon = Icons.arrow_forward_ios_rounded,
     required this.onTap,
+    this.iconWidth = 54,
+    this.iconHeight = 44,
   });
 
   @override
@@ -21,7 +23,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
       child: Container(
         decoration: UiHelper.drivenCardBoxDecoration(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+          padding: const EdgeInsets.all(16),
           child: _content(),
         ),
       ),
@@ -33,19 +35,20 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
       children: [
         Semantics(
           label: 'icon_$text',
-          child: SvgPicture.asset(leftIcon),
+          child: SvgPicture.asset(
+            leftIcon,
+            width: iconWidth,
+            height: iconHeight,
+          ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 20),
         Expanded(
           child: DrivenText(
             text: text,
             style: f16SemiBoldBlack,
+            textAlign: TextAlign.left,
           ),
         ),
-        Icon(
-          rightIcon,
-          color: DrivenColors.primary,
-        )
       ],
     );
   }

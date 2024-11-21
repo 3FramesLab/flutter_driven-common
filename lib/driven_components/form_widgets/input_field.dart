@@ -24,7 +24,7 @@ class InputField extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               titleText,
-              style: f14SemiboldBlack2,
+              style: f14SemiBoldBlack2,
             ),
           ),
           Padding(

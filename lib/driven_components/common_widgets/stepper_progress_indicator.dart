@@ -12,7 +12,7 @@ class StepperProgressIndicator extends StatelessWidget {
     this.totalSteps = 3,
     this.radius = 12,
     this.stepBackgroundColor = DrivenColors.white,
-    this.defaultColor = DrivenColors.purple200,
+    this.defaultColor = DrivenColors.primary,
     Key? key,
   }) : super(key: key);
 
@@ -59,17 +59,17 @@ class StepperProgressIndicator extends StatelessWidget {
   }
 
   Color? _getBgColor(int step) => step < currentStep
-      ? defaultColor
+      ? DrivenColors.primary
       : stepBackgroundColor ?? Colors.transparent;
 
   Color _getBorderColor(int step) =>
-      step <= currentStep ? defaultColor : DrivenColors.grey500;
+      step <= currentStep ? DrivenColors.primary : DrivenColors.grey500;
 
   Color? _getTextColor(int step) {
     if (step < currentStep) {
       return Colors.white;
     } else if (step == currentStep) {
-      return defaultColor;
+      return DrivenColors.primary;
     }
     return DrivenColors.grey600;
   }
@@ -77,7 +77,7 @@ class StepperProgressIndicator extends StatelessWidget {
   Widget _buildDivider(int step) {
     Color? color;
     if (step <= currentStep - 1) {
-      color = defaultColor;
+      color = DrivenColors.primary;
     } else {
       color = DrivenColors.grey500;
     }

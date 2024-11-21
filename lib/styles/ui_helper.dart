@@ -29,7 +29,7 @@ class UiHelper {
   }
 
   static bool isTablet() {
-    final data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+    final data = MediaQueryData.fromView(WidgetsBinding.instance.window);
     return data.size.shortestSide > 600;
   }
 
@@ -52,9 +52,11 @@ class UiHelper {
     filter: {'#': RegExp('[0-9]')},
   );
 
-  static BoxDecoration drivenCardBoxDecoration() {
+  static BoxDecoration drivenCardBoxDecoration({
+    BorderRadius? borderRadius = const BorderRadius.all(Radius.circular(10)),
+  }) {
     return BoxDecoration(
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      borderRadius: borderRadius,
       boxShadow: [
         BoxShadow(
           color: DrivenColors.grey.withOpacity(0.3),

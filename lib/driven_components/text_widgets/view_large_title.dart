@@ -1,5 +1,4 @@
-import 'package:driven_common/styles/styles_module.dart';
-import 'package:flutter/material.dart';
+part of driven_components_module;
 
 class ViewLargeTitle extends StatelessWidget {
   final String title;
@@ -7,7 +6,7 @@ class ViewLargeTitle extends StatelessWidget {
 
   const ViewLargeTitle({
     required this.title,
-    this.padding = const EdgeInsets.fromLTRB(20, 15, 10, 20),
+    this.padding = const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
     super.key,
   });
 
@@ -20,7 +19,8 @@ class ViewLargeTitle extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.left,
-          style: f28ExtraboldBlackDark,
+          style: f24ExtraboldBlack,
+          maxLines: 2,
         ),
       ),
     );

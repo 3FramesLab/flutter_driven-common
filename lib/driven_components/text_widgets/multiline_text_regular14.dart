@@ -5,7 +5,7 @@ class MultilineTextRegular14 extends SemanticsWrappedText {
     String data, {
     super.key,
     int maxLines = 2,
-    Color color = blackDark,
+    Color color = black,
     TextStyle style = const TextStyle(),
   }) : super(
           data,

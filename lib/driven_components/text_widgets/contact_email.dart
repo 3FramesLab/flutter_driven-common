@@ -3,7 +3,7 @@ part of driven_components_module;
 TextSpan contactEmail(Color textColor) {
   return TextSpan(
     text: DrivenConstants.contactEmail,
-    style: f14SemiboldBlack2.copyWith(
+    style: f14SemiBoldBlack2.copyWith(
       color: textColor,
       decoration: TextDecoration.underline,
       height: 1.6,
