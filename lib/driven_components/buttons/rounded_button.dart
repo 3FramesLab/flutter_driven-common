@@ -9,6 +9,8 @@ class RoundedButton extends StatelessWidget {
   final Color? disabledBackgroundColor;
   final BorderSide? side;
   final TextStyle? buttonTextStyle;
+  final double? borderRadius;
+  final Widget? prefix;
 
   const RoundedButton({
     required this.onPressed,
@@ -19,6 +21,8 @@ class RoundedButton extends StatelessWidget {
     this.disabledBackgroundColor = DrivenColors.disabledButtonColor,
     this.side,
     this.buttonTextStyle,
+    this.borderRadius,
+    this.prefix,
     super.key,
   });
 
@@ -29,10 +33,21 @@ class RoundedButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: _style(),
-        child: Text(
-          text,
-          style: buttonTextStyle,
-        ),
+        child: prefix != null
+            ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  prefix!,
+                  Text(
+                    text,
+                    style: buttonTextStyle,
+                  )
+                ],
+              )
+            : Text(
+                text,
+                style: buttonTextStyle,
+              ),
       ),
     );
   }
@@ -44,6 +59,7 @@ class RoundedButton extends StatelessWidget {
       minimumHeight: height,
       disabledBackgroundColor: disabledBackgroundColor!,
       side: side,
+      borderRadius: borderRadius,
     );
   }
 }
