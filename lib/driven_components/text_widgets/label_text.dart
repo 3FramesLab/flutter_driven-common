@@ -10,7 +10,7 @@ class LabelText extends StatelessWidget {
       container: true,
       child: Text(
         label,
-        style: f14SemiboldGrey,
+        style: f16SemiboldGrey,
       ),
     );
   }
