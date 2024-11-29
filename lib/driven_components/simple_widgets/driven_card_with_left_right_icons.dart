@@ -2,13 +2,19 @@ part of driven_components_module;
 
 class DrivenCardWithLeftRightIcons extends StatelessWidget {
   final String leftIcon;
+  final IconData leftMaterialIcon;
+  final Color leftIconColor;
   final String text;
   final IconData rightIcon;
   final VoidCallback onTap;
+  final double verticalPadding;
 
   const DrivenCardWithLeftRightIcons({
     super.key,
-    required this.leftIcon,
+    this.leftIcon = '',
+    this.leftIconColor = DrivenColors.primary,
+    this.leftMaterialIcon = Icons.arrow_forward_ios_rounded,
+    this.verticalPadding = 16,
     required this.text,
     this.rightIcon = Icons.arrow_forward_ios_rounded,
     required this.onTap,
@@ -21,7 +27,10 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
       child: Container(
         decoration: UiHelper.drivenCardBoxDecoration(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
+          padding: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: verticalPadding,
+          ),
           child: _content(),
         ),
       ),
@@ -31,10 +40,19 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
   Widget _content() {
     return Row(
       children: [
-        Semantics(
-          label: 'icon_$text',
-          child: SvgPicture.asset(leftIcon),
-        ),
+        if (leftIcon.isNotEmpty)
+          Semantics(
+            label: 'icon_$text',
+            child: SvgPicture.asset(leftIcon),
+          ),
+        if (leftIcon.isEmpty)
+          Semantics(
+            label: 'icon_$text',
+            child: Icon(
+              leftMaterialIcon,
+              color: leftIconColor,
+            ),
+          ),
         const SizedBox(width: 10),
         Expanded(
           child: DrivenText(
