@@ -14,7 +14,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
     this.leftIcon = '',
     this.leftIconColor = DrivenColors.primary,
     this.leftMaterialIcon = Icons.arrow_forward_ios_rounded,
-    this.verticalPadding = 16,
+    this.verticalPadding = 25,
     required this.text,
     this.rightIcon = Icons.arrow_forward_ios_rounded,
     required this.onTap,
