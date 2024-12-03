@@ -6,6 +6,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
   final Color leftIconColor;
   final String text;
   final IconData rightIcon;
+  final String rightSvgIcon;
   final VoidCallback onTap;
   final double verticalPadding;
 
@@ -17,6 +18,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
     this.verticalPadding = 25,
     required this.text,
     this.rightIcon = Icons.arrow_forward_ios_rounded,
+    this.rightSvgIcon = '',
     required this.onTap,
   });
 
@@ -60,10 +62,13 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
             style: f16SemiBoldBlack,
           ),
         ),
-        Icon(
-          rightIcon,
-          color: DrivenColors.primary,
-        )
+        if (rightSvgIcon.isEmpty)
+          Icon(
+            rightIcon,
+            color: DrivenColors.primary,
+          )
+        else
+          SvgPicture.asset(rightSvgIcon),
       ],
     );
   }
