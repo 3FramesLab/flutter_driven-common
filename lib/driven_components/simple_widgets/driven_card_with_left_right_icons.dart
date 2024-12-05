@@ -9,6 +9,8 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
   final String rightSvgIcon;
   final VoidCallback onTap;
   final double verticalPadding;
+  final String subTitle;
+  final String description;
 
   const DrivenCardWithLeftRightIcons({
     super.key,
@@ -20,6 +22,8 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
     this.rightIcon = Icons.arrow_forward_ios_rounded,
     this.rightSvgIcon = '',
     required this.onTap,
+    this.subTitle = '',
+    this.description = '',
   });
 
   @override
@@ -40,35 +44,57 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
   }
 
   Widget _content() {
-    return Row(
+    return Column(
       children: [
-        if (leftIcon.isNotEmpty)
-          Semantics(
-            label: 'icon_$text',
-            child: SvgPicture.asset(leftIcon),
-          ),
-        if (leftIcon.isEmpty)
-          Semantics(
-            label: 'icon_$text',
-            child: Icon(
-              leftMaterialIcon,
-              color: leftIconColor,
+        Row(
+          children: [
+            if (leftIcon.isNotEmpty)
+              Semantics(
+                label: 'icon_$text',
+                child: SvgPicture.asset(leftIcon),
+              ),
+            if (leftIcon.isEmpty)
+              Semantics(
+                label: 'icon_$text',
+                child: Icon(
+                  leftMaterialIcon,
+                  color: leftIconColor,
+                ),
+              ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: DrivenText(
+                text: text,
+                style: f16SemiBoldBlack,
+              ),
+            ),
+            if (rightSvgIcon.isEmpty)
+              Icon(
+                rightIcon,
+                color: DrivenColors.primary,
+              )
+            else
+              SvgPicture.asset(rightSvgIcon),
+          ],
+        ),
+        if (subTitle.isNotEmpty)
+          Container(
+            padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+            alignment: Alignment.centerLeft,
+            child: DrivenText(
+              text: subTitle,
+              style: f12SemiboldGrey,
             ),
           ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: DrivenText(
-            text: text,
-            style: f16SemiBoldBlack,
-          ),
-        ),
-        if (rightSvgIcon.isEmpty)
-          Icon(
-            rightIcon,
-            color: DrivenColors.primary,
+        if (description.isNotEmpty)
+          Container(
+            padding: const EdgeInsets.fromLTRB(0, 4, 0, 0),
+            alignment: Alignment.centerLeft,
+            child: DrivenText(
+              text: description,
+              style: f14RegularBlack,
+            ),
           )
-        else
-          SvgPicture.asset(rightSvgIcon),
       ],
     );
   }
