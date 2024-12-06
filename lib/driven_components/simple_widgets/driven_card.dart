@@ -27,16 +27,19 @@ class DrivenCard extends StatelessWidget {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      child: Semantics(
-        container: true,
-        label: semanticLabel,
-        child: GestureDetector(
-          onTap: onPressed,
-          child: Column(
-            children: [
-              _mainContentBody,
-              _bottomTitle,
-            ],
+      child: Container(
+        decoration: UiHelper.drivenCardBoxDecoration(),
+        child: Semantics(
+          container: true,
+          label: semanticLabel,
+          child: GestureDetector(
+            onTap: onPressed,
+            child: Column(
+              children: [
+                _mainContentBody,
+                _bottomTitle,
+              ],
+            ),
           ),
         ),
       ),
