@@ -59,13 +59,13 @@ class UiHelper {
       borderRadius: borderRadius,
       boxShadow: [
         BoxShadow(
-          color: DrivenColors.grey.withOpacity(0.3),
+          color: DrivenColors.grey.withOpacity(0.1),
           offset: const Offset(0, 1),
           blurRadius: 8,
           spreadRadius: 0,
         ),
         BoxShadow(
-          color: DrivenColors.grey.withOpacity(0.3),
+          color: DrivenColors.grey.withOpacity(0.1),
           offset: const Offset(0, 2),
           blurRadius: 3,
           spreadRadius: -2,
