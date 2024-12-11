@@ -5,10 +5,12 @@ class DrivenBackButton extends StatelessWidget {
   final Color color;
   final MainAxisSize mainAxisSize;
   final double width;
+  final String? backButtonText;
 
   const DrivenBackButton({
     super.key,
     this.onPressed,
+    this.backButtonText = DrivenConstants.back,
     this.color = DrivenColors.primary,
     this.mainAxisSize = MainAxisSize.max,
     // TO-DO (Shailendra): Make it 24 as default once we remove admin_template in super-app
@@ -35,7 +37,7 @@ class DrivenBackButton extends StatelessWidget {
           SizedBox(
             width: 42,
             child: Text(
-              DrivenConstants.back,
+              backButtonText.toString(),
               style: f16SemiboldPrimary.copyWith(color: color),
               textScaler: const TextScaler.linear(1),
             ),
