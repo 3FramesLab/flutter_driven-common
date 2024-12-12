@@ -31,7 +31,7 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
 
   void get _getWebViewArguments => {
         initialUrlRequest = URLRequest(
-          url: Uri.parse(Get.arguments[CommonRouteArguments.webViewUrl]),
+          url: WebUri(Get.arguments[CommonRouteArguments.webViewUrl]),
         ),
         webViewTitle = Get.arguments[CommonRouteArguments.webViewTitle],
         primaryColor = Get.arguments[CommonRouteArguments.webViewPrimaryColor],
