@@ -66,7 +66,7 @@ class UiHelper {
         ),
         BoxShadow(
           color: DrivenColors.grey.withOpacity(0.1),
-          offset: const Offset(0, 2),
+          offset: const Offset(0, 3),
           blurRadius: 3,
           spreadRadius: -2,
         )
