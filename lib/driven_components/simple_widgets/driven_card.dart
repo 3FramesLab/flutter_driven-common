@@ -7,15 +7,17 @@ class DrivenCard extends StatelessWidget {
   final String bottomTitle;
   final String semanticLabel;
   final VoidCallback? onPressed;
+  final EdgeInsetsGeometry margin;
 
   const DrivenCard({
     Key? key,
+    required this.mainContent,
+    required this.semanticLabel,
     this.title,
     this.description,
-    required this.mainContent,
-    required this.bottomTitle,
-    required this.semanticLabel,
-    required this.onPressed,
+    this.margin = const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    this.bottomTitle = '',
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -25,8 +27,9 @@ class DrivenCard extends StatelessWidget {
 
   Widget _body() {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      elevation: 0,
+      margin: margin,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         decoration: UiHelper.drivenCardBoxDecoration(),
         child: Semantics(
@@ -48,34 +51,34 @@ class DrivenCard extends StatelessWidget {
 
   Widget get _mainContentBody => Container(
       decoration: UiHelper.drivenCardBoxDecoration(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-        ),
+        borderRadius: bottomTitle.isEmpty
+            ? const BorderRadius.all(Radius.circular(10))
+            : const BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
       ),
       width: Get.width,
       child: ClipRRect(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(8),
-          topRight: Radius.circular(8),
-        ),
         child: mainContent,
       ));
 
-  Widget get _bottomTitle => Container(
-        height: 48,
-        decoration: const BoxDecoration(
-          color: DrivenColors.lightBlue,
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
+  Widget get _bottomTitle => bottomTitle.isNotEmpty
+      ? Container(
+          height: 48,
+          decoration: const BoxDecoration(
+            color: DrivenColors.lightBlue,
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            ),
           ),
-        ),
-        child: Center(
-          child: DrivenText(
-            text: bottomTitle,
-            style: f16SemiboldPrimary,
+          child: Center(
+            child: DrivenText(
+              text: bottomTitle.toString(),
+              style: f16SemiboldPrimary,
+            ),
           ),
-        ),
-      );
+        )
+      : const SizedBox();
 }
