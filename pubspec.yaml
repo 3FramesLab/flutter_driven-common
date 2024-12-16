@@ -13,7 +13,7 @@ dependencies:
   flash: ^3.1.0
   flutter:
     sdk: flutter
-  flutter_inappwebview: ^6.1.5
+  flutter_inappwebview: ^6.1.0
   flutter_aepassurance: ^4.0.2
   flutter_aepcore: ^4.0.2
   flutter_aepedge: ^4.0.2
