@@ -48,12 +48,6 @@ class UiHelper {
   }
 
   static final MaskTextInputFormatter routeIdInputMask = MaskTextInputFormatter(
-    mask: '########-##',
-    filter: {'#': RegExp('[0-9]')},
-  );
-
-  static final MaskTextInputFormatter routeIdInputMaskAlphaNumeric13 =
-      MaskTextInputFormatter(
     mask: '##########-##',
     filter: {'#': RegExp(r'[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};:"\\|,.<>/?~`]')},
   );
