@@ -10,6 +10,8 @@ class RoundedButton extends StatelessWidget {
   final BorderSide? side;
   final TextStyle? buttonTextStyle;
   final IconData? rightIcon;
+  final double? borderRadius;
+  final Widget? prefix;
 
   const RoundedButton({
     required this.onPressed,
@@ -21,6 +23,8 @@ class RoundedButton extends StatelessWidget {
     this.side,
     this.buttonTextStyle,
     this.rightIcon,
+    this.borderRadius,
+    this.prefix,
     super.key,
   });
 
@@ -42,11 +46,22 @@ class RoundedButton extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(left: rightIcon != null ? 32 : 0),
-            child: Text(
-              text,
-              style: buttonTextStyle,
-              textAlign: TextAlign.center,
-            ),
+            child: prefix != null
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      prefix!,
+                      Text(
+                        text,
+                        style: buttonTextStyle,
+                      )
+                    ],
+                  )
+                : Text(
+                    text,
+                    style: buttonTextStyle,
+                    textAlign: TextAlign.center,
+                  ),
           ),
         ),
         rightIcon != null
@@ -66,6 +81,7 @@ class RoundedButton extends StatelessWidget {
       minimumHeight: height,
       disabledBackgroundColor: disabledBackgroundColor!,
       side: side,
+      borderRadius: borderRadius,
     );
   }
 }
