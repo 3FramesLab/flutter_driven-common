@@ -218,6 +218,35 @@ const f14RegularTextStyle = TextStyle(
   fontWeight: DrivenFonts.fontWeightRegular,
 );
 
+final f12RegularBlackSfPro =
+    f12RegularBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14RegularBlackSfPro =
+    f14RegularBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f16RegularBlackSfPro =
+    f16RegularBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+
+final f12SemiboldBlackSfPro =
+    f12SemiBoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14SemiboldBlackSfPro =
+    f14SemiBoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14SemiboldRedSfPro =
+    f14SemiBoldRed.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f16SemiboldBlackSfPro =
+    f16SemiBoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+
+final f12BoldBlackSfPro =
+    f12BoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14BoldBlackSfPro =
+    f14BoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f16BoldBlackSfPro =
+    f16BoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+
+const f16SemiBold = TextStyle(
+  fontSize: 16,
+  fontWeight: DrivenFonts.fontWeightSemibold,
+  fontFamily: DrivenFonts.avertaFontFamily,
+);
+
 class DrivenTextStyle extends TextStyle {
   const DrivenTextStyle(
     double fontSize,
