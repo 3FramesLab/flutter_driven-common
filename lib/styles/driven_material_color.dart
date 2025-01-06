@@ -1,7 +1,7 @@
 part of styles_module;
 
 @immutable
-class DrivenMaterialColor extends WidgetStateProperty<Color?>
+class DrivenMaterialColor extends MaterialStateProperty<Color?>
     with Diagnosticable {
   final Color? primary;
   final Color? disabled;
@@ -9,8 +9,8 @@ class DrivenMaterialColor extends WidgetStateProperty<Color?>
   DrivenMaterialColor(this.primary, this.disabled);
 
   @override
-  Color? resolve(Set<WidgetState> states) {
-    final isDisabled = states.contains(WidgetState.disabled);
+  Color? resolve(Set<MaterialState> states) {
+    final isDisabled = states.contains(MaterialState.disabled);
     return isDisabled ? disabled : primary;
   }
 }

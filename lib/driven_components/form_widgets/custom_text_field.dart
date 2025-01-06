@@ -53,7 +53,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       keyboardType: widget.keyboardType,
       obscureText: _handleObscureText,
       inputFormatters: widget.textInputFormatters,
-      style: f14SemiBoldBlack,
+      style: f14SemiboldBlack,
       decoration: widget.inputDecoration ?? _inputDecoration(),
       maxLength: widget.textMaxLength,
     );
@@ -67,7 +67,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       filled: true,
       counter: const SizedBox.shrink(),
       focusColor: DrivenColors.white,
-      fillColor: DrivenColors.pageBackgroundColor,
+      fillColor: DrivenColors.textBackgroundColor,
       suffixIcon: _handleSuffixIcon(),
       focusedBorder: _focusedBorder(),
       enabledBorder: _focusedBorder(),

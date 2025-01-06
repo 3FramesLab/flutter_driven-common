@@ -26,7 +26,7 @@ class BorderlessInputField extends StatelessWidget {
       onChanged: onChanged,
       keyboardType: keyboardType,
       inputFormatters: inputFormatters,
-      style: f45RegularBlack.merge(style),
+      style: f45RegularBlackDark.merge(style),
       decoration: BorderlessInputDecoration(
         hintStyle: hintStyle,
         hintText: placeholderText,

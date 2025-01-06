@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 library driven_common_module;
 
 // modules

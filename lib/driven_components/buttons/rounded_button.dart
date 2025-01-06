@@ -9,7 +9,6 @@ class RoundedButton extends StatelessWidget {
   final Color? disabledBackgroundColor;
   final BorderSide? side;
   final TextStyle? buttonTextStyle;
-  final IconData? rightIcon;
   final double? borderRadius;
   final Widget? prefix;
 
@@ -22,7 +21,6 @@ class RoundedButton extends StatelessWidget {
     this.disabledBackgroundColor = DrivenColors.disabledButtonColor,
     this.side,
     this.buttonTextStyle,
-    this.rightIcon,
     this.borderRadius,
     this.prefix,
     super.key,
@@ -35,42 +33,22 @@ class RoundedButton extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: _style(),
-        child: _textWithIcon(),
-      ),
-    );
-  }
-
-  Widget _textWithIcon() {
-    return Row(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(left: rightIcon != null ? 32 : 0),
-            child: prefix != null
-                ? Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      prefix!,
-                      Text(
-                        text,
-                        style: buttonTextStyle,
-                      )
-                    ],
-                  )
-                : Text(
+        child: prefix != null
+            ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  prefix!,
+                  Text(
                     text,
                     style: buttonTextStyle,
-                    textAlign: TextAlign.center,
-                  ),
-          ),
-        ),
-        rightIcon != null
-            ? Padding(
-                padding: const EdgeInsets.only(right: 12),
-                child: Icon(rightIcon, size: 18),
+                  )
+                ],
               )
-            : const SizedBox.shrink(),
-      ],
+            : Text(
+                text,
+                style: buttonTextStyle,
+              ),
+      ),
     );
   }
 

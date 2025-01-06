@@ -5,14 +5,12 @@ class ActionsLayout extends StatelessWidget {
   final Widget body;
   final EdgeInsets padding;
   final EdgeInsets actionsPadding;
-  final double minHeight;
 
   const ActionsLayout({
     required this.body,
     this.actions = const [],
     this.padding = const EdgeInsets.all(16),
     this.actionsPadding = const EdgeInsets.only(bottom: 38),
-    this.minHeight = 150,
     super.key,
   });
 
@@ -21,7 +19,6 @@ class ActionsLayout extends StatelessWidget {
     this.actions = const [],
     this.padding = const EdgeInsets.symmetric(horizontal: 16),
     this.actionsPadding = const EdgeInsets.only(bottom: 38),
-    this.minHeight = 150,
     super.key,
   });
 
@@ -39,7 +36,7 @@ class ActionsLayout extends StatelessWidget {
 
   Widget _actions() {
     return Container(
-      constraints: BoxConstraints(minHeight: minHeight),
+      constraints: const BoxConstraints(minHeight: 150),
       padding: actionsPadding,
       margin: const EdgeInsets.only(top: 20),
       child: Column(
