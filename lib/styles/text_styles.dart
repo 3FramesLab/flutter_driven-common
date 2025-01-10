@@ -82,6 +82,7 @@ const f16BoldRed = DrivenTextStyle(16, bold, red);
 const f16SemiboldRed = DrivenTextStyle(16, semiBold, red);
 
 const f18SemiBoldBlack = DrivenTextStyle(18, semiBold, black);
+const f18ExtraBoldBlack = DrivenTextStyle(18, extraBold, black);
 const f18ExtraBoldPrimary = DrivenTextStyle(18, extraBold, primary);
 
 const f24ExtraboldPrimary =
