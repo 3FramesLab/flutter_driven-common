@@ -11,6 +11,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
   final double verticalPadding;
   final String subTitle;
   final String description;
+  final Widget? rightData;
 
   const DrivenCardWithLeftRightIcons({
     super.key,
@@ -24,6 +25,7 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
     required this.onTap,
     this.subTitle = '',
     this.description = '',
+    this.rightData,
   });
 
   @override
@@ -68,6 +70,8 @@ class DrivenCardWithLeftRightIcons extends StatelessWidget {
                 style: f16SemiBoldBlack,
               ),
             ),
+            if(rightData != null)
+              rightData!,
             if (rightSvgIcon.isEmpty)
               Icon(
                 rightIcon,
