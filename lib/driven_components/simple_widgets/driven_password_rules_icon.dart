@@ -45,7 +45,7 @@ class DrivenPasswordRulesIcon extends StatelessWidget {
     if (canShowQuestionMaterialIcon) {
       return Icon(
         Icons.help,
-        size: 24,
+        size: 20,
         color: iconBackgroundColor,
       );
     } else {
