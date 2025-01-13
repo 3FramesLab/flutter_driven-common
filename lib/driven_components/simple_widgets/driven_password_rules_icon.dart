@@ -7,6 +7,7 @@ class DrivenPasswordRulesIcon extends StatelessWidget {
   final double? animateOffset;
   final List<Map<String, String>> passwordRules;
   final bool canShowQuestionMaterialIcon;
+  final Color iconBackgroundColor;
 
   const DrivenPasswordRulesIcon({
     super.key,
@@ -14,6 +15,7 @@ class DrivenPasswordRulesIcon extends StatelessWidget {
     this.animateOffset,
     this.passwordRules = const [],
     this.canShowQuestionMaterialIcon = true,
+    this.iconBackgroundColor = DrivenColors.black,
   });
 
   @override
@@ -41,10 +43,10 @@ class DrivenPasswordRulesIcon extends StatelessWidget {
 
   Widget _questionMarkImage() {
     if (canShowQuestionMaterialIcon) {
-      return const Icon(
+      return Icon(
         Icons.help,
         size: 24,
-        color: DrivenColors.black,
+        color: iconBackgroundColor,
       );
     } else {
       return Padding(
