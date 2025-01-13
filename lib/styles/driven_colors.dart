@@ -87,4 +87,5 @@ class DrivenColors {
   static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
 
   static const primary = Color.fromRGBO(1, 97, 121, 1);
+  static const lightBlue = Color(0xFF40B7EC);
 }
