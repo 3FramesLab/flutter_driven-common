@@ -127,7 +127,7 @@ part 'simple_widgets/padded_row.dart';
 part 'simple_widgets/padded_text.dart';
 part 'simple_widgets/padded_text_fixed_font_size.dart';
 part 'simple_widgets/page_content.dart';
-part 'simple_widgets/password_icon.dart';
+part 'simple_widgets/password_rules_icon.dart';
 part 'simple_widgets/review_panel.dart';
 part 'simple_widgets/signup_page_message.dart';
 part 'simple_widgets/signup_page_title.dart';

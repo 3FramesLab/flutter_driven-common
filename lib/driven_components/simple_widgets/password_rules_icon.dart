@@ -2,13 +2,13 @@
 
 part of '../driven_components_module.dart';
 
-class PasswordRulesIcon extends StatelessWidget {
+class DrivenPasswordRulesIcon extends StatelessWidget {
   final ScrollController? scrollController;
   final double? animateOffset;
   final List<Map<String, String>> passwordRules;
   final bool canShowQuestionMaterialIcon;
 
-  const PasswordRulesIcon({
+  const DrivenPasswordRulesIcon({
     super.key,
     this.scrollController,
     this.animateOffset,
@@ -32,8 +32,8 @@ class PasswordRulesIcon extends StatelessWidget {
     FocusScope.of(context).requestFocus(FocusNode());
     await showAlignedDialog(
       context: context,
-      builder:
-          PasswordRulesDialog(passwordRules: passwordRules).localDialogBuilder,
+      builder: DrivenPasswordRulesDialog(passwordRules: passwordRules)
+          .localDialogBuilder,
       followerAnchor: Alignment.topLeft,
       targetAnchor: Alignment.bottomLeft,
     );

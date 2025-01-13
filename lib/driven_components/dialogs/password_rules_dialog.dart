@@ -2,10 +2,10 @@
 
 part of '../driven_components_module.dart';
 
-class PasswordRulesDialog {
+class DrivenPasswordRulesDialog {
   List<Map<String, String>> passwordRules;
 
-  PasswordRulesDialog({required this.passwordRules});
+  DrivenPasswordRulesDialog({required this.passwordRules});
 
   Widget localDialogBuilder(BuildContext context) {
     return Semantics(
