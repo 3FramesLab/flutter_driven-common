@@ -1,9 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 part of '../driven_components_module.dart';
 
-class PasswordRuleDialog {
+class PasswordRulesDialog {
   List<Map<String, String>> passwordRules;
 
-  PasswordRuleDialog({required this.passwordRules});
+  PasswordRulesDialog({required this.passwordRules});
 
   Widget localDialogBuilder(BuildContext context) {
     return Semantics(

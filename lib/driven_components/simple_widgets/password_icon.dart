@@ -33,7 +33,7 @@ class PasswordRulesIcon extends StatelessWidget {
     await showAlignedDialog(
       context: context,
       builder:
-          PasswordRuleDialog(passwordRules: passwordRules).localDialogBuilder,
+          PasswordRulesDialog(passwordRules: passwordRules).localDialogBuilder,
       followerAnchor: Alignment.topLeft,
       targetAnchor: Alignment.bottomLeft,
     );
