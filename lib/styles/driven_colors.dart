@@ -88,4 +88,8 @@ class DrivenColors {
 
   static const primary = Color.fromRGBO(1, 97, 121, 1);
   static const lightBlue = Color(0xFF40B7EC);
+
+  static const white248 = Color(0xFFF8F8F8);
+  static const lightBlue227 = Color(0xFFE3F2FD);
+  static const grey108 = Color(0xFF6C727F);
 }
