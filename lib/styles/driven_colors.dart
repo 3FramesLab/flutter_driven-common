@@ -93,7 +93,7 @@ class DrivenColors {
   static const lightBlue227 = Color(0xFFE3F2FD);
   static const grey108 = Color(0xFF6C727F);
 
-  static const greenLight = Color(0xFFB6EBCA);
+  static const lightGreen = Color(0xFFB6EBCA);
   static const green58 = Color(0xFF3AE180);
-  static const greenDark = Color(0xFF12BD55);
+  static const darkGreen = Color(0xFF12BD55);
 }
