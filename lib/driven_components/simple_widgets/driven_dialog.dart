@@ -18,6 +18,9 @@ class DrivenDialog extends StatelessWidget {
   final TextStyle? secondaryRightButtonTextStyle;
   final double? textSize;
   final TextStyle? textStyle;
+  final EdgeInsets insetPadding;
+  final EdgeInsets? dialogPadding;
+  final AlignmentGeometry textAlignment;
 
   const DrivenDialog({
     required this.text,
@@ -35,8 +38,11 @@ class DrivenDialog extends StatelessWidget {
     this.secondaryLeftButtonOnPressed,
     this.secondaryRightButtonOnPressed,
     this.secondaryRightButtonTextStyle,
+    this.textAlignment = Alignment.center,
+    this.insetPadding = const EdgeInsets.all(8),
     this.textSize,
     this.textStyle,
+    this.dialogPadding,
     super.key,
   });
 
@@ -52,11 +58,12 @@ class DrivenDialog extends StatelessWidget {
 
   Widget _dialogTextView() => isDynamicAlert
       ? Align(
+          alignment: textAlignment,
           child: DrivenRichText(
-          [...text],
-          fontSize: textSize,
-          textStyle: textStyle,
-        ))
+            [...text],
+            fontSize: textSize,
+            textStyle: textStyle,
+          ))
       : SizedBox(
           height: height,
           child: Align(
@@ -78,7 +85,7 @@ class DrivenDialog extends StatelessWidget {
       onWillPop: () => Future.value(enableBackPress),
       child: TextScaleClamp(
         child: Dialog(
-          insetPadding: const EdgeInsets.all(8),
+          insetPadding: insetPadding,
           shape: DrivenRectangleBorder.mediumRounded,
           child: Container(
             constraints: BoxConstraints(minHeight: isDynamicAlert ? 170 : 248),
@@ -100,7 +107,7 @@ class DrivenDialog extends StatelessWidget {
 
   Widget drivenColumn(List<Widget> body) {
     return DrivenColumn(
-      padding: _dialogPadding(),
+      padding: dialogPadding ?? _dialogPadding(),
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       mainAxisSize: MainAxisSize.min,
       children: [
