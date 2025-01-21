@@ -69,6 +69,7 @@ class DrivenColors {
   static const successGreenColor = Color(0xff64bb50);
   static const failureRedColor = Color(0xffb00020);
   static const skyBlueColor = Color(0xff7bbfcc);
+  static const lightBlueBackground = Color(0xffeef1f6);
   static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
   static const lightBlueGradient = Color.fromRGBO(2, 179, 223, 1);
   static const whiteShadedBlue = Color.fromRGBO(227, 242, 253, 1);
