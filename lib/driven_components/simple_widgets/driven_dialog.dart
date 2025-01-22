@@ -21,6 +21,7 @@ class DrivenDialog extends StatelessWidget {
   final EdgeInsets insetPadding;
   final EdgeInsets? dialogPadding;
   final AlignmentGeometry textAlignment;
+  final Widget? bottomBody;
 
   const DrivenDialog({
     required this.text,
@@ -43,6 +44,7 @@ class DrivenDialog extends StatelessWidget {
     this.textSize,
     this.textStyle,
     this.dialogPadding,
+    this.bottomBody,
     super.key,
   });
 
@@ -137,6 +139,7 @@ class DrivenDialog extends StatelessWidget {
           if (secondaryButton != null) _secondaryButton(),
           if (secondaryRightButtonText != null)
             _secondaryRightButton(secondaryRightButtonText),
+          if (bottomBody != null) bottomBody!,
         ],
       );
     }
@@ -216,6 +219,7 @@ class DrivenDialog extends StatelessWidget {
 class DefaultDialogCloseButton extends StatelessWidget {
   final Color backgroundColor;
   final Function()? onButtonTap;
+
   const DefaultDialogCloseButton({
     super.key,
     this.backgroundColor = DrivenColors.primaryButtonColor,

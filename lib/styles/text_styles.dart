@@ -227,6 +227,10 @@ final f14RegularBlackSfPro =
     f14RegularBlackDark.copyWith(fontFamily: sfProFontFamily);
 final f16RegularBlackSfPro =
     f16RegularBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f20RegularBlackSfPro =
+    f20RegularBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f24RegularBlackSfPro =
+    f20RegularBlackDark.copyWith(fontFamily: sfProFontFamily, fontSize: 24);
 
 final f12SemiboldBlackSfPro =
     f12SemiboldBlackDark.copyWith(fontFamily: sfProFontFamily);
@@ -236,11 +240,21 @@ final f14SemiboldRedSfPro =
     f14SemiBoldRed.copyWith(fontFamily: sfProFontFamily);
 final f16SemiboldBlackSfPro =
     f16SemiboldBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f20SemiboldBlackSfPro =
+    f20SemiboldBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f24SemiboldBlackSfPro =
+    f24SemiboldBlackDark.copyWith(fontFamily: sfProFontFamily);
 
-final f12BoldBlackSfPro = f12BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
-final f14BoldBlackSfPro = f14BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f12BoldBlackSfPro =
+    f12BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f14BoldBlackSfPro =
+    f14BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
 final f16BoldBlackSfPro =
     f16BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f20BoldBlackSfPro =
+    f20BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
+final f24BoldBlackSfPro =
+    f24BoldBlackDark.copyWith(fontFamily: sfProFontFamily);
 
 const f16Semibold = TextStyle(
   fontSize: 16,
