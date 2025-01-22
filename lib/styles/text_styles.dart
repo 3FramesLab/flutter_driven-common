@@ -244,6 +244,9 @@ final f14BoldBlackSfPro =
 final f16BoldBlackSfPro =
     f16BoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
 
+final f14RegularGreyItalic = const DrivenTextStyle(14, regular, grey)
+    .copyWith(fontStyle: FontStyle.italic);
+
 const f16SemiBold = TextStyle(
   fontSize: 16,
   fontWeight: DrivenFonts.fontWeightSemibold,
