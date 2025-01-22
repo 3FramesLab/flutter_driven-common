@@ -35,7 +35,7 @@ class CustomTextFormField extends StatefulWidget {
   final TextStyle? errorStyle;
   final TextStyle? style;
   final int? minLines;
-  final int? maxLines;
+  final int maxLines;
 
   const CustomTextFormField({
     Key? key,
@@ -73,7 +73,7 @@ class CustomTextFormField extends StatefulWidget {
     this.errorStyle,
     this.style,
     this.minLines,
-    this.maxLines,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
