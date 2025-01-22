@@ -1,6 +1,6 @@
 part of driven_components_module;
 
-class DrivenRatingsButtons extends StatelessWidget {
+class DrivenFeedbackButton extends StatelessWidget {
   final RxBool isSentimentVeryDissatisfiedEnabled = false.obs;
   final RxBool isSentimentDissatisfiedEnabled = false.obs;
   final RxBool isSentimentNeutralEnabled = false.obs;
@@ -17,7 +17,8 @@ class DrivenRatingsButtons extends StatelessWidget {
   final String sentimentsSatisfiedIcon;
   final String sentimentsVerySatisfiedIcon;
   final String radioIcon;
-  DrivenRatingsButtons({
+
+  DrivenFeedbackButton({
     required this.ratingTitle,
     required this.onRatingSelection,
     required this.sentimentsVeryDissatisfiedIcon,
@@ -31,6 +32,7 @@ class DrivenRatingsButtons extends StatelessWidget {
     this.bottomPadding = 30,
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
     return Column(

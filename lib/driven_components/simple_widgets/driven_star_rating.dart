@@ -1,13 +1,13 @@
 part of driven_components_module;
 
-class CustomStarRatingWidget extends StatefulWidget {
+class DrivenStarRating extends StatefulWidget {
   final int maxRating; // Maximum number of stars
   final double initialRating; // Initial rating value
   final Color activeColor; // Color for filled stars
   final Color inactiveColor; // Color for unfilled stars
   final Function(double) onRatingChanged; // Callback when rating changes
 
-  const CustomStarRatingWidget({
+  const DrivenStarRating({
     required this.onRatingChanged,
     Key? key,
     this.maxRating = 5,
@@ -17,10 +17,10 @@ class CustomStarRatingWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CustomStarRatingWidget> createState() => _CustomRatingWidgetState();
+  State<DrivenStarRating> createState() => _CustomRatingWidgetState();
 }
 
-class _CustomRatingWidgetState extends State<CustomStarRatingWidget> {
+class _CustomRatingWidgetState extends State<DrivenStarRating> {
   late double currentRating;
 
   @override
