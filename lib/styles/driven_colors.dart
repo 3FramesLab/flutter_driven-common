@@ -1,9 +1,10 @@
 part of styles_module;
 
 class DrivenColors {
+  static const primary = Color.fromRGBO(1, 97, 121, 1); // Color(0xFF016179)
   static const black = Colors.black;
   static const white = Colors.white;
-  static const brandPurple = Color(0xFF8154F2);
+  static const transparentWhite = Color.fromRGBO(255, 255, 255, 0.89);
   static const black33 = Color.fromRGBO(33, 33, 33, 1);
   static const black60 = Color(0x99000000);
   static const black90 = Color(0xE6000000);
@@ -15,7 +16,7 @@ class DrivenColors {
   static const lighterGreyDisableBackground = Color(0xFFE6E7E6);
   static const lightGreyLight = Color.fromRGBO(245, 245, 245, 1);
   static const accountTextColor = Color(0xFF333333);
-  static const grey = Color(0xFF616161);
+  static const grey = Color(0xFF616161); // rgb 97 97 97
   static const darkerGrey = Color(0xFF999999);
   static const grey600 = Color(0xFF7F7F7F);
   static const grey800 = Color(0xFF3C3C3C);
@@ -28,7 +29,6 @@ class DrivenColors {
   static const flashGreen = Color.fromRGBO(46, 125, 50, 1);
   static const orange = Color.fromRGBO(206, 58, 30, 1);
   static const lightOrange = Color.fromRGBO(206, 58, 13, 1);
-  static const purple = Color(0xFF7646F1);
   static const red = Color(0xFFb00020);
   static const pureRed = Color(0xFFFF0000);
   static const shimmerGrey = Color(0xFFF1F4F6);
@@ -36,56 +36,41 @@ class DrivenColors {
   static const barrierColor = Color(0x00123456);
   static const blue = Colors.blue;
   static const darkBlue = Color(0xFF1565C0);
-
   static const inactiveCardDot = Color(0xFFd6d6d6);
   static const activeCardDot = Color(0xFF3b3b3b);
   static const lightGreyBlue = Color(0x00123456);
-
-  static const primaryButtonColor = black;
+  static const lightBlue = Color(0xF3E3F2FD);
+  static const primaryButtonColor = primary;
   static const primaryButtonTextColor = white;
   static const disabledButtonColor = Color(0xFFe0e0e0); // RGB(224, 224, 224)
   static const disabledButtonTextColor =
       Color(0xFF9e9e9e); // RGB(158, 158, 158)
   static const enableBorderColor = Color.fromRGBO(224, 224, 224, 1);
-  static const textBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
-  static const checkboxBorderColor = Color.fromARGB(255, 73, 4, 157);
-  static const darkBlueButtonColor = Color.fromRGBO(0, 97, 121, 1);
+  static const pageBackgroundColor = Color.fromRGBO(248, 250, 255, 1);
+  static const checkboxBorderColor = Color.fromRGBO(54, 87, 128, 1);
   static const dividerColor = Color(0xFFD6DAE0);
-
   static Color shimmerBarColor = Colors.black.withOpacity(0.04);
   static const black54 = Colors.black54;
-
-  // admin_module colors
   static const grey700 = Color(0xFF616161);
   static const grey100 = Color(0xFFf5f5f5);
   static const lightGolden = Color.fromRGBO(242, 181, 93, 1);
   static const lightSkin = Color.fromRGBO(251, 224, 189, 1);
   static const grey900 = Color(0xFF3C3C3C);
-  static const purple200 = Color(0xFF8154F2);
   static const grey500 = Color(0xff9E9E9E);
   static const greyBlueLight = Color(0xffD6DADF);
   static const black38 = Colors.black38;
   static const normalGrey = Colors.grey;
   static const otpFieldFillColor = Color.fromRGBO(248, 250, 255, 0.2);
-  static const purpleActiveColor = Color(0xFF8154F2);
-  static const cpDarkBlue = Color(0xFF276E8A);
   static const redAccent = Color(0xFFCE3A0E);
   static const redAccent239 = Color.fromRGBO(239, 83, 80, 1);
   static const orangeAccent = Color(0xFFEF6C00);
-
-  // Amazon colors
-  static const primaryAmazon = Color.fromRGBO(1, 97, 121, 1);
   static const lightGreyAmazon = Color.fromRGBO(158, 158, 158, 1);
-  static const primaryButtonColorAmazon = primaryAmazon;
-  static const primaryButtonTextColorAmazon = white;
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
   static const successGreenColor = Color(0xff64bb50);
   static const failureRedColor = Color(0xffb00020);
   static const skyBlueColor = Color(0xff7bbfcc);
   static const lightBlueBackground = Color(0xffeef1f6);
-
-  // MC SL
   static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
-
-  static const primary = Color.fromRGBO(1, 97, 121, 1);
+  static const lightBlueGradient = Color.fromRGBO(2, 179, 223, 1);
+  static const whiteShadedBlue = Color.fromRGBO(227, 242, 253, 1);
 }

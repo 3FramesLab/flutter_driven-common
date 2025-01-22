@@ -8,15 +8,17 @@ class ClickableText extends StatelessWidget {
   final TextDecoration decoration;
   final EdgeInsetsGeometry? padding;
   final HitTestBehavior? behavior;
+  final double size;
 
   const ClickableText({
     required this.title,
     this.onTap,
-    this.textColor = DrivenColors.black,
+    this.textColor = DrivenColors.primary,
     this.alignment = MainAxisAlignment.center,
     this.decoration = TextDecoration.underline,
     this.padding,
     this.behavior,
+    this.size = DrivenDimensions.large,
     super.key,
   });
 
@@ -35,7 +37,7 @@ class ClickableText extends StatelessWidget {
               child: Text(
                 title,
                 style: DrivenTextStyle(
-                  DrivenDimensions.large,
+                  size,
                   DrivenFonts.fontWeightSemibold,
                   textColor,
                   decoration: decoration,

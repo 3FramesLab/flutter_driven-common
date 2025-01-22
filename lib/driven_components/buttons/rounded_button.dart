@@ -31,12 +31,13 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Semantics(
-        container: true,
-        child: TextButton(
-          onPressed: onPressed,
-          style: _style(),
-          child: _textWithIcon(),
-        ));
+      container: true,
+      child: TextButton(
+        onPressed: onPressed,
+        style: _style(),
+        child: _textWithIcon(),
+      ),
+    );
   }
 
   Widget _textWithIcon() {

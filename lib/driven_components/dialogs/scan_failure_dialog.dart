@@ -16,9 +16,9 @@ class ScanFailureDialog extends StatelessWidget {
     required this.title,
     required this.primaryButtonText,
     required this.secondaryButtonText,
-    this.titleTextStyle = f16RegularBlackDark,
+    this.titleTextStyle = f16RegularBlack,
     this.subTitle,
-    this.subTitleTextStyle = f16RegularBlackDark,
+    this.subTitleTextStyle = f16RegularBlack,
     this.onPrimaryButtonTap,
     this.onSecondaryButtonTap,
     this.onPopInvoked,
@@ -90,12 +90,12 @@ class ScanFailureDialog extends StatelessWidget {
   Widget get _primaryButton => PrimaryButton(
         onPressed: onPrimaryButtonTap?.call,
         text: primaryButtonText,
-        backgroundColor: DrivenColors.primaryAmazon,
+        backgroundColor: DrivenColors.primary,
       );
 
   Widget get _secondaryButton => ClickableText(
         title: secondaryButtonText,
         onTap: onSecondaryButtonTap?.call,
-        textColor: DrivenColors.primaryAmazon,
+        textColor: DrivenColors.primary,
       );
 }

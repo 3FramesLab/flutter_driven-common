@@ -16,7 +16,7 @@ class DrivenRadioButton extends StatelessWidget {
     required this.defaultValue,
     required this.onChange,
     this.isEnabled = true,
-    this.activeColor = DrivenColors.brandPurple,
+    this.activeColor = DrivenColors.primary,
     this.size,
     this.padding = const EdgeInsets.fromLTRB(5, 6, 32, 0),
     super.key,
@@ -30,7 +30,7 @@ class DrivenRadioButton extends StatelessWidget {
           scale: 1.35,
           child: Radio<dynamic>(
             materialTapTargetSize: size,
-            activeColor: activeColor,
+            activeColor: DrivenColors.primary,
             value: defaultValue,
             groupValue: groupValue,
             onChanged: isEnabled ? onChange : null,
