@@ -103,6 +103,7 @@ const f20SemiboldBlackDark = DrivenTextStyle(20, semiBold, blackDark);
 const f20BoldBlackDark = DrivenTextStyle(20, bold, blackDark);
 
 const f22SemiboldBlack = DrivenTextStyle(22, semiBold, black);
+const f22BoldBlackDark = DrivenTextStyle(22, bold, blackDark);
 
 const f24SemiboldBlack = DrivenTextStyle(24, semiBold, blackDark);
 const f24SemiboldBlackDark = DrivenTextStyle(24, semiBold, blackDark);
