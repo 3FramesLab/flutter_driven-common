@@ -8,6 +8,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   final VoidCallback? onTap;
   final bool isDisabled;
   final EdgeInsetsGeometry padding;
+  final Widget? topIconWidget;
 
   const DrivenCardWithCenterTopIcon({
     super.key,
@@ -15,6 +16,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
     required this.text,
     this.textStyle,
     this.borderColor,
+    this.topIconWidget,
     this.isDisabled = false,
     this.padding = const EdgeInsets.all(16),
     this.onTap,
@@ -58,7 +60,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(icon),
+          topIconWidget ?? SvgPicture.asset(icon),
           const SizedBox(height: 2),
           Flexible(
             child: DrivenText(
