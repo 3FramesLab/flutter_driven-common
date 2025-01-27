@@ -1,6 +1,7 @@
 library driven_components_module;
 
 import 'dart:async';
+import 'dart:math';
 
 import 'package:driven_common/common/driven_constants.dart';
 import 'package:driven_common/common/driven_dimensions.dart';
@@ -151,3 +152,4 @@ part 'text_widgets/title_text.dart';
 part 'text_widgets/rich_text_with_bold_title.dart';
 part 'text_widgets/driven_text.dart';
 part 'overlays/camera_scanner_overlay.dart';
+part 'common_widgets/custom_circular_loader.dart';
