@@ -22,13 +22,27 @@ class CommonWebViewController extends GetxController {
     }
   }
 
-  void onError(
+  void onReceivedError(
     InAppWebViewController controller,
-    Uri? url,
-    int code,
-    String message,
+    WebResourceRequest request,
+    WebResourceError errorResponse,
   ) {
     isLoading(false);
+  }
+
+  void onReceivedHttpError(
+    InAppWebViewController controller,
+    WebResourceRequest request,
+    WebResourceResponse errorResponse,
+  ) {
+    isLoading(false);
+  }
+
+  Future<NavigationActionPolicy?> shouldOverrideUrlLoading(
+    InAppWebViewController controller,
+    NavigationAction? navigationAction,
+  ) async {
+    return NavigationActionPolicy.ALLOW;
   }
 
   Future<void> onBackPressed() async {
