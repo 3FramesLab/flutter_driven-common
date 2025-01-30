@@ -14,13 +14,10 @@ class DrivenText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: text,
-      child: Text(
-        text,
-        style: style,
-        textAlign: textAlign,
-      ),
+    return Text(
+      text,
+      style: style,
+      textAlign: textAlign,
     );
   }
 }

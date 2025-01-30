@@ -17,8 +17,8 @@ class DrivenCustomDropDown extends StatelessWidget {
     required this.valueChanged,
     this.placeholder = '',
     this.creditCheckInfoText = '',
-    this.borderColor = DrivenColors.primary,
-    this.selectedItemBorderColor = DrivenColors.primary,
+    this.borderColor = DrivenColors.purple,
+    this.selectedItemBorderColor = DrivenColors.purple,
     super.key,
   });
 
@@ -42,15 +42,15 @@ class DrivenCustomDropDown extends StatelessWidget {
 
   ButtonStyle get _buttonStyle {
     return ButtonStyle(
-      overlayColor: WidgetStateProperty.resolveWith(
+      overlayColor: MaterialStateProperty.resolveWith(
         (states) {
-          if (states.contains(WidgetState.pressed)) {
+          if (states.contains(MaterialState.pressed)) {
             return Colors.transparent;
           }
           return null;
         },
       ),
-      padding: WidgetStateProperty.all(EdgeInsets.zero),
+      padding: MaterialStateProperty.all(EdgeInsets.zero),
     );
   }
 
@@ -96,7 +96,7 @@ class DrivenCustomDropDown extends StatelessWidget {
   Container _dialogContent(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: DrivenColors.primary),
+        border: Border.all(color: borderColor),
         borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(8),
           bottomRight: Radius.circular(8),
@@ -139,7 +139,8 @@ class DrivenCustomDropDown extends StatelessWidget {
   BoxDecoration _selectedItemDecoration() {
     return BoxDecoration(
       border: Border.all(
-        color: _isDropDownClicked() ? DrivenColors.primary : Colors.transparent,
+        color:
+            _isDropDownClicked() ? selectedItemBorderColor : Colors.transparent,
       ),
     );
   }

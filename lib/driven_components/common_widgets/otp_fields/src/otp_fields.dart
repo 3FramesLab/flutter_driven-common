@@ -39,7 +39,7 @@ class OtpFieldsState extends State<OtpFields> with TickerProviderStateMixin {
   late AnimationController _cursorController;
   late Animation<double> _cursorAnimation;
   OtpTheme get _otpTheme => widget.otpTheme;
-  TextStyle get _textStyle => f14SemiBoldBlack;
+  TextStyle get _textStyle => f14SemiboldBlack;
 
   @override
   void initState() {

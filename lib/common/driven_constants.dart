@@ -60,4 +60,8 @@ class DrivenConstants {
   static const mobilePhone = 'Mobile Phone';
   static const passwordRegex =
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*?[*&!#@$%^()_+=\-,./?[\]{}|]).*$';
+
+  static const hyphenSign = '-';
+  static const passwordRuleFormatTitle =
+      'The format of your password must adhere to the following rules:';
 }

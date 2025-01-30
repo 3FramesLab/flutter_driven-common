@@ -4,7 +4,7 @@ TextSpan richTextHyperlink(String hyperlinkText, VoidCallback action) {
   return TextSpan(
     text: hyperlinkText,
     style: const TextStyle(
-      color: DrivenColors.primary,
+      color: DrivenColors.brandPurple,
       decoration: TextDecoration.underline,
       fontWeight: DrivenFonts.fontWeightSemibold,
       fontSize: 12,

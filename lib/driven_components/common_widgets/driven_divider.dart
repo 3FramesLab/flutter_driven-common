@@ -9,7 +9,7 @@ class DrivenDivider extends StatelessWidget {
     Key? key,
     this.height,
     this.thickness = 1,
-    this.color = DrivenColors.disabledButtonTextColor,
+    this.color = DrivenColors.grey,
   }) : super(key: key);
 
   @override
