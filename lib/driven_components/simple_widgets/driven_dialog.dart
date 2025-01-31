@@ -117,6 +117,7 @@ class DrivenDialog extends StatelessWidget {
         Column(children: body),
         SizedBox(height: isDynamicAlert ? 30 : 2),
         _actions(),
+        if (bottomBody != null) bottomBody!,
       ],
     );
   }
@@ -139,7 +140,6 @@ class DrivenDialog extends StatelessWidget {
           if (secondaryButton != null) _secondaryButton(),
           if (secondaryRightButtonText != null)
             _secondaryRightButton(secondaryRightButtonText),
-          if (bottomBody != null) bottomBody!,
         ],
       );
     }
@@ -219,7 +219,6 @@ class DrivenDialog extends StatelessWidget {
 class DefaultDialogCloseButton extends StatelessWidget {
   final Color backgroundColor;
   final Function()? onButtonTap;
-
   const DefaultDialogCloseButton({
     super.key,
     this.backgroundColor = DrivenColors.primaryButtonColor,

@@ -17,7 +17,7 @@ class DrivenCheckbox extends StatelessWidget {
     required this.value,
     required this.textWidget,
     this.isShowGreyCheckbox = false,
-    this.activeColor = DrivenColors.brandPurple,
+    this.activeColor = DrivenColors.primary,
     this.borderSideColor = DrivenColors.grey700,
     this.enableTextTap = true,
     this.checkBoxExtraPadding =

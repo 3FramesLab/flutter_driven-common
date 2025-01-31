@@ -1,6 +1,4 @@
-// ignore_for_file: use_build_context_synchronously
-
-part of '../driven_components_module.dart';
+part of driven_components_module;
 
 class DrivenPasswordRulesIcon extends StatelessWidget {
   final ScrollController? scrollController;

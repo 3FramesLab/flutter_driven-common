@@ -4,44 +4,44 @@ class DrivenBackButton extends StatelessWidget {
   final void Function()? onPressed;
   final Color color;
   final MainAxisSize mainAxisSize;
-  final FontWeight? fontWeight;
+  final double iconWidth;
+  final String? buttonText;
+  final double buttonTextWidth;
 
   const DrivenBackButton({
     super.key,
     this.onPressed,
-    this.color = DrivenColors.purple,
+    this.buttonText = DrivenConstants.back,
+    this.color = DrivenColors.primary,
     this.mainAxisSize = MainAxisSize.max,
-    this.fontWeight,
+    // TO-DO (Shailendra): Make it 24 as default once we remove admin_template in super-app
+    this.iconWidth = 17,
+    this.buttonTextWidth = 42,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
+        padding: WidgetStateProperty.all<EdgeInsets>(EdgeInsets.zero),
       ),
       onPressed: onPressed ?? Get.back,
       child: Row(
         mainAxisSize: mainAxisSize,
         children: [
           SizedBox(
-            width: 17,
+            width: iconWidth,
             child: Icon(
-              Icons.arrow_back_ios,
+              Icons.navigate_before,
               color: color,
             ),
           ),
           SizedBox(
-            width: 42,
+            width: buttonTextWidth,
             child: Text(
-              DrivenConstants.back,
-              style: TextStyle(
-                fontSize: 17,
-                color: color,
-                fontFamily: DrivenFonts.avertaFontFamily,
-                fontWeight: fontWeight,
-              ),
-              textScaleFactor: 1,
+              buttonText.toString(),
+              style: f16SemiboldPrimary.copyWith(color: color),
+              textScaler: const TextScaler.linear(1),
             ),
           ),
         ],

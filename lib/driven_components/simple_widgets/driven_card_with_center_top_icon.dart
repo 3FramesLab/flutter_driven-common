@@ -1,27 +1,34 @@
 part of driven_components_module;
 
 class DrivenCardWithCenterTopIcon extends StatelessWidget {
-  final String icon;
+  final String svgIcon;
   final String text;
   final TextStyle? textStyle;
   final Color? borderColor;
   final VoidCallback? onTap;
   final bool isDisabled;
+  final Icon? icon;
+  final EdgeInsetsGeometry margin;
+  final double padding;
 
   const DrivenCardWithCenterTopIcon({
     super.key,
-    required this.icon,
     required this.text,
+    this.svgIcon = '',
+    this.icon,
     this.textStyle,
     this.borderColor,
     this.isDisabled = false,
-    this.onTap,
+    this.onTap,  
+    this.margin =  EdgeInsets.zero , 
+    this.padding = 16,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: _boxDecoration,
+      margin: margin,
       child: Material(
         color: DrivenColors.transparent,
         child: InkWell(
@@ -32,7 +39,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
           child: Ink(
             width: double.infinity,
             child: Padding(
-              padding: const EdgeInsets.all(16),
+              padding:  EdgeInsets.all(padding),
               child: _content(),
             ),
           ),
@@ -56,7 +63,16 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(icon),
+          if (svgIcon.isNotEmpty)
+            Semantics(
+              label: 'icon_$text',
+              child: SvgPicture.asset(svgIcon),
+            ),
+          if (icon != null)
+            Semantics(
+              label: 'icon_$text',
+              child: icon,
+            ),
           const SizedBox(height: 2),
           Flexible(
             child: DrivenText(
@@ -71,5 +87,5 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   }
 
   TextStyle get _textStyle =>
-      textStyle ?? (isDisabled ? f14SemiboldDisabled : f14SemiboldBlack);
+      textStyle ?? (isDisabled ? f14SemiboldDisabled : f14SemiBoldBlack);
 }
