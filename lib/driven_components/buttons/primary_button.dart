@@ -10,6 +10,7 @@ class PrimaryButton extends RoundedButton {
     final IconData? rightIcon,
     double? borderRadius,
     Widget? prefix,
+    Color disabledBackgroundColor = DrivenColors.disabledButtonColor,
     super.key,
   }) : super(
           onPressed: onPressed,
@@ -21,5 +22,6 @@ class PrimaryButton extends RoundedButton {
           rightIcon: rightIcon,
           borderRadius: borderRadius,
           prefix: prefix,
+          disabledBackgroundColor: disabledBackgroundColor,
         );
 }

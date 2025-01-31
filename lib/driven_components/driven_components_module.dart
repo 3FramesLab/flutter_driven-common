@@ -1,7 +1,9 @@
 library driven_components_module;
 
 import 'dart:async';
+import 'dart:math' as math;
 
+import 'package:driven_common/common/driven_assets.dart';
 import 'package:driven_common/common/driven_constants.dart';
 import 'package:driven_common/common/driven_dimensions.dart';
 import 'package:driven_common/common/money_maker.dart';
@@ -48,6 +50,7 @@ part 'complex_widgets/toggle_switch_container.dart';
 part 'dialogs/aligned_dialog.dart';
 part 'dialogs/scan_failure_dialog.dart';
 part 'dialogs/connectivity_error_dialog.dart';
+part 'dialogs/driven_password_rules_dialog.dart';
 part 'form_widgets/autocomplete_input.dart';
 part 'form_widgets/borderless_input_field.dart';
 part 'form_widgets/custom_text_field.dart';
@@ -126,7 +129,7 @@ part 'simple_widgets/padded_row.dart';
 part 'simple_widgets/padded_text.dart';
 part 'simple_widgets/padded_text_fixed_font_size.dart';
 part 'simple_widgets/page_content.dart';
-part 'simple_widgets/password_icon.dart';
+part 'simple_widgets/driven_password_rules_icon.dart';
 part 'simple_widgets/review_panel.dart';
 part 'simple_widgets/signup_page_message.dart';
 part 'simple_widgets/signup_page_title.dart';
@@ -155,3 +158,4 @@ part 'text_widgets/rich_text_with_bold_title.dart';
 part 'text_widgets/driven_text.dart';
 part 'text_widgets/view_large_title.dart';
 part 'overlays/camera_scanner_overlay.dart';
+part 'common_widgets/custom_circular_loader.dart';

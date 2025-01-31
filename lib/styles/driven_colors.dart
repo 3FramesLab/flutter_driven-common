@@ -73,4 +73,12 @@ class DrivenColors {
   static const lightBlueGradient = Color.fromRGBO(2, 179, 223, 1);
   static const whiteShadedBlue = Color.fromRGBO(227, 242, 253, 1);
   static const cpDarkBlue = Color(0xFF276E8A);
+
+  static const white248 = Color(0xFFF8F8F8);
+  static const lightBlue227 = Color(0xFFE3F2FD);
+  static const grey108 = Color(0xFF6C727F);
+
+  static const lightGreen = Color(0xFFB6EBCA);
+  static const green58 = Color(0xFF3AE180);
+  static const darkGreen = Color(0xFF12BD55);
 }
