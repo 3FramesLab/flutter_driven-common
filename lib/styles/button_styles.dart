@@ -13,6 +13,22 @@ class DrivenButtonStyle {
     );
   }
 
+  static ButtonStyle evPrimaryElevated() {
+    return styleFrom(
+      backgroundColor: DrivenColors.cpDarkBlue,
+      primary: Colors.black,
+      disabledBackgroundColor: DrivenColors.disabledButtonColor,
+      disabledPrimary: Colors.white,
+      minimumSize: const Size.fromHeight(48),
+      shape: const DrivenRectangleBorder.withRadius(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
+      ),
+      textStyle: f16SemiBoldBlack.copyWith(
+        fontFamily: DrivenFonts.sfProDisplayFontFamily,
+      ),
+    );
+  }
+
   static ButtonStyle primaryOutlined() {
     return styleFrom(
       backgroundColor: Colors.white,
@@ -24,13 +40,34 @@ class DrivenButtonStyle {
     );
   }
 
+  static ButtonStyle evPrimaryOutlined() {
+    return styleFrom(
+      backgroundColor: DrivenColors.white,
+      primary: DrivenColors.black,
+      side: const BorderSide(width: 2, color: DrivenColors.lightGrey),
+      minimumSize: const Size.fromHeight(48),
+      shape: DrivenRectangleBorder.mediumRounded,
+      textStyle: f16SemiBoldBlack.copyWith(
+        fontFamily: DrivenFonts.sfProDisplayFontFamily,
+      ),
+    );
+  }
+
   static ButtonStyle primaryText() {
     return styleFrom(primary: DrivenColors.primary, textStyle: f16Semibold);
   }
 
+  static ButtonStyle evPrimaryText() {
+    return styleFrom(
+        primary: DrivenColors.cpDarkBlue,
+        textStyle: f16Semibold.copyWith(
+          fontFamily: DrivenFonts.sfProDisplayFontFamily,
+        ));
+  }
+
   static ButtonStyle transparentOverlay() {
     return ButtonStyle(
-      overlayColor: WidgetStateProperty.resolveWith<Color?>(
+      overlayColor: MaterialStateProperty.resolveWith<Color?>(
         (states) {
           return Colors.transparent;
         },
