@@ -29,7 +29,7 @@ class UiHelper {
   }
 
   static bool isTablet() {
-    final data = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
+    final data = MediaQueryData.fromView(WidgetsBinding.instance.window);
     return data.size.shortestSide > 600;
   }
 
@@ -52,19 +52,27 @@ class UiHelper {
     filter: {'#': RegExp('[0-9]')},
   );
 
-  static BoxDecoration drivenCardBoxDecoration() {
+  static final MaskTextInputFormatter routeIdInputMaskAlphaNumeric13 =
+      MaskTextInputFormatter(
+    mask: '##########-##',
+    filter: {'#': RegExp(r'[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};:"\\|,.<>/?~`]')},
+  );
+
+  static BoxDecoration drivenCardBoxDecoration({
+    BorderRadius? borderRadius = const BorderRadius.all(Radius.circular(10)),
+  }) {
     return BoxDecoration(
-      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      borderRadius: borderRadius,
       boxShadow: [
         BoxShadow(
-          color: DrivenColors.grey.withOpacity(0.3),
+          color: DrivenColors.grey.withOpacity(0.1),
           offset: const Offset(0, 1),
           blurRadius: 8,
           spreadRadius: 0,
         ),
         BoxShadow(
-          color: DrivenColors.grey.withOpacity(0.3),
-          offset: const Offset(0, 2),
+          color: DrivenColors.grey.withOpacity(0.1),
+          offset: const Offset(0, 3),
           blurRadius: 3,
           spreadRadius: -2,
         )

@@ -20,7 +20,7 @@ class RoundedButtonStyle extends ButtonStyle {
           padding: _padding(padding),
         );
 
-  static MaterialStateProperty<TextStyle>? _textStyle() {
+  static WidgetStateProperty<TextStyle>? _textStyle() {
     return ButtonStyleButton.allOrNull<TextStyle>(f16Semibold);
   }
 
@@ -39,17 +39,17 @@ class RoundedButtonStyle extends ButtonStyle {
     );
   }
 
-  static MaterialStateProperty<BorderSide?>? _side(BorderSide? side) {
+  static WidgetStateProperty<BorderSide?>? _side(BorderSide? side) {
     return ButtonStyleButton.allOrNull<BorderSide>(side);
   }
 
-  static MaterialStateProperty<Size?>? _sizeFromHeight(double height) {
+  static WidgetStateProperty<Size?>? _sizeFromHeight(double height) {
     return ButtonStyleButton.allOrNull<Size>(
       Size.fromHeight(height),
     );
   }
 
-  static MaterialStateProperty<OutlinedBorder?>? _shape(double height,
+  static WidgetStateProperty<OutlinedBorder?>? _shape(double height,
       {double? borderRadius}) {
     return ButtonStyleButton.allOrNull<OutlinedBorder>(
       RoundedRectangleBorder(
@@ -60,7 +60,7 @@ class RoundedButtonStyle extends ButtonStyle {
     );
   }
 
-  static MaterialStateProperty<EdgeInsetsGeometry?>? _padding(
+  static WidgetStateProperty<EdgeInsetsGeometry?>? _padding(
       EdgeInsets? padding) {
     return ButtonStyleButton.allOrNull<EdgeInsetsGeometry>(
       padding,

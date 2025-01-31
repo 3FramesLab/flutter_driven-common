@@ -21,7 +21,7 @@ class DrivenImageDialog extends StatelessWidget {
     this.primaryButtonText = DrivenConstants.ok,
     this.onPrimaryButtonTap,
     this.onPopInvoked,
-    this.buttonBackgroundColor = DrivenColors.primaryAmazon,
+    this.buttonBackgroundColor = DrivenColors.primary,
     this.descriptionStyle,
     super.key,
   });
@@ -92,7 +92,7 @@ class DrivenImageDialog extends StatelessWidget {
           child: Text(
             description ?? '',
             textAlign: TextAlign.center,
-            style: descriptionStyle ?? f14SemiboldBlackDark,
+            style: descriptionStyle ?? f14SemiBoldBlack,
           ),
         ),
       );

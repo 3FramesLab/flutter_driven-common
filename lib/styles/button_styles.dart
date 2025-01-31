@@ -9,7 +9,7 @@ class DrivenButtonStyle {
       disabledPrimary: Colors.white,
       minimumSize: const Size.fromHeight(48),
       shape: DrivenRectangleBorder.veryRounded,
-      textStyle: f16SemiboldBlack,
+      textStyle: f16SemiBoldBlack,
     );
   }
 
@@ -20,17 +20,17 @@ class DrivenButtonStyle {
       side: const BorderSide(width: 2, color: DrivenColors.lightGrey),
       minimumSize: const Size.fromHeight(48),
       shape: DrivenRectangleBorder.veryRounded,
-      textStyle: f16SemiboldBlack,
+      textStyle: f16SemiBoldBlack,
     );
   }
 
   static ButtonStyle primaryText() {
-    return styleFrom(primary: DrivenColors.brandPurple, textStyle: f16Semibold);
+    return styleFrom(primary: DrivenColors.primary, textStyle: f16Semibold);
   }
 
   static ButtonStyle transparentOverlay() {
     return ButtonStyle(
-      overlayColor: MaterialStateProperty.resolveWith<Color?>(
+      overlayColor: WidgetStateProperty.resolveWith<Color?>(
         (states) {
           return Colors.transparent;
         },
