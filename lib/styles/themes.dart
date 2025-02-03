@@ -53,9 +53,15 @@ class Themes {
         textButtonTheme:
             TextButtonThemeData(style: DrivenButtonStyle.primaryText()),
         textTheme: const TextTheme(
-          bodyLarge: f14RegularBlack,
+          labelSmall: f14RegularGrey,
+          labelMedium: f14SemiBoldGrey700,
+          labelLarge: f20SemiBoldBlack,
+          bodySmall: f10RegularRed,
+          bodyMedium: f14RegularBlack,
+          bodyLarge: f20RegularBlack,
+          titleMedium: f14SemiBoldGrey700,
+          titleSmall: f14RegularLightGrey,
           titleLarge: f14RegularGrey,
-          titleMedium: f16SemiBoldBlack2,
         ),
         inputDecorationTheme: inputDecorationTheme,
         dividerColor: DrivenColors.lightGrey,
@@ -69,7 +75,7 @@ class Themes {
         textSelectionTheme:
             const TextSelectionThemeData(cursorColor: Colors.blue),
         scaffoldBackgroundColor: DrivenColors.lightestGrey,
-        primaryColor: DrivenColors.cpDarkBlue,
+        primaryColor: DrivenColors.cpPrimary,
         fontFamily: DrivenFonts.sfProDisplayFontFamily,
         elevatedButtonTheme: ElevatedButtonThemeData(
             style: DrivenButtonStyle.evPrimaryElevated()),
@@ -78,16 +84,18 @@ class Themes {
         textButtonTheme:
             TextButtonThemeData(style: DrivenButtonStyle.evPrimaryText()),
         textTheme: TextTheme(
-          bodyLarge: f14RegularBlackSfPro,
-          titleLarge: f14RegularGrey.copyWith(
+          labelSmall:
+              f14RegularBlackSfPro.copyWith(color: DrivenColors.grey108),
+          labelMedium: f14RegularBlackSfPro,
+          bodySmall: f10RegularRed.copyWith(
               fontFamily: DrivenFonts.sfProDisplayFontFamily),
-          titleMedium: f16SemiBoldBlack2.copyWith(
-              fontFamily: DrivenFonts.sfProDisplayFontFamily),
+          bodyMedium: f14RegularBlackSfPro,
+          bodyLarge: f16RegularBlackSfPro,
         ),
         inputDecorationTheme: inputDecorationTheme,
         dividerColor: DrivenColors.lightGrey,
         checkboxTheme: DrivenCheckboxTheme.theme,
         unselectedWidgetColor: DrivenColors.grey600,
-        iconTheme: const IconThemeData(color: DrivenColors.cpDarkBlue),
+        iconTheme: const IconThemeData(color: DrivenColors.cpPrimary),
       );
 }
