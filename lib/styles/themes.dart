@@ -56,7 +56,7 @@ class Themes {
           labelSmall: f14RegularGrey,
           labelMedium: f14SemiBoldGrey700,
           labelLarge: f20SemiBoldBlack,
-          bodySmall: f10RegularRed,
+          bodySmall: f12RegularRed,
           bodyMedium: f14RegularBlack,
           bodyLarge: f20RegularBlack,
           titleMedium: f14SemiBoldGrey700,
@@ -87,7 +87,7 @@ class Themes {
           labelSmall:
               f14RegularBlackSfPro.copyWith(color: DrivenColors.grey108),
           labelMedium: f14RegularBlackSfPro,
-          bodySmall: f10RegularRed.copyWith(
+          bodySmall: f12RegularRed.copyWith(
               fontFamily: DrivenFonts.sfProDisplayFontFamily),
           bodyMedium: f14RegularBlackSfPro,
           bodyLarge: f16RegularBlackSfPro,

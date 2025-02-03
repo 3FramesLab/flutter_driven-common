@@ -26,7 +26,6 @@ const grey700 = DrivenColors.grey700;
 const f10RegularBlack = DrivenTextStyle(10, regular, black);
 const f10RegularWhite = DrivenTextStyle(10, regular, white);
 const f10RegularGrey = DrivenTextStyle(10, regular, grey);
-const f10RegularRed = DrivenTextStyle(10, regular, grey);
 
 const f12SemiBoldBlack = DrivenTextStyle(12, semiBold, black);
 const f12SemiboldGrey = DrivenTextStyle(12, semiBold, grey);
@@ -36,6 +35,7 @@ const f12BoldWhite = DrivenTextStyle(12, bold, white);
 const f12RegularBlack = DrivenTextStyle(12, regular, black);
 const f12RegularBlack2 = DrivenTextStyle(12, regular, black2);
 const f12RegularGrey = DrivenTextStyle(12, regular, grey);
+const f12RegularRed = DrivenTextStyle(12, regular, red);
 
 const f13RegularGrey = DrivenTextStyle(13, regular, grey);
 const f13RegularBlack = DrivenTextStyle(13, regular, black);
