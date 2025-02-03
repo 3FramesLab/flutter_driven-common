@@ -83,4 +83,6 @@ class DrivenColors {
   static const darkGreen = Color(0xFF12BD55);
 
   static const cpPrimary = Color(0xFF40B7EC);
+  static const grey99 = Color(0xFF636974);
+  static const grey158 = Color(0xFF9E9E9E);
 }

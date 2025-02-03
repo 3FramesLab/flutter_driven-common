@@ -3,10 +3,10 @@ part of styles_module;
 class DrivenButtonStyle {
   static ButtonStyle primaryElevated() {
     return styleFrom(
-      backgroundColor: DrivenColors.black,
+      backgroundColor: DrivenColors.primary,
       primary: Colors.white,
       disabledBackgroundColor: DrivenColors.disabledButtonColor,
-      disabledPrimary: Colors.white,
+      disabledPrimary: DrivenColors.grey158,
       minimumSize: const Size.fromHeight(48),
       shape: DrivenRectangleBorder.veryRounded,
       textStyle: f16SemiBoldBlack,
@@ -18,7 +18,7 @@ class DrivenButtonStyle {
       backgroundColor: DrivenColors.cpDarkBlue,
       primary: Colors.black,
       disabledBackgroundColor: DrivenColors.disabledButtonColor,
-      disabledPrimary: Colors.white,
+      disabledPrimary: DrivenColors.grey99,
       minimumSize: const Size.fromHeight(48),
       shape: const DrivenRectangleBorder.withRadius(
         borderRadius: BorderRadius.all(Radius.circular(8)),
