@@ -63,6 +63,7 @@ const f14RegularGreyBlue = DrivenTextStyle(14, regular, greyBlue);
 const f15RegularWhite = DrivenTextStyle(15, regular, white);
 const f15RegularBlack = DrivenTextStyle(15, regular, black);
 
+const f16RegularPrimary = DrivenTextStyle(16, regular, primary);
 const f16RegularGrey = DrivenTextStyle(16, regular, grey);
 const f16SemiBoldGrey = DrivenTextStyle(16, semiBold, grey);
 const f16SemiBoldWhite = DrivenTextStyle(16, semiBold, white);
@@ -82,6 +83,7 @@ const f16BoldRed = DrivenTextStyle(16, bold, red);
 const f16SemiboldRed = DrivenTextStyle(16, semiBold, red);
 
 const f18SemiBoldBlack = DrivenTextStyle(18, semiBold, black);
+const f18ExtraBoldBlack = DrivenTextStyle(18, extraBold, black);
 const f18ExtraBoldPrimary = DrivenTextStyle(18, extraBold, primary);
 
 const f24ExtraboldPrimary =
@@ -94,10 +96,12 @@ const f20SemiBoldBlack = DrivenTextStyle(20, semiBold, black);
 const f20BoldBlack = DrivenTextStyle(20, bold, black);
 
 const f22SemiBoldBlack = DrivenTextStyle(22, semiBold, black);
+const f22BoldBlackDark = DrivenTextStyle(22, bold, black);
 
 const f24BoldBlack = DrivenTextStyle(24, bold, black);
 const f24SemiBoldBlack = DrivenTextStyle(24, semiBold, black);
 const f24ExtraboldBlack = DrivenTextStyle(24, extraBold, black);
+const f24ExtraBoldGreen = DrivenTextStyle(24, extraBold, green);
 
 const f26BoldWhite = DrivenTextStyle(26, bold, white);
 
@@ -245,16 +249,14 @@ final f20SemiboldBlackSfPro =
 final f24SemiboldBlackSfPro =
     f24SemiBoldBlack.copyWith(fontFamily: sfProFontFamily);
 
-final f12BoldBlackSfPro =
-    f12BoldBlack.copyWith(fontFamily: sfProFontFamily);
-final f14BoldBlackSfPro =
-    f14BoldBlack.copyWith(fontFamily: sfProFontFamily);
-final f16BoldBlackSfPro =
-    f16BoldBlack.copyWith(fontFamily: sfProFontFamily);
-final f20BoldBlackSfPro =
-    f20BoldBlack.copyWith(fontFamily: sfProFontFamily);
-final f24BoldBlackSfPro =
-    f24BoldBlack.copyWith(fontFamily: sfProFontFamily);
+final f12BoldBlackSfPro = f12BoldBlack.copyWith(fontFamily: sfProFontFamily);
+final f14BoldBlackSfPro = f14BoldBlack.copyWith(fontFamily: sfProFontFamily);
+final f16BoldBlackSfPro = f16BoldBlack.copyWith(fontFamily: sfProFontFamily);
+final f20BoldBlackSfPro = f20BoldBlack.copyWith(fontFamily: sfProFontFamily);
+final f24BoldBlackSfPro = f24BoldBlack.copyWith(fontFamily: sfProFontFamily);
+
+final f14RegularGreyItalic = const DrivenTextStyle(14, regular, grey)
+    .copyWith(fontStyle: FontStyle.italic);
 
 const f16SemiBold = TextStyle(
   fontSize: 16,

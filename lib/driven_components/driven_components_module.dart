@@ -137,6 +137,11 @@ part 'simple_widgets/driven_card.dart';
 part 'simple_widgets/driven_card_with_left_right_icons.dart';
 part 'simple_widgets/driven_card_with_center_top_icon.dart';
 part 'simple_widgets/driven_card_with_left_icon.dart';
+part 'simple_widgets/driven_feedback_button.dart';
+part 'simple_widgets/driven_star_rating.dart';
+part 'simple_widgets/stepper_rating_progress_indicator.dart';
+part 'simple_widgets/svg_image.dart';
+
 part 'switch/driven_cupertino_switch.dart';
 part 'templates/padded_content.dart';
 part 'text_widgets/body1_regular14.dart';
