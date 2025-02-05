@@ -1,12 +1,10 @@
 part of styles_module;
 
 const primary = DrivenColors.primary;
-const primary = DrivenColors.primary;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
 const greyBlue = DrivenColors.greyBlue;
 const lightGrey = DrivenColors.lightGrey;
-const black = DrivenColors.black;
 const black = DrivenColors.black;
 const black2 = DrivenColors.accountTextColor;
 const black60 = DrivenColors.black60;
@@ -22,14 +20,12 @@ const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
 const cpDarkBlue = DrivenColors.primary;
-const cpDarkBlue = DrivenColors.primary;
 const disabled = DrivenColors.disabledButtonTextColor;
 
 const f10RegularBlack = DrivenTextStyle(10, regular, black);
 const f10RegularWhite = DrivenTextStyle(10, regular, white);
 const f10RegularGrey = DrivenTextStyle(10, regular, grey);
 
-const f12SemiBoldBlack = DrivenTextStyle(12, semiBold, black);
 const f12SemiBoldBlack = DrivenTextStyle(12, semiBold, black);
 const f12SemiboldGrey = DrivenTextStyle(12, semiBold, grey);
 const f12SemiboldWhite = DrivenTextStyle(12, semiBold, white);
