@@ -12,17 +12,20 @@ class SwitchWithContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.ltr,
-      child: ToggleSwitchContainer(
-          child: DrivenCupertinoSwitch(
-        value: value,
-        activeColor: DrivenColors.flashGreen,
-        inactiveColor: Colors.white,
-        thumbColor: value ? Colors.white : Colors.grey,
-        key: const Key(DrivenConstants.saveUserNameSwitchKey),
-        onChanged: onChanged,
-      )),
+    return Semantics(
+      container: true,
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: ToggleSwitchContainer(
+            child: DrivenCupertinoSwitch(
+          value: value,
+          activeColor: DrivenColors.flashGreen,
+          inactiveColor: Colors.white,
+          thumbColor: value ? Colors.white : Colors.grey,
+          key: const Key(DrivenConstants.saveUserNameSwitchKey),
+          onChanged: onChanged,
+        )),
+      ),
     );
   }
 }

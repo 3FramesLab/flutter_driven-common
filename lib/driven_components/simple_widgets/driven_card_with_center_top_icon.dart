@@ -9,7 +9,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
   final bool isDisabled;
   final Icon? icon;
   final EdgeInsetsGeometry margin;
-  final double padding;
+  final EdgeInsetsGeometry padding;
 
   const DrivenCardWithCenterTopIcon({
     super.key,
@@ -19,9 +19,9 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
     this.textStyle,
     this.borderColor,
     this.isDisabled = false,
-    this.onTap,  
-    this.margin =  EdgeInsets.zero , 
-    this.padding = 16,
+    this.padding = const EdgeInsets.all(16),
+    this.onTap,
+    this.margin = EdgeInsets.zero,
   });
 
   @override
@@ -39,7 +39,7 @@ class DrivenCardWithCenterTopIcon extends StatelessWidget {
           child: Ink(
             width: double.infinity,
             child: Padding(
-              padding:  EdgeInsets.all(padding),
+              padding: padding,
               child: _content(),
             ),
           ),

@@ -4,12 +4,14 @@ class DrivenText extends StatelessWidget {
   final TextStyle? style;
   final String text;
   final TextAlign? textAlign;
+  final int? maxLines;
 
   const DrivenText({
     super.key,
     required this.text,
     this.style = f16RegularBlack,
     this.textAlign,
+    this.maxLines,
   });
 
   @override
@@ -20,6 +22,7 @@ class DrivenText extends StatelessWidget {
         text,
         style: style,
         textAlign: textAlign,
+        maxLines: maxLines,
       ),
     );
   }

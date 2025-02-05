@@ -17,6 +17,9 @@ class CustomTextField extends StatefulWidget {
   final String? errorText;
   final InputDecoration? inputDecoration;
   final String? hintText;
+  final int? minLines;
+  final int maxLines;
+
   const CustomTextField({
     Key? key,
     this.textEditingController,
@@ -35,6 +38,8 @@ class CustomTextField extends StatefulWidget {
     this.errorText,
     this.inputDecoration,
     this.hintText = '',
+    this.minLines,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -56,6 +61,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       style: f14SemiBoldBlack,
       decoration: widget.inputDecoration ?? _inputDecoration(),
       maxLength: widget.textMaxLength,
+      minLines: widget.minLines,
+      maxLines: widget.maxLines,
     );
   }
 

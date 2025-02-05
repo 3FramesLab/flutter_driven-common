@@ -1,10 +1,12 @@
 part of styles_module;
 
 const primary = DrivenColors.primary;
+const primary = DrivenColors.primary;
 const white = DrivenColors.white;
 const grey = DrivenColors.grey;
 const greyBlue = DrivenColors.greyBlue;
 const lightGrey = DrivenColors.lightGrey;
+const black = DrivenColors.black;
 const black = DrivenColors.black;
 const black2 = DrivenColors.accountTextColor;
 const black60 = DrivenColors.black60;
@@ -20,12 +22,14 @@ const semiBold = DrivenFonts.fontWeightSemibold;
 const bold = DrivenFonts.fontWeightBold;
 const extraBold = DrivenFonts.fontWeightExtraBold;
 const cpDarkBlue = DrivenColors.primary;
+const cpDarkBlue = DrivenColors.primary;
 const disabled = DrivenColors.disabledButtonTextColor;
 
 const f10RegularBlack = DrivenTextStyle(10, regular, black);
 const f10RegularWhite = DrivenTextStyle(10, regular, white);
 const f10RegularGrey = DrivenTextStyle(10, regular, grey);
 
+const f12SemiBoldBlack = DrivenTextStyle(12, semiBold, black);
 const f12SemiBoldBlack = DrivenTextStyle(12, semiBold, black);
 const f12SemiboldGrey = DrivenTextStyle(12, semiBold, grey);
 const f12SemiboldWhite = DrivenTextStyle(12, semiBold, white);
@@ -63,6 +67,7 @@ const f14RegularGreyBlue = DrivenTextStyle(14, regular, greyBlue);
 const f15RegularWhite = DrivenTextStyle(15, regular, white);
 const f15RegularBlack = DrivenTextStyle(15, regular, black);
 
+const f16RegularPrimary = DrivenTextStyle(16, regular, primary);
 const f16RegularGrey = DrivenTextStyle(16, regular, grey);
 const f16SemiBoldGrey = DrivenTextStyle(16, semiBold, grey);
 const f16SemiBoldWhite = DrivenTextStyle(16, semiBold, white);
@@ -82,6 +87,7 @@ const f16BoldRed = DrivenTextStyle(16, bold, red);
 const f16SemiboldRed = DrivenTextStyle(16, semiBold, red);
 
 const f18SemiBoldBlack = DrivenTextStyle(18, semiBold, black);
+const f18ExtraBoldBlack = DrivenTextStyle(18, extraBold, black);
 const f18ExtraBoldPrimary = DrivenTextStyle(18, extraBold, primary);
 
 const f24ExtraboldPrimary =
@@ -94,6 +100,7 @@ const f20SemiBoldBlack = DrivenTextStyle(20, semiBold, black);
 const f20BoldBlack = DrivenTextStyle(20, bold, black);
 
 const f22SemiBoldBlack = DrivenTextStyle(22, semiBold, black);
+const f22BoldBlackDark = DrivenTextStyle(22, bold, black);
 
 const f24BoldBlack = DrivenTextStyle(24, bold, black);
 const f24SemiBoldBlack = DrivenTextStyle(24, semiBold, black);
@@ -256,6 +263,9 @@ final f20BoldBlackSfPro =
 final f24BoldBlackSfPro =
     f24BoldBlack.copyWith(fontFamily: sfProFontFamily);
 
+final f14RegularGreyItalic = const DrivenTextStyle(14, regular, grey)
+    .copyWith(fontStyle: FontStyle.italic);
+    
 const f16SemiBold = TextStyle(
   fontSize: 16,
   fontWeight: DrivenFonts.fontWeightSemibold,
