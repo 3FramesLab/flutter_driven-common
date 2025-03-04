@@ -4,6 +4,7 @@ class DrivenColors {
   static const black = Colors.black;
   static const white = Colors.white;
   static const brandPurple = Color(0xFF8154F2);
+  static const black33 = Color.fromRGBO(33, 33, 33, 1);
   static const black60 = Color(0x99000000);
   static const black90 = Color(0xE6000000);
   static const textColor = Color(0xFF3c3c3c); // RGB(60, 60, 60)
@@ -69,6 +70,7 @@ class DrivenColors {
   static const purpleActiveColor = Color(0xFF8154F2);
   static const cpDarkBlue = Color(0xFF276E8A);
   static const redAccent = Color(0xFFCE3A0E);
+  static const redAccent239 = Color.fromRGBO(239, 83, 80, 1);
   static const orangeAccent = Color(0xFFEF6C00);
 
   // Amazon colors
@@ -79,7 +81,11 @@ class DrivenColors {
   static const cameraOverlayColor = Color.fromRGBO(0, 0, 0, 80);
   static const successGreenColor = Color(0xff64bb50);
   static const failureRedColor = Color(0xffb00020);
+  static const skyBlueColor = Color(0xff7bbfcc);
+  static const lightBlueBackground = Color(0xffeef1f6);
 
   // MC SL
   static const mcCardSelectionColor = Color.fromRGBO(21, 101, 192, 1);
+
+  static const primary = Color.fromRGBO(1, 97, 121, 1);
 }

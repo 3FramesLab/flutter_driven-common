@@ -82,6 +82,7 @@ const f16SemiboldBlack = DrivenTextStyle(16, semiBold, black);
 const f16SemiboldBlackDark = DrivenTextStyle(16, semiBold, blackDark);
 const f16SemiboldBlack2 = DrivenTextStyle(16, semiBold, black2);
 const f16BoldBlackDark = DrivenTextStyle(16, bold, blackDark);
+const f16BoldGreen = DrivenTextStyle(16, bold, green);
 const f16ExtraBoldBlackDark = DrivenTextStyle(16, extraBold, blackDark);
 const f16ExtraBoldDarkBlue = DrivenTextStyle(16, extraBold, cpDarkBlue);
 const f16ExtraboldBlack2 = DrivenTextStyle(16, extraBold, black2);
@@ -103,6 +104,7 @@ const f20SemiboldBlackDark = DrivenTextStyle(20, semiBold, blackDark);
 const f20BoldBlackDark = DrivenTextStyle(20, bold, blackDark);
 
 const f22SemiboldBlack = DrivenTextStyle(22, semiBold, black);
+const f22BoldBlackDark = DrivenTextStyle(22, bold, blackDark);
 
 const f24SemiboldBlack = DrivenTextStyle(24, semiBold, blackDark);
 const f24SemiboldBlackDark = DrivenTextStyle(24, semiBold, blackDark);
@@ -148,6 +150,19 @@ const f14SemiboldPurpleUnderline = TextStyle(
 const f14RegularPurple = TextStyle(
   fontSize: 14,
   color: DrivenColors.brandPurple,
+  fontFamily: DrivenFonts.avertaFontFamily,
+);
+
+const f14SemiboldPrimaryUnderline = TextStyle(
+  fontSize: 14,
+  color: DrivenColors.primary,
+  fontFamily: DrivenFonts.avertaFontFamily,
+  decoration: TextDecoration.underline,
+);
+
+const f14RegularPrimary = TextStyle(
+  fontSize: 14,
+  color: DrivenColors.primary,
   fontFamily: DrivenFonts.avertaFontFamily,
 );
 
@@ -201,6 +216,29 @@ const f14RegularTextStyle = TextStyle(
   fontFamily: DrivenFonts.avertaFontFamily,
   fontWeight: DrivenFonts.fontWeightRegular,
 );
+
+final f12RegularBlackSfPro =
+    f12RegularBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14RegularBlackSfPro =
+    f14RegularBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f16RegularBlackSfPro =
+    f16RegularBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+
+final f12SemiboldBlackSfPro =
+    f12SemiboldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14SemiboldBlackSfPro =
+    f14SemiboldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14SemiboldRedSfPro =
+    f14SemiBoldRed.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f16SemiboldBlackSfPro =
+    f16SemiboldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+
+final f12BoldBlackSfPro =
+    f12BoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f14BoldBlackSfPro =
+    f14BoldBlack.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
+final f16BoldBlackSfPro =
+    f16BoldBlackDark.copyWith(fontFamily: DrivenFonts.sfProDisplayFontFamily);
 
 const f16Semibold = TextStyle(
   fontSize: 16,

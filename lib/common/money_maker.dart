@@ -12,7 +12,7 @@ class MoneyMaker {
   }
 
   static Money fromInt(int amountInCents) {
-    return Money.fromInt(amountInCents, code: 'USD');
+    return Money.fromInt(amountInCents, isoCode: 'USD');
   }
 
   static Money fromString(String amount) {

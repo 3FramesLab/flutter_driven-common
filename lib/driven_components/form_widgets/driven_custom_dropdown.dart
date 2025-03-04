@@ -8,6 +8,8 @@ class DrivenCustomDropDown extends StatelessWidget {
   final RxBool _isDropDownClicked = false.obs;
   final String placeholder;
   final String creditCheckInfoText;
+  final Color borderColor;
+  final Color selectedItemBorderColor;
 
   DrivenCustomDropDown({
     required this.selectedItem,
@@ -15,6 +17,8 @@ class DrivenCustomDropDown extends StatelessWidget {
     required this.valueChanged,
     this.placeholder = '',
     this.creditCheckInfoText = '',
+    this.borderColor = DrivenColors.purple,
+    this.selectedItemBorderColor = DrivenColors.purple,
     super.key,
   });
 
@@ -92,7 +96,7 @@ class DrivenCustomDropDown extends StatelessWidget {
   Container _dialogContent(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: DrivenColors.purple),
+        border: Border.all(color: borderColor),
         borderRadius: const BorderRadius.only(
           bottomLeft: Radius.circular(8),
           bottomRight: Radius.circular(8),
@@ -135,7 +139,8 @@ class DrivenCustomDropDown extends StatelessWidget {
   BoxDecoration _selectedItemDecoration() {
     return BoxDecoration(
       border: Border.all(
-        color: _isDropDownClicked() ? DrivenColors.purple : Colors.transparent,
+        color:
+            _isDropDownClicked() ? selectedItemBorderColor : Colors.transparent,
       ),
     );
   }

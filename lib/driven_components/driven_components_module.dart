@@ -1,6 +1,7 @@
 library driven_components_module;
 
 import 'dart:async';
+import 'dart:math';
 
 import 'package:driven_common/common/driven_constants.dart';
 import 'package:driven_common/common/driven_dimensions.dart';
@@ -33,6 +34,7 @@ part 'buttons/rounded_button.dart';
 part 'buttons/rounded_button_style.dart';
 part 'buttons/underlined_button.dart';
 // common widgets
+part 'common_widgets/filled_circle_icon.dart';
 part 'common_widgets/cupertino_progress_indicator.dart';
 part 'common_widgets/driven_divider.dart';
 part 'common_widgets/stepper_progress_indicator.dart';
@@ -150,3 +152,4 @@ part 'text_widgets/title_text.dart';
 part 'text_widgets/rich_text_with_bold_title.dart';
 part 'text_widgets/driven_text.dart';
 part 'overlays/camera_scanner_overlay.dart';
+part 'common_widgets/custom_circular_loader.dart';

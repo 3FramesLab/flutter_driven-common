@@ -52,6 +52,12 @@ class UiHelper {
     filter: {'#': RegExp('[0-9]')},
   );
 
+  static final MaskTextInputFormatter routeIdInputMaskAlphaNumeric13 =
+      MaskTextInputFormatter(
+    mask: '##########-##',
+    filter: {'#': RegExp(r'[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};:"\\|,.<>/?~`]')},
+  );
+
   static BoxDecoration drivenCardBoxDecoration() {
     return BoxDecoration(
       borderRadius: const BorderRadius.all(Radius.circular(10)),
