@@ -34,6 +34,7 @@ class CustomTextFormField extends StatefulWidget {
   final TextStyle? labelStyle;
   final TextStyle? errorStyle;
   final TextStyle? style;
+  final int? maxLines;
 
   const CustomTextFormField({
     Key? key,
@@ -70,6 +71,7 @@ class CustomTextFormField extends StatefulWidget {
     this.labelStyle,
     this.errorStyle,
     this.style,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -121,6 +123,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         onEditingComplete: widget.onEditComplete,
         enableSuggestions: widget.enableSuggestions,
         readOnly: widget.readOnly,
+        maxLines: widget.maxLines,
       ),
     );
   }
