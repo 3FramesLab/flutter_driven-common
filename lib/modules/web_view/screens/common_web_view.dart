@@ -14,9 +14,11 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
   late final String webViewTitle;
   late final Color primaryColor;
 
-  final InAppWebViewSettings initialSettings = InAppWebViewSettings(
-    useShouldOverrideUrlLoading: true,
-    transparentBackground: true,
+  final InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
+    crossPlatform: InAppWebViewOptions(
+      useShouldOverrideUrlLoading: true,
+      transparentBackground: true,
+    ),
   );
 
   @override
@@ -29,7 +31,7 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
 
   void get _getWebViewArguments => {
         initialUrlRequest = URLRequest(
-          url: WebUri(Get.arguments[CommonRouteArguments.webViewUrl]),
+          url: Uri.parse(Get.arguments[CommonRouteArguments.webViewUrl]),
         ),
         webViewTitle = Get.arguments[CommonRouteArguments.webViewTitle],
         primaryColor = Get.arguments[CommonRouteArguments.webViewPrimaryColor],
@@ -80,15 +82,13 @@ class _CommonWebViewScreenState extends State<CommonWebViewScreen> {
   Widget _loadWebView(BuildContext context, URLRequest initialUrl) => Expanded(
         child: InAppWebView(
           gestureRecognizers: _gestureRecognizers,
-          initialSettings: initialSettings,
+          initialOptions: options,
           initialUrlRequest: initialUrl,
           onWebViewCreated: _commonWebViewController.onWebViewCreated,
           onLoadStart: _commonWebViewController.onLoadStart,
           onLoadStop: _commonWebViewController.onLoadStop,
-          onReceivedHttpError: _commonWebViewController.onReceivedHttpError,
-          onReceivedError: _commonWebViewController.onReceivedError,
-          shouldOverrideUrlLoading:
-              _commonWebViewController.shouldOverrideUrlLoading,
+          onLoadHttpError: _commonWebViewController.onError,
+          onLoadError: _commonWebViewController.onError,
         ),
       );
 
